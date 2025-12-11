@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "company": "Company",
+    "login": "Login",
+    "startFreeTrial": "Start Free Trial",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "AI- First ERP",
+    "title": "The Future of",
+    "titleHighlight": "Synchronised Intelligence",
+    "description": "Empower your enterprise with an AI-powered ERP that learns, adapts, and evolves simplifying complexity into seamless motion.",
+    "getStarted": "Get Started",
+    "bookDemo": "Book a Demo"
+  },
+  "stats": {
+    "customersTitle": "24,000+ Happy Customers",
+    "customersSubtitle": "Using Syncrra everyday and loving it!",
+    "fasterTask": "Faster Task Completion",
+    "reductionDowntime": "Reduction in Production Downtime",
+    "customerSatisfaction": "Customer Satisfaction"
+  }
+}

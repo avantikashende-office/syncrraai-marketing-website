@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "product": "उत्पाद",
+    "solutions": "समाधान",
+    "pricing": "मूल्य",
+    "resources": "संसाधन",
+    "company": "कंपनी",
+    "login": "लॉगिन",
+    "startFreeTrial": "निःशुल्क परीक्षण शुरू करें",
+    "language": "भाषा"
+  },
+  "hero": {
+    "badge": "AI- प्रथम ERP",
+    "title": "का भविष्य",
+    "titleHighlight": "समकालिक बुद्धिमत्ता",
+    "description": "अपने उद्यम को एक AI-संचालित ERP के साथ सशक्त बनाएं जो सीखता, अनुकूलित होता और विकसित होता है, जटिलता को निर्बाध गति में सरल बनाता है।",
+    "getStarted": "शुरू करें",
+    "bookDemo": "डेमो बुक करें"
+  },
+  "stats": {
+    "customersTitle": "24,000+ खुश ग्राहक",
+    "customersSubtitle": "रोज़ाना Syncrra का उपयोग कर रहे हैं और इसे पसंद कर रहे हैं!",
+    "fasterTask": "तेज़ कार्य पूर्णता",
+    "reductionDowntime": "उत्पादन डाउनटाइम में कमी",
+    "customerSatisfaction": "ग्राहक संतुष्टि"
+  }
+}

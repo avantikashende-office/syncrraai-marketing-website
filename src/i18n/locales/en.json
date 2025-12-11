@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "company": "Company",
+    "login": "Login",
+    "startFreeTrial": "Start Free Trial",
+    "language": "Language"
+  }
+}
