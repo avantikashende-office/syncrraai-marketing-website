@@ -23,53 +23,56 @@ export default function CoreCapabilitiesSection() {
 
     return (
         <section className="section-padding">
-            <div className="capabilities-header">
-                <Badge label="KEY FEATURES" />
+            <div className="section-container">
+                <div className="capabilities-header">
+                    <Badge label="KEY FEATURES" />
 
-                <motion.h2 
-                    className="capabilities-title"
-                    variants={fadeInMain}
-                    initial="initial"
-                    whileInView="animate"
-                >
-                    Make Manufacturing Operations <br />
-                    Effortless & Fully Connected
-                </motion.h2>
+                    <motion.h2
+                        className="capabilities-title"
+                        variants={fadeInMain}
+                        initial="initial"
+                        whileInView="animate"
+                    >
+                        Make Manufacturing Operations <br />
+                        Effortless & Fully Connected
+                    </motion.h2>
 
-                <div className="capabilities-actions">
-                    <p className="text-description">
-                        Empower your enterprise with an AI-powered ERP that learns, adapts, <br />
-                        and evolves simplifying complexity into seamless motion.
-                    </p>
+                    <div className="capabilities-actions">
+                        <p className="text-description">
+                            Empower your enterprise with an AI-powered ERP that learns, adapts, <br />
+                            and evolves simplifying complexity into seamless motion.
+                        </p>
 
-                    <Button variant="outline">
-                        Explore More<ArrowUpRight size={20} />
-                    </Button>
+                        <Button variant="outline">
+                            Explore More<ArrowUpRight size={20} />
+                        </Button>
+                    </div>
                 </div>
-            </div>
 
-            {/* 2 COLUMNS */}
-            <div className="capabilities-grid">
-                {/* LEFT CAPABILITIES LIST */}
-                <AccordionList
-                    items={capabilityData}
-                    active={active}
-                    onSelect={setActive}
-                />
+                {/* 2 COLUMNS */}
+                <div className="capabilities-grid">
+                    {/* LEFT CAPABILITIES LIST */}
+                    <AccordionList
+                        items={capabilityData}
+                        active={active}
+                        onSelect={setActive}
+                    />
 
-                {/* RIGHT IMAGE */}
-                <div className="capabilities-image-wrapper">
-                    <div className="capabilities-image-sticky">
-                        <Image
-                            src={RIGHT_IMAGE_URL}
-                            alt="ERP System Dashboard"
-                            width={650}
-                            height={200}
-                            className="capabilities-image"
-                        />
+                    {/* RIGHT IMAGE */}
+                    <div className="capabilities-image-wrapper">
+                        <div className="capabilities-image-sticky">
+                            <Image
+                                src={RIGHT_IMAGE_URL}
+                                alt="ERP System Dashboard"
+                                width={650}
+                                height={200}
+                                className="capabilities-image"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 }

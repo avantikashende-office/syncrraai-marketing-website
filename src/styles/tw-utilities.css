@@ -92,8 +92,8 @@
 
   /* Navigation Patterns */
   .nav-container {
-    @apply sticky top-0 z-50 max-w-screen-xl rounded-xl border-b backdrop-blur-sm;
-    margin: 20;
+    @apply sticky top-0 z-50 w-[1223px] rounded-xl border-b backdrop-blur-sm;
+    margin: 20 auto;
     color: white;
     border-color: rgba(255, 255, 255, 0.05);
 
