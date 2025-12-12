@@ -30,9 +30,8 @@ export default function Herosection() {
             </section>
 
             {/* Positioned Icons */}
-            <div className="integrations-icons">
+            {/* <div className="integrations-icons">
 
-                {/* LEFT SIDE */}
                 <a href="/integrations" className="integration-icon icon-top-left">
                     <Image src="/integrations/i1.svg" className="w-20 h-20" alt="Integration icon" width={32} height={32} />
                 </a>
@@ -45,7 +44,6 @@ export default function Herosection() {
                     <Image src="/integrations/i3.svg" className="w-20 h-20" alt="Integration icon" width={32} height={32} />
                 </a>
 
-                {/* RIGHT SIDE */}
                 <a href="/integrations" className="integration-icon icon-top-right">
                     <Image src="/integrations/i4.svg" className="w-20 h-20" alt="Integration icon" width={32} height={32} />
                 </a>
@@ -58,7 +56,7 @@ export default function Herosection() {
                     <Image src="/integrations/i6.svg" className="w-20 h-20" alt="Integration icon" width={32} height={32} />
                 </a>
 
-            </div>
+            </div> */}
 
         </section>
     );
