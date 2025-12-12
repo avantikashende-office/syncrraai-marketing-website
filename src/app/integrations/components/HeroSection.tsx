@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 export default function Herosection() {
     return (
@@ -8,13 +10,23 @@ export default function Herosection() {
 
             {/* Heading */}
             <section className="integration-hero-layout ">
-                <h1 className="gradient-gray-text text-5xl  text-semibold text-center">
+                <motion.h1 
+                  className="gradient-gray-text text-5xl  text-semibold text-center"
+                  variants={fadeInMain}
+                  initial="initial"
+                  whileInView="animate"
+                >
                     A Fully Connected <br /> Manufacturing Stack
-                </h1>
+                </motion.h1>
 
-                <p className="text-description text-center">
+                <motion.p 
+                  className="text-description text-center"
+                  variants={fadeInMain}
+                  initial="initial"
+                  whileInView="animate"
+                >
                     Pick ready-to-go integrations for your system
-                </p>
+                </motion.p>
             </section>
 
             {/* Positioned Icons */}

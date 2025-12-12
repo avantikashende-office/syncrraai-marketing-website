@@ -4,30 +4,61 @@ import { useTranslation } from 'react-i18next';
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { Sparkles } from 'lucide-react';
+import { fadeInMain, waveContainer, waveLetters } from '@/utils/animations';
+import { motion } from 'framer-motion';
 
 export default function Herosection() {
   const { t } = useTranslation();
 
+  const title = t("hero.title");
+  const highlight = t("hero.titleHighlight");
+  const fullTitle = `${title} ${highlight}`;
+
   return (
     <section className="hero-bg">
       <div className="hero-layout">
-        <Badge label={t('hero.badge')} icon={<Sparkles fill="white" size={18} />} />
 
-        <h1 className="text-hero text-center">
-          {t('hero.title')}
-          <br />
-          <span className="gradient-text">{t('hero.titleHighlight')}</span>
-        </h1>
+        {/* Badge - fadeUp */}
+        <motion.div
+          variants={fadeInMain}
+          initial="initial"
+          animate="animate"
+        >
+          <Badge label={t('hero.badge')} icon={<Sparkles fill="white" size={18} />} />
+        </motion.div>
 
-        <p className="text-description text-center">
+        {/* H1 - wave letters */}
+        <motion.h1
+          variants={fadeInMain}
+          initial="initial"
+          animate="animate"
+          className="text-hero text-center">
+
+          {t('hero.title')} <br />
+
+          <span className="gradient-text">{t('hero.titleHighlight')}
+          </span>
+
+        </motion.h1>
+
+        {/* Description - fadeUp */}
+        <motion.p
+          className="text-description text-center"
+          variants={fadeInMain}
+          initial="initial"
+          animate="animate"
+        >
           {t('hero.description')}
-        </p>
+        </motion.p>
 
+        {/* Buttons (unchanged) */}
         <div className="hero-button-group">
           <Button variant="primary">{t('hero.getStarted')}</Button>
           <Button variant="secondary">{t('hero.bookDemo')}</Button>
         </div>
+
       </div>
     </section>
   );
 }
+

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Card from "@/components/ui/Card";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 const AllToolsListSection = () => {
   const [search, setSearch] = useState("");
@@ -74,9 +76,14 @@ const AllToolsListSection = () => {
 
         {/* ---- Heading + Search Bar ---- */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <h2 className="text-3xl text-white">
+          <motion.h2 
+            className="text-3xl text-white"
+            variants={fadeInMain}
+            initial="initial"
+            whileInView="animate"
+          >
             List of All Tools
-          </h2>
+          </motion.h2>
 
           {/* Search Box (Styled like screenshot) */}
           <div className="relative w-full md:w-70">

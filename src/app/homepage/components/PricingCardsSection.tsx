@@ -1,7 +1,11 @@
+"use client";
+
 import PricingSection from '@/components/shared/PricingSection'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import { ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInMain } from '@/utils/animations'
 
 const PricingCardSection = () => {
 
@@ -12,20 +16,36 @@ const PricingCardSection = () => {
                     <Badge label="PRICING" />
                 </div>
 
-                <h2 className="unified-title gradient-gray-text">
-                    Choose the Right Plan<br /> for Your Goals</h2>
-                <p className="unified-description">
+                <motion.h2 
+                  className="unified-title gradient-gray-text"
+                  variants={fadeInMain}
+                  initial="initial"
+                  whileInView="animate"
+                >
+                    Choose the Right Plan<br /> for Your Goals
+                </motion.h2>
+                <motion.p 
+                  className="unified-description"
+                  variants={fadeInMain}
+                  initial="initial"
+                  whileInView="animate"
+                >
                     Pick the plan that fits your needs today and scales <br />
                     effortlessly with your team
-                </p>
+                </motion.p>
             </div>
             <PricingSection />
             <div className="section-container flex justify-center items-center">
                 <div className="stats-card flex items-center justify-between w-full">
                     <div className="flex flex-col text-left">
-                        <p className="text-lg text-white font-medium">
+                        <motion.p 
+                          className="text-lg text-white font-medium"
+                          variants={fadeInMain}
+                          initial="initial"
+                          whileInView="animate"
+                        >
                             Not sure which plans is for you?
-                        </p>
+                        </motion.p>
                         <p className="text-lg text-white">
                             Compare Plans to find what’s right for your team.
                         </p>

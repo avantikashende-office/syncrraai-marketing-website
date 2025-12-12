@@ -1,6 +1,6 @@
-import { MotionValue, useScroll, useTransform, Variants } from "framer-motion";
+import { Variants, Easing } from "framer-motion";
 
-export const fadeUpMain: Variants = {
+export const fadeInMain: Variants = {
   initial: {
     opacity: 0,
     x: -28,
@@ -14,7 +14,7 @@ export const fadeUpMain: Variants = {
     filter: "blur(0px)",
     transition: {
       duration: 1.1,
-      ease: [0.16, 0.84, 0.44, 1], 
+      ease: [0.16, 0.84, 0.44, 1] as Easing, 
     },
   },
 };
@@ -31,7 +31,7 @@ export const fadeWords = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.8, 0.25, 1],
+      ease: [0.25, 0.8, 0.25, 1] as Easing,
       staggerChildren: 0.08, 
     },
   },
@@ -63,16 +63,7 @@ export const waveLetters = {
     filter: "blur(0px)",
     transition: {
       duration: 0.2,
-      ease: [0.16, 0.84, 0.44, 1],
+      ease: [0.16, 0.84, 0.44, 1] as Easing,
     },
   },
-};
-
-export const useHeroBgAnimation = () => {
-  const { scrollYProgress } = useScroll();
-
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-
-  return { bgScale, bgY };
 };

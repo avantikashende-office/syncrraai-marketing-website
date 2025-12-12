@@ -18,7 +18,7 @@ type AccordionListProps = {
   itemPaddingY?: string;           // default py-6
   titleClassName?: string;         // default text-2xl
   descriptionClassName?: string;   // default text-description
-  icon?: React.ComponentType<any>; // optional icon override
+  icon?: React.ComponentType<{ className?: string; size?: number }>; // optional icon override
 
   containerClassName?: string;     // NEW → override container wrapper
 };

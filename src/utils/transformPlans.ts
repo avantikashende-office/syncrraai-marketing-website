@@ -6,5 +6,6 @@ export function transformPlans(mode: "monthly" | "yearly") {
     price: `$${mode === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}`,
     priceSuffix: mode === "monthly" ? "per month" : "per year",
     features: mode === "monthly" ? plan.monthlyFeatures : plan.yearlyFeatures,
+    buttonVariant: plan.buttonVariant as "outline" | "primary",
   }));
 }

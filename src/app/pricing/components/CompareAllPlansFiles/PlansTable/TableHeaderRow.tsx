@@ -1,5 +1,5 @@
     import React from "react";
-import { Plan, BillingPeriod } from "../../types";
+import { Plan, BillingPeriod } from "../types";
 
 export default function TableHeaderRow({
   plans,

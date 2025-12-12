@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 const YourDataYourControlSection = () => {
   return (
@@ -8,14 +12,33 @@ const YourDataYourControlSection = () => {
         {/* LEFT TEXT BLOCK */}
         <div className="data-control-text">
           <div>
-            <h2 className="data-control-title-gray">Your Data. Your Control.</h2>
-            <h3 className="data-control-title-bold">Secure. Compliant. Always.</h3>
+            <motion.h2 
+              className="data-control-title-gray"
+              variants={fadeInMain}
+              initial="initial"
+              whileInView="animate"
+            >
+              Your Data. Your Control.
+            </motion.h2>
+            <motion.h3 
+              className="data-control-title-bold"
+              variants={fadeInMain}
+              initial="initial"
+              whileInView="animate"
+            >
+              Secure. Compliant. Always.
+            </motion.h3>
           </div>
 
-          <p className="data-control-description">
+          <motion.p 
+            className="data-control-description"
+            variants={fadeInMain}
+            initial="initial"
+            whileInView="animate"
+          >
             Syncrra safeguards your manufacturing data with enterprise-grade security. 
             All transactions, logs, and records stay encrypted and fully under your control.
-          </p>
+          </motion.p>
         </div>
 
         {/* RIGHT BADGE IMAGES */}

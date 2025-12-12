@@ -1,6 +1,10 @@
+"use client";
+
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 
 export function SeamlessIntegrationsSection() {
@@ -11,7 +15,14 @@ export function SeamlessIntegrationsSection() {
           <Badge label="INTEGRATIONS" />
         </div>
 
-        <h2 className="integrations-title">Seamless Integrations, <br /> Zero Friction</h2>
+        <motion.h2 
+          className="integrations-title"
+          variants={fadeInMain}
+          initial="initial"
+          whileInView="animate"
+        >
+          Seamless Integrations, <br /> Zero Friction
+        </motion.h2>
 
         <div className="integrations-image-wrapper">
           <Image
@@ -23,10 +34,15 @@ export function SeamlessIntegrationsSection() {
           />
         </div>
 
-        <p className="integrations-description">
+        <motion.p 
+          className="integrations-description"
+          variants={fadeInMain}
+          initial="initial"
+          whileInView="animate"
+        >
           Plug Syncrra into your workflow with just a click. <br />
           No messy setups, no dev tie needed, just instant productivit
-        </p>
+        </motion.p>
         <div className="integrations-cta">
           <Button variant="primary">Try Syncrra for Free </Button>
         </div>

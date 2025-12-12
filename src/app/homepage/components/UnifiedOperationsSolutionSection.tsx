@@ -1,5 +1,9 @@
+"use client";
+
 import Badge from "@/components/ui/Badge";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 export function UnifiedOperationsSolutionSection() {
   return (
@@ -9,13 +13,24 @@ export function UnifiedOperationsSolutionSection() {
           <Badge label="ALL IN ONE SOLUTION" />
         </div>
 
-        <h2 className="unified-title">
-          One System for Your <br /> Entire Plant </h2>
+        <motion.h2 
+          className="unified-title"
+          variants={fadeInMain}
+          initial="initial"
+          whileInView="animate"
+        >
+          One System for Your <br /> Entire Plant
+        </motion.h2>
 
-        <p className="unified-description">
+        <motion.p 
+          className="unified-description"
+          variants={fadeInMain}
+          initial="initial"
+          whileInView="animate"
+        >
           A single ERP designed to manage planning, production, inventory, <br />
           machines, teams, and financials all in one connected platform.
-        </p>
+        </motion.p>
 
         <div className="unified-image-wrapper">
           <Image

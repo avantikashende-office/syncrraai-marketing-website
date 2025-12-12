@@ -579,23 +579,8 @@
     transform: translateY(-80px);
   }
 
-  /* Hero Background */
   /* .hero-bg {
-    @apply relative overflow-hidden bg-[#000000];
-  }
-
-  .hero-bg::before {
-    content: "";
-    @apply absolute inset-0 pointer-events-none;
-    background-image: url("/bg.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
-  } */
-
-  .hero-bg {
     @apply relative overflow-hidden bg-black pb-[100vh];
-    /* bg-black matches your previous background */
     z-index: 0;
   }
   .hero-bg::before {
@@ -607,10 +592,39 @@
     background-size: cover;
     background-position: top;
 
-    /* layer behind everything */
     z-index: -1;
     opacity: 1;
-  }
+  } */
+
+.hero-bg {
+  @apply relative overflow-hidden bg-black pb-[100vh];
+  z-index: 0;
+}
+
+/* Main backgrounds: bg.svg (full) + hero-top-bg.svg (bottom) */
+.hero-bg::before {
+  content: "";
+  @apply absolute inset-0 pointer-events-none;
+
+  background-image:
+    url("/bg.svg"),             /* top background grid */
+    url("/homepage/hero-top-bg.svg");    /* bottom shape */
+
+  background-repeat: no-repeat, no-repeat;
+
+  background-size:
+    cover,                      /* bg.svg full screen */
+    100% auto;                  /* hero-top-bg.svg width full */
+
+  background-position:
+    center top,                 /* bg.svg visible at top */
+    center bottom;              /* hero-top-bg placed at bottom */
+
+  z-index: -1;
+  opacity: 1;
+}
+
+
 
   /* Hero Section */
   .hero-button-group {

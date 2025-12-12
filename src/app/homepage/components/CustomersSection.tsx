@@ -1,8 +1,12 @@
+"use client";
+
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import EmptyCard from '@/components/ui/EmptyCard'
 import { ArrowUpRight, ChevronRight, Clock3, Settings, UserRound } from 'lucide-react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { fadeInMain } from '@/utils/animations'
 
 const CustomersSection = () => {
 
@@ -48,17 +52,27 @@ const CustomersSection = () => {
             <div className="space-y-4 section-container">
                 <Badge label="CUSTOMERS" />
 
-                <h2 className="section-title-large gradient-gray-text">
+                <motion.h2 
+                  className="section-title-large gradient-gray-text"
+                  variants={fadeInMain}
+                  initial="initial"
+                  whileInView="animate"
+                >
                     Trusted by the Most
                     <br />
                     Innovative Companies
-                </h2>
+                </motion.h2>
 
                 <div className="customers-header">
-                    <p className="text-description">
+                    <motion.p 
+                      className="text-description"
+                      variants={fadeInMain}
+                      initial="initial"
+                      whileInView="animate"
+                    >
                         Join 100k + customers who use our platform to take their<br />
                         operational efforts to the next level.
-                    </p>
+                    </motion.p>
 
                     <Button variant="outline">
                         View Case Studies <ArrowUpRight className='ml-2' size={20} />
@@ -77,14 +91,24 @@ const CustomersSection = () => {
                                         CASE STUDY
                                     </p>
 
-                                    <h2 className="customer-case-title">
+                                    <motion.h2 
+                                      className="customer-case-title"
+                                      variants={fadeInMain}
+                                      initial="initial"
+                                      whileInView="animate"
+                                    >
                                         Customer Story
-                                    </h2>
+                                    </motion.h2>
 
-                                    <p className="text-subdescription">
+                                    <motion.p 
+                                      className="text-subdescription"
+                                      variants={fadeInMain}
+                                      initial="initial"
+                                      whileInView="animate"
+                                    >
                                         How Classic Roof Manufacturing automated 80% of production tracking
                                         and reduced delays by 50% using Syncrra ERP.
-                                    </p>
+                                    </motion.p>
                                 </div>
 
                                 {/* TAGS */}
@@ -114,7 +138,14 @@ const CustomersSection = () => {
                                         width={250}
                                         className="customer-case-logo"
                                     />
-                                    <h2 className="customer-case-title">Classic Roof</h2>
+                                    <motion.h2 
+                                      className="customer-case-title"
+                                      variants={fadeInMain}
+                                      initial="initial"
+                                      whileInView="animate"
+                                    >
+                                      Classic Roof
+                                    </motion.h2>
                                 </div>
 
                                 {/* BOTTOM BUTTON (right aligned) */}
@@ -150,7 +181,14 @@ const CustomersSection = () => {
                                 <div className="testimonial-card">
                                     <div className="customer-testimonial-header">
                                         <Settings />
-                                        <h3 className="customer-testimonial-company">GreenWorks</h3>
+                                        <motion.h3 
+                                          className="customer-testimonial-company"
+                                          variants={fadeInMain}
+                                          initial="initial"
+                                          whileInView="animate"
+                                        >
+                                          GreenWorks
+                                        </motion.h3>
                                     </div>
 
                                     <p className="testimonial-quote"> “Before Syncrra, keeping projects aligned felt impossible.

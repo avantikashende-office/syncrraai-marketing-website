@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 const items = [
   "manual reports",
@@ -75,9 +76,14 @@ export default function BusinessChallengesSection() {
         <div className="glow-background" />
 
         <div className="challenges-content">
-          <span className="challenges-text">
+          <motion.span 
+            className="challenges-text"
+            variants={fadeInMain}
+            initial="initial"
+            whileInView="animate"
+          >
             Time to ditch
-          </span>
+          </motion.span>
 
           <div className="challenges-scroll-wrapper">
 

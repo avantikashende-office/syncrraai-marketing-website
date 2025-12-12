@@ -3,13 +3,20 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowDown, ArrowUp } from "lucide-react";
 import Counter from '@/components/ui/Counter';
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 export default function StatsSection() {
     const { t } = useTranslation();
 
     return (
         <section className="section-container section-padding flex justify-center items-center">
-            <div className="stats-card">
+            <motion.div 
+                className="stats-card"
+                variants={fadeInMain}
+                initial="initial"
+                whileInView="animate"
+            >
                 {/* LEFT TEXT */}
                 <div className="stats-text-wrapper">
                     <h3 className="text-subhero">
@@ -83,7 +90,7 @@ export default function StatsSection() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

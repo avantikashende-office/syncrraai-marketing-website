@@ -6,6 +6,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import AccordionList from "@/components/ui/AccordionList";
+import { motion } from "framer-motion";
+import { fadeInMain } from "@/utils/animations";
 
 const RIGHT_IMAGE_URL = "/img/CoreCapabilitiesSection.jpg";
 
@@ -24,10 +26,15 @@ export default function CoreCapabilitiesSection() {
             <div className="capabilities-header">
                 <Badge label="KEY FEATURES" />
 
-                <h2 className="capabilities-title">
+                <motion.h2 
+                    className="capabilities-title"
+                    variants={fadeInMain}
+                    initial="initial"
+                    whileInView="animate"
+                >
                     Make Manufacturing Operations <br />
                     Effortless & Fully Connected
-                </h2>
+                </motion.h2>
 
                 <div className="capabilities-actions">
                     <p className="text-description">
