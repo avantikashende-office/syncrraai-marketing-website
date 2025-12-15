@@ -22,7 +22,7 @@ export default function CoreCapabilitiesSection() {
     const [active, setActive] = useState("production");
 
     return (
-        <section className="section-padding">
+        <section className=" ">
             <div className="section-container">
                 <div className="capabilities-header">
                     <Badge label="KEY FEATURES" />

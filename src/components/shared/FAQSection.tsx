@@ -61,7 +61,7 @@ const FAQSection = () => {
 
 
     return (
-        <section className="section-padding">
+        <section className=" ">
             <div className="space-y-6 section-container">
                 <div className="flex justify-center">
                     <Badge label="FAQ" />

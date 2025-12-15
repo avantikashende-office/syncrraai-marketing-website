@@ -10,7 +10,7 @@ export default function StatsSection() {
     const { t } = useTranslation();
 
     return (
-        <section className="section-container section-padding flex justify-center items-center">
+        <section className="section-container   flex justify-center items-center">
             <motion.div 
                 className="stats-card"
                 variants={fadeInMain}

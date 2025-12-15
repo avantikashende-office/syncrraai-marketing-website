@@ -9,7 +9,7 @@ import { fadeInMain } from "@/utils/animations";
 
 export function SeamlessIntegrationsSection() {
   return (
-    <section className="section-padding">
+    <section className=" ">
       <div className="section-container space-y-8">
         <div className="flex justify-center">
           <Badge label="INTEGRATIONS" />

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function AIFeaturesOverviewSection() {
   return (
-    <section className="section-padding">
+    <section className=" ">
       <div className="space-y-8 section-container">
         <Badge label="AI FEATURES" />
 

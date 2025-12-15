@@ -4,7 +4,7 @@ import SyncrraLogo from '../../../public/Logos/SyncrraLogoIcon';
 
 const TryForFreeSection = () => {
     return (
-        <section className="section-container section-padding flex flex-col justify-center items-center text-center space-y-8">
+        <section className="section-container   flex flex-col justify-center items-center text-center space-y-8">
 
             <div className="flex flex-col items-center gap-2">
                 <div className="tryfree-image-wrapper">

@@ -1,11 +1,7 @@
 @layer utilities {
   /* Layout Patterns */
   .section-container {
-    @apply max-w-[1123px] mx-auto px-8;
-  }
-
-  .section-padding {
-    @apply py-24;
+    @apply w-full mx-auto px-[5%] py-[10vw] max-w-[90%];
   }
 
   .hero-layout {
@@ -92,8 +88,8 @@
 
   /* Navigation Patterns */
   .nav-container {
-    @apply sticky top-0 z-50 w-[1223px] rounded-xl border-b backdrop-blur-sm;
-    margin: 20 auto;
+    @apply sticky top-0 z-50 rounded-xl border-b backdrop-blur-sm;
+    margin: 20;
     color: white;
     border-color: rgba(255, 255, 255, 0.05);
 
@@ -596,35 +592,28 @@
     opacity: 1;
   } */
 
-.hero-bg {
-  @apply relative overflow-hidden bg-black pb-[100vh];
-  z-index: 0;
-}
+  .hero-bg {
+    @apply relative overflow-hidden bg-black pb-[100vh];
+    z-index: 0;
+  }
 
-/* Main backgrounds: bg.svg (full) + hero-top-bg.svg (bottom) */
-.hero-bg::before {
-  content: "";
-  @apply absolute inset-0 pointer-events-none;
+  /* Main backgrounds: bg.svg (full) + hero-top-bg.svg (bottom) */
+  .hero-bg::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
 
-  background-image:
-    url("/bg.svg"),             /* top background grid */
-    url("/homepage/hero-top-bg.svg");    /* bottom shape */
+    background-image: url("/bg.svg"),
+      /* top background grid */ url("/homepage/hero-top-bg.svg"); /* bottom shape */
 
-  background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat, no-repeat;
 
-  background-size:
-    cover,                      /* bg.svg full screen */
-    100% auto;                  /* hero-top-bg.svg width full */
+    background-size: cover, /* bg.svg full screen */ 100% auto; /* hero-top-bg.svg width full */
 
-  background-position:
-    center top,                 /* bg.svg visible at top */
-    center bottom;              /* hero-top-bg placed at bottom */
+    background-position: center top, /* bg.svg visible at top */ center bottom; /* hero-top-bg placed at bottom */
 
-  z-index: -1;
-  opacity: 1;
-}
-
-
+    z-index: -1;
+    opacity: 1;
+  }
 
   /* Hero Section */
   .hero-button-group {

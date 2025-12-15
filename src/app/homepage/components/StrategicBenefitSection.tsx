@@ -68,7 +68,7 @@ export function StrategicBenefitsSection() {
   ];
 
   return (
-    <section className="section-padding">
+    <section className=" ">
       <div className="section-container space-y-8">
         {/* Badge */}
         <div className="flex justify-center">
@@ -101,7 +101,7 @@ export function StrategicBenefitsSection() {
 
 
       </div>
-      <div className="section-padding">
+      <div className=" ">
         <ScrollingBadges
           itemsTop={[
             "Faster Decisions",

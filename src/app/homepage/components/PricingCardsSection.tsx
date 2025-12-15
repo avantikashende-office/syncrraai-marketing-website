@@ -10,7 +10,7 @@ import { fadeInMain } from '@/utils/animations'
 const PricingCardSection = () => {
 
     return (
-        <section className="section-padding">
+        <section className=" ">
             <div className="section-container space-y-8">
                 <div className="flex justify-center">
                     <Badge label="PRICING" />

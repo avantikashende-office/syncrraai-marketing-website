@@ -8,7 +8,7 @@ import { fadeInMain } from '@/utils/animations'
 const HeroSection = () => {
   return (
     <>
-      <section className="section-padding pricing-hero-bg">
+      <section className="  pricing-hero-bg">
         <div className="section-container space-y-6 mb-12">
           {/* Heading */}
           <motion.h2 

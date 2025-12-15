@@ -74,7 +74,7 @@ bg-gradient-glow            // Glow effect
 ### Layout Patterns
 ```css
 .section-container          // Max-width container with padding
-.section-padding           // Standard section vertical padding
+.            // Standard section vertical padding
 .hero-layout              // Hero section layout pattern
 .card-container           // Card background and padding
 .stats-grid               // Statistics layout grid
@@ -128,7 +128,7 @@ bg-gradient-glow            // Glow effect
 
 ### After (Semantic Tokens)
 ```jsx
-<div className="section-container section-padding">
+<div className="section-container  ">
   <h1 className="text-hero">
     <span className="gradient-text">Title</span>
   </h1>

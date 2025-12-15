@@ -72,7 +72,7 @@ const AllToolsListSection = () => {
 
   return (
     <section>
-      <div className="section-container section-padding space-y-10">
+      <div className="section-container   space-y-10">
 
         {/* ---- Heading + Search Bar ---- */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">

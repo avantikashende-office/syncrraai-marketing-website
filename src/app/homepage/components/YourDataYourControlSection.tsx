@@ -6,7 +6,7 @@ import { fadeInMain } from "@/utils/animations";
 
 const YourDataYourControlSection = () => {
   return (
-    <section className="section-container section-padding flex justify-center items-center">
+    <section className="section-container   flex justify-center items-center">
       <div className="data-control-card">
 
         {/* LEFT TEXT BLOCK */}
