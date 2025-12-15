@@ -11,7 +11,7 @@ export default function Herosection() {
             {/* Heading */}
             <section className="integration-hero-layout ">
                 <motion.h1 
-                  className="gradient-gray-text text-5xl  text-semibold text-center"
+                  className="gradient-gray-text title-center"
                   variants={fadeInMain}
                   initial="initial"
                   whileInView="animate"
@@ -20,7 +20,7 @@ export default function Herosection() {
                 </motion.h1>
 
                 <motion.p 
-                  className="text-description text-center"
+                  className="subtitle-center"
                   variants={fadeInMain}
                   initial="initial"
                   whileInView="animate"

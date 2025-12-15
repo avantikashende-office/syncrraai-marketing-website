@@ -4,6 +4,10 @@
     @apply w-full mx-auto px-[5%] py-[10vw] max-w-[90%];
   }
 
+  .section-container-gray {
+    @apply w-full mx-auto px-[10%] py-[10vw] bg-[#171717];
+  }
+
   .hero-layout {
     @apply flex flex-col items-center justify-center gap-12 max-w-4xl mx-auto px-8;
   }
@@ -47,8 +51,31 @@
        text-transparent;
   }
 
-  .text-hero {
-    @apply text-6xl font-medium leading-tight;
+  .hero-title-center {
+    @apply text-6xl font-medium leading-tight text-center;
+  }
+
+  .hero-subtitle-center {
+    @apply text-lg max-w-2xl text-center mx-auto;
+    color: #939393;
+  }
+
+  .title-center {
+    @apply text-5xl font-medium leading-tight text-center;
+  }
+
+  .subtitle-center {
+    @apply text-lg max-w-2xl text-center mx-auto;
+    color: #939393;
+  }
+
+  .title-side {
+    @apply text-5xl font-medium  leading-snug;
+  }
+
+  .subtitle-side {
+    @apply text-lg max-w-2xl;
+    color: #939393;
   }
 
   .text-subhero {
@@ -644,69 +671,32 @@
   }
 
   /* Core Capabilities */
-  .capabilities-header {
-    @apply space-y-8 max-w-[1123px] mx-auto px-8;
-  }
-
-  .capabilities-title {
-    @apply bg-gradient-to-r from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent text-[2.8rem] leading-[1.2] leading-snug;
-  }
-
-  .capabilities-actions {
-    @apply flex items-start justify-between gap-8;
-  }
-
   .capabilities-grid {
-    @apply mt-20 grid grid-cols-1 lg:grid-cols-2 items-stretch;
-    gap: 3.75rem;
+    @apply flex justify-between items-center gap-12 my-15;
   }
-
-  .capabilities-image-wrapper {
-    @apply hidden lg:flex justify-end;
-  }
-
-  .capabilities-image-sticky {
-    @apply self-start sticky top-28;
-  }
-
   .capabilities-image {
     @apply rounded-3xl;
     height: 521px;
   }
 
-  /* Unified Solution */
-  .unified-section {
-    @apply py-24;
-    background-color: #171717;
-  }
-
-  .light .unified-section {
-    background-color: #f5f5f5;
-  }
-
-  .unified-title {
-    @apply text-center text-5xl leading-[1.2];
-  }
-
-  .unified-description {
-    @apply text-lg max-w-2xl text-center max-w-3xl mx-auto mb-20;
-    color: #939393;
-  }
-
-  .light .unified-description {
-    color: #666666;
-  }
 
   .unified-image-wrapper {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center p-15;
   }
 
   .unified-image {
-    @apply rounded-xl flex border w-full max-w-[1123px] object-cover;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.1);
-    height: 100vh;
+    @apply rounded-xl flex border w-full max-w-[1123px] object-cover ;
+    height: 80vh;
   }
+
+  /* Comparison */
+.comparison-grid{
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 py-12 ;
+}
+
+.comparison-title {
+  @apply flex justify-center items-center gap-3 mb-6;
+}
 
   /* AI Features */
   .ai-grid {
@@ -757,19 +747,6 @@
   }
 
   /* Customers Section */
-  .customers-section {
-    @apply py-24;
-    background-color: #171717;
-  }
-
-  .light .customers-section {
-    background-color: #f5f5f5;
-  }
-
-  .customers-header {
-    @apply flex items-start justify-between gap-4 mb-12;
-  }
-
   .customers-grid {
     @apply grid grid-rows-1 gap-6;
   }
@@ -852,13 +829,7 @@
     @apply text-xl font-semibold;
   }
 
-  .customer-testimonial-image-wrapper {
-    @apply relative h-full overflow-visible flex items-end justify-end;
-  }
 
-  .customer-testimonial-image {
-    @apply object-contain absolute -top-16 lg:-top-24 right-0 lg:-right-10;
-  }
 
   .testimonial-cards-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8;
@@ -895,11 +866,9 @@
     color: #939393;
   }
 
-  /* Seamless Integrations */
-  .integrations-title {
-    @apply text-center bg-gradient-to-r from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent text-5xl leading-[1.2];
-  }
 
+  /* Integrations Section */
+  
   .integrations-image-wrapper {
     @apply flex justify-center items-center my-16;
   }
@@ -907,25 +876,13 @@
   .integrations-image {
     @apply rounded-xl flex border w-full max-w-[1123px] object-cover;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.1);
   }
 
-  .integrations-description {
-    @apply text-lg max-w-2xl text-center max-w-3xl mx-auto;
-    color: #939393;
-  }
 
-  .light .integrations-description {
-    color: #666666;
-  }
-
-  .integrations-cta {
-    @apply flex items-center justify-center;
-  }
 
   /* Strategic Benefits */
   .benefits-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-8;
   }
 
   /* Data Control Section */
@@ -969,35 +926,7 @@
     @apply object-contain;
   }
 
-  /* Page Layouts */
-  .page-wrapper {
-    @apply py-24 max-w-[1123px] mx-auto px-8;
-  }
 
-  .page-title-centered {
-    @apply flex justify-center h-screen text-6xl font-medium leading-tight;
-  }
-
-  .page-title-large {
-    @apply flex justify-center h-screen text-4xl;
-  }
-
-  /* Wrapper for the image */
-  .tryfree-image-wrapper {
-    @apply relative w-full flex justify-center;
-  }
-
-  /* The main image */
-  .tryfree-image {
-    @apply w-full max-w-[900px] h-auto object-cover z-[1];
-  }
-
-  /* Fade overlay */
-  .tryfree-image-wrapper::after {
-    content: "";
-    @apply absolute bottom-0 left-0 w-full max-w-6xl h-[60%] z-[2];
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.888), rgba(0, 0, 0, 0));
-  }
 
   /* Logo visibility */
   .tryfree-logo {
@@ -1008,10 +937,6 @@
   .my-35 {
     margin-top: 8.75rem;
     margin-bottom: 8.75rem;
-  }
-
-  .mt-23 {
-    margin-top: 5.75rem;
   }
 
   .mt-25 {
@@ -1037,44 +962,4 @@
   @apply flex flex-col items-center gap-6 z-20;
 }
 
-/* Master icon layer wrapper */
-.integrations-icons {
-  @apply relative left-1/2 -translate-x-1/2 top-[38%] 
-         w-full max-w-[1400px] 
-         h-[40px]  /* gives real vertical space to move icons */
-         pointer-events-none;
-}
 
-/* Base icon style */
-.integration-icon {
-  @apply w-25 h-25 rounded-xl 
-         flex justify-center items-center
-         cursor-pointer hover:scale-110 transition 
-         pointer-events-auto;
-}
-
-/* LEFT SIDE — keeping horizontal positions, adjusting vertical only */
-.icon-top-left {
-  @apply absolute left-[15%] top-[100%];
-}
-
-.icon-mid-left {
-  @apply absolute left-[25%] top-[495%]; /* moved DOWN */
-}
-
-.icon-bottom-left {
-  @apply absolute left-[13%] top-[780%]; /* moved DOWN */
-}
-
-/* RIGHT SIDE — keeping horizontal positions, adjusting vertical only */
-.icon-top-right {
-  @apply absolute right-[5%] top-[100%];
-}
-
-.icon-mid-right {
-  @apply absolute right-[16%] top-[340%]; /* moved DOWN */
-}
-
-.icon-bottom-right {
-  @apply absolute right-[22%] top-[650%]; /* moved DOWN */
-}

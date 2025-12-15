@@ -8,18 +8,18 @@ import Image from "next/image";
 
 export function AIFeaturesOverviewSection() {
   return (
-    <section className=" ">
-      <div className="space-y-8 section-container">
+    <section className="section-container space-y-16">
+      <div className="space-y-8 ">
         <Badge label="AI FEATURES" />
 
-        <h2 className="section-title-large gradient-gray-text">
+        <h2 className="title-side gradient-gray-text">
           One Platform.
           <br />
           Infinite Possibilities.
         </h2>
 
-        <div className="flex items-start justify-between gap-4">
-          <p className="text-description">
+        <div className="flex items-start justify-between">
+          <p className="subtitle-side">
             Designed to simplify complexities and empower data-backed decisions, <br />
             it is your single source of truth for smarter business growth.
           </p>
@@ -31,7 +31,6 @@ export function AIFeaturesOverviewSection() {
       </div>
 
       {/* GRID SECTION */}
-      <div className="section-container mt-16">
 
         <div className="ai-grid">
 
@@ -86,7 +85,7 @@ export function AIFeaturesOverviewSection() {
           </div>
 
         </div>
-      </div>
+      
 
     </section>
   );

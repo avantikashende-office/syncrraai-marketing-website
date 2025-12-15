@@ -11,8 +11,8 @@ export default function PricingSection() {
   const plans = transformPlans(mode);
 
   return (
-    <section>
-      <div className="flex flex-col items-center gap-6 mb-16">
+    <section className="space-y-12 py-6">
+      <div className="flex flex-col items-center gap-6">
         <SwitchChip
           leftLabel="Monthly"
           rightLabel="Yearly"
@@ -24,7 +24,7 @@ export default function PricingSection() {
         />
       </div>
 
-      <div className="flex gap-5 section-container justify-center">
+      <div className="flex gap-5 justify-center">
         {plans.map((plan) => (
           <PricingCard key={plan.id} {...plan} />
         ))}

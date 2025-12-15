@@ -9,20 +9,20 @@ import { fadeInMain } from "@/utils/animations";
 
 export function SeamlessIntegrationsSection() {
   return (
-    <section className=" ">
-      <div className="section-container space-y-8">
+    <section className="section-container space-y-8">
+
         <div className="flex justify-center">
           <Badge label="INTEGRATIONS" />
         </div>
 
-        <motion.h2 
-          className="integrations-title"
+        <motion.h1 
+          className="title-center gradient-gray-text"
           variants={fadeInMain}
           initial="initial"
-          whileInView="animate"
+          whileInView="animate" 
         >
           Seamless Integrations, <br /> Zero Friction
-        </motion.h2>
+        </motion.h1>
 
         <div className="integrations-image-wrapper">
           <Image
@@ -35,7 +35,7 @@ export function SeamlessIntegrationsSection() {
         </div>
 
         <motion.p 
-          className="integrations-description"
+          className="subtitle-center"
           variants={fadeInMain}
           initial="initial"
           whileInView="animate"
@@ -43,10 +43,9 @@ export function SeamlessIntegrationsSection() {
           Plug Syncrra into your workflow with just a click. <br />
           No messy setups, no dev tie needed, just instant productivit
         </motion.p>
-        <div className="integrations-cta">
+        <div className="flex justify-center">
           <Button variant="primary">Try Syncrra for Free </Button>
         </div>
-      </div>
 
     </section>
   );

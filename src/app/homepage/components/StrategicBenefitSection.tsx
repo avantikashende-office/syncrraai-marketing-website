@@ -28,7 +28,6 @@ export function StrategicBenefitsSection() {
   };
 
   const BENEFITS = [
-
     {
       icon: "smile",
       title: "AI-Driven Insights",
@@ -68,7 +67,7 @@ export function StrategicBenefitsSection() {
   ];
 
   return (
-    <section className=" ">
+    <section>
       <div className="section-container space-y-8">
         {/* Badge */}
         <div className="flex justify-center">
@@ -76,12 +75,12 @@ export function StrategicBenefitsSection() {
         </div>
 
         {/* Heading */}
-        <h2 className=" gradient-gray-text section-title-large text-center">
+        <h1 className=" gradient-gray-text title-center">
           Empower Your Business with <br /> Intelligent ERP Automation
-        </h2>
+        </h1>
 
         {/* Subtitle */}
-        <p className="text-description text-center  mx-auto  mb-20">
+        <p className="subtitle-center">
           Experience the next level of productivity and precision with SyncRRA s
           AI-powered ERP designed to automate, analyze, and accelerate every
           business operation.
@@ -98,10 +97,8 @@ export function StrategicBenefitsSection() {
             />
           ))}
         </div>
-
-
       </div>
-      <div className=" ">
+      <div>
         <ScrollingBadges
           itemsTop={[
             "Faster Decisions",
@@ -122,7 +119,6 @@ export function StrategicBenefitsSection() {
           speed={60}
         />
       </div>
-
     </section>
   );
 }

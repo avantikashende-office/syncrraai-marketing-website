@@ -29,7 +29,7 @@ export const basePlans = [
     id: "basic",
     title: "Basic Plan",
     monthlyPrice: 49,
-    yearlyPrice: 196, // Yearly discount
+    yearlyPrice: 196,
     description: "Best for growing businesses",
     monthlyFeatures: [
       "All Starter features",
@@ -40,8 +40,10 @@ export const basePlans = [
     ],
     yearlyFeatures: [
       "All Starter features",
-      "25 users ", // example change
-      "Faster support SLA",
+      "Upto 20 users",
+      "Role-based user permissions",
+      "Rejection & Supplier Management module",
+      "Priority email support",
     ],
     buttonText: "Get Started",
     buttonVariant: "outline",
@@ -63,8 +65,10 @@ export const basePlans = [
     ],
     yearlyFeatures: [
       "All Basic features",
-      "60 users",
-      "Premium automation flows",
+      "Upto 50 users",
+      "Advanced analytics & custom dashboards",
+      "Workflow automation (Approvals, Alerts)",
+      "Dedicated account manager",
     ],
     highlight: true,
     badgeText: "Popular",
@@ -90,7 +94,9 @@ export const basePlans = [
     yearlyFeatures: [
       "All Pro features",
       "Unlimited users",
-      "Dedicated engineering hours",
+      "Custom module development",
+      "AI-driven insights & forecasting",
+      "Onboarding & training included",
     ],
     buttonText: "Contact Us",
     buttonVariant: "outline",

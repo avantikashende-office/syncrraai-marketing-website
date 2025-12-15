@@ -32,7 +32,7 @@ export default function Herosection() {
           variants={fadeInMain}
           initial="initial"
           animate="animate"
-          className="text-hero text-center">
+          className="hero-title-center">
 
           {t('hero.title')} <br />
 
@@ -43,7 +43,7 @@ export default function Herosection() {
 
         {/* Description - fadeUp */}
         <motion.p
-          className="text-description text-center"
+          className="hero-subtitle-center"
           variants={fadeInMain}
           initial="initial"
           animate="animate"

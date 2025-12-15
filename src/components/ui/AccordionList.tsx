@@ -31,7 +31,7 @@ export default function AccordionList({
   titleClassName = "text-2xl",
   descriptionClassName = "text-description",
   icon: Icon = ChevronRight,
-  containerClassName = "flex flex-col max-w-xl pl-26", // default
+  containerClassName = "flex flex-col max-w-lg", // default
 }: AccordionListProps) {
 
   const handleClick = (key: string) => {

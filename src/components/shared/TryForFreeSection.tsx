@@ -4,10 +4,10 @@ import SyncrraLogo from '../../../public/Logos/SyncrraLogoIcon';
 
 const TryForFreeSection = () => {
     return (
-        <section className="section-container   flex flex-col justify-center items-center text-center space-y-8">
+        <section className="section-container  flex flex-col justify-center items-center text-center space-y-8">
 
-            <div className="flex flex-col items-center gap-2">
-                <div className="tryfree-image-wrapper">
+            <div>
+                {/* <div className="tryfree-image-wrapper">
                     <Image
                         src="/TryForFreeImage.svg"
                         alt="Dashboard Preview"
@@ -15,7 +15,7 @@ const TryForFreeSection = () => {
                         height={600}
                         className="tryfree-image"
                     />
-                </div>
+                </div> */}
 
                 <div className="tryfree-logo">
                     <SyncrraLogo className="w-25 h-25" />
@@ -32,9 +32,7 @@ const TryForFreeSection = () => {
                 Start taking control of your business today
             </p>
 
-            <div>
                 <Button variant="primary">Get Started</Button>
-            </div>
 
         </section>
     )

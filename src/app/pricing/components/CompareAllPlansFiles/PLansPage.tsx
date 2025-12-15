@@ -24,14 +24,17 @@ export default function PlansPage() {
   const sections = comparisonSectionsData[isMonthly ? "monthly" : "yearly"];
 
   return (
-    <div className="section-container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 py-20">
       {/* Comparison Table */}
       <div className="rounded-xl overflow-hidden">
 
         {/* Billing Row */}
         <div className="grid grid-cols-5">
           {/* Column 1 */}
-          <div className="px-2 py-4 flex flex-col items-start space-y-4  border-b border-[#404040]">
+          <div>
+
+          </div>
+          {/* <div className="px-2 py-4 flex flex-col items-center justify-center space-y-4  border-b border-[#404040]">
             <div className="text-sm font-semibold">Billing Frequency:</div>
             <SwitchChip
               leftLabel="Monthly"
@@ -42,13 +45,13 @@ export default function PlansPage() {
               showBadge={false}
             />
             <p className="text-[0.7rem] pl-4">Save 20% on yearly plan!</p>
-          </div>
+          </div> */}
 
           {/* Remaining columns */}
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="px-6 py-4 mt-8 border-b border-[#404040]"
+              className="px-6 py-4"
             >
               <div className={`border px-4 py-3 rounded-lg text-lg font-medium ${plan.isPopular ? 'border-green-500' : 'border-[#404040]'
                 }`}>
