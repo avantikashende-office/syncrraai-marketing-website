@@ -12,11 +12,11 @@ export function AIFeaturesOverviewSection() {
       <div className="space-y-8 ">
         <Badge label="AI FEATURES" />
 
-        <h2 className="title-side gradient-gray-text">
+        <h1 className="title-side gradient-gray-text">
           One Platform.
           <br />
           Infinite Possibilities.
-        </h2>
+        </h1>
 
         <div className="flex items-start justify-between">
           <p className="subtitle-side">

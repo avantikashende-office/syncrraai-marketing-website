@@ -1,8 +1,13 @@
+import TryForFreeSection from "@/components/shared/TryForFreeSection";
+import HeroSection from "./components/HeroSection";
+import LatestInsightsSection from "./components/LatestInsightsSection";
 
 export default function Blog() {
   return (
-   <div className="page-wrapper">
-      <h1 className="page-title-centered">Blog</h1>
-    </div>
+    <>
+      <HeroSection />
+      <LatestInsightsSection />
+      <TryForFreeSection />
+    </>
   );
 }

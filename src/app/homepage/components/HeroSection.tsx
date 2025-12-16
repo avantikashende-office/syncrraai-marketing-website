@@ -16,7 +16,7 @@ export default function Herosection() {
 
   return (
     <section className="hero-bg">
-      <div className="hero-layout">
+      <div className="hero-layout pt-[120px]">
 
         {/* Badge - fadeUp */}
         <motion.div

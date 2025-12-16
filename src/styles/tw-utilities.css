@@ -114,16 +114,10 @@
   }
 
   /* Navigation Patterns */
-  .nav-container {
-    @apply sticky top-0 z-50 rounded-xl border-b backdrop-blur-sm;
-    margin: 20;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.05);
-
-    /* Start fully transparent */
-    background-color: transparent;
-    transition: background-color 0.25s ease, border-color 0.25s ease;
-  }
+ .nav-container {
+  @apply fixed top-0 left-0 w-full z-50;
+  pointer-events: auto;
+}
 
   /* Add background only when NOT at top */
   .nav-container.scrolled {
@@ -137,15 +131,6 @@
     color: black;
   }
 
-  .light .nav-container.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.05);
-  }
-
-  .nav-container:not(:where([style*="top: 0px"])) {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
   .nav-inner {
     @apply max-w-[1123px] mx-auto px-8 flex items-center justify-between h-[87px] rounded-[52.5px];
   }
@@ -157,25 +142,50 @@
   .nav-link {
     @apply hover:text-[#39D373] transition;
   }
-
-  .footer {
-    @apply text-sm;
+  .nav-select {
+    @apply hover:text-[#39D373] transition cursor-pointer outline-none border-0;
   }
 
+  .nav-cta-group {
+    @apply hidden md:flex items-center gap-6;
+  }
+
+  .nav-logo-link {
+    @apply flex items-center gap-2;
+  }
+
+
+  /* Footer Patterns */
+
+  .footer-container {
+    @apply w-full mx-auto px-[10%] pt-15 bg-[#171717];
+  }
+  .footer-grid-top {
+    @apply flex items-center justify-between mb-8;
+  }
+  .footer-grid-logo {
+    @apply flex items-center gap-8;
+  }
+  .footer-grid-icons {
+    @apply flex items-center gap-4;
+  }
+  .footer-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_2fr] gap-10 py-6;
+  }
   .footer-col-title {
-    @apply text-[0.7rem] mb-2;
+    @apply text-[0.8rem] mb-2;
   }
-
   .footer-link {
-    @apply text-[#AFAFAF] text-[0.6rem] hover:text-green-500 transition;
+    @apply text-[#AFAFAF] text-[0.7rem];
   }
 
   .footer-link:hover {
     cursor: pointer;
+    color :white;
   }
 
   .footer-icon {
-    @apply p-2 bg-white rounded-2xl hover:cursor-pointer hover:bg-[#171717] hover:text-white text-[#171717];
+    @apply p-2 bg-white rounded-full transition hover:cursor-pointer hover:bg-[#171717] hover:text-white text-[#171717];
   }
 
   /* Button Patterns */
@@ -574,18 +584,6 @@
     @apply w-full bg-gradient-to-r from-green-800 to-green-700 text-white py-2 rounded-md text-xs font-medium hover:opacity-90 transition cursor-pointer;
   }
 
-  /* Navbar Patterns */
-  .nav-select {
-    @apply hover:text-[#39D373] transition cursor-pointer outline-none border-0;
-  }
-
-  .nav-cta-group {
-    @apply hidden md:flex items-center gap-6;
-  }
-
-  .nav-logo-link {
-    @apply flex items-center gap-2;
-  }
 
   /* Pricing Hero Background */
   .pricing-hero-bg {
@@ -620,7 +618,7 @@
   } */
 
   .hero-bg {
-    @apply relative overflow-hidden bg-black pb-[100vh];
+    @apply relative overflow-hidden bg-black pb-[120vh];
     z-index: 0;
   }
 
@@ -679,24 +677,23 @@
     height: 521px;
   }
 
-
   .unified-image-wrapper {
     @apply flex justify-center items-center p-15;
   }
 
   .unified-image {
-    @apply rounded-xl flex border w-full max-w-[1123px] object-cover ;
+    @apply rounded-xl flex border w-full max-w-[1123px] object-cover;
     height: 80vh;
   }
 
   /* Comparison */
-.comparison-grid{
-  @apply grid grid-cols-1 md:grid-cols-2 gap-6 py-12 ;
-}
+  .comparison-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 py-12;
+  }
 
-.comparison-title {
-  @apply flex justify-center items-center gap-3 mb-6;
-}
+  .comparison-title {
+    @apply flex justify-center items-center gap-3 mb-6;
+  }
 
   /* AI Features */
   .ai-grid {
@@ -829,8 +826,6 @@
     @apply text-xl font-semibold;
   }
 
-
-
   .testimonial-cards-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8;
   }
@@ -866,9 +861,8 @@
     color: #939393;
   }
 
-
   /* Integrations Section */
-  
+
   .integrations-image-wrapper {
     @apply flex justify-center items-center my-16;
   }
@@ -877,8 +871,6 @@
     @apply rounded-xl flex border w-full max-w-[1123px] object-cover;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
-
-
 
   /* Strategic Benefits */
   .benefits-grid {
@@ -926,8 +918,6 @@
     @apply object-contain;
   }
 
-
-
   /* Logo visibility */
   .tryfree-logo {
     @apply relative flex justify-center z-[10];
@@ -961,5 +951,3 @@
 .integration-hero-layout {
   @apply flex flex-col items-center gap-6 z-20;
 }
-
-
