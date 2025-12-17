@@ -1,6 +1,15 @@
 import Button from "./Button";
 
-interface BlogCarouselCardProps {
+export interface BlogItem {
+  id: number;
+  title: string;
+  image: string;
+  author: string;
+  authorAvatar: string;
+  date: string;
+}
+
+export interface BlogCarouselCardProps {
   data: {
     title: string;
     image: string;

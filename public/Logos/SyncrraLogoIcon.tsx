@@ -18,20 +18,20 @@ export default function SyncrraLogo({ className = "" }: SyncrraLogoProps) {
             <path d="M98.2711 51.5761L89.0763 60.7888C84.0467 44.2846 70.2154 42.7833 63.9284 44.0956L49.3111 29.4497L64.4785 14.2526L72.8874 22.6779L62.5924 32.9931C82.0821 29.3395 94.4989 43.8594 98.2711 51.5761Z" fill="url(#paint3_linear_1_13551)" />
             <defs>
                 <linearGradient id="paint0_linear_1_13551" x1="22.9522" y1="43.6696" x2="59.2072" y2="41.907" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#39D373" />
-                    <stop offset="1" stop-color="#005F24" />
+                    <stop stopColor="#39D373" />
+                    <stop offset="1" stopColor="#005F24" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_1_13551" x1="43.5841" y1="78.0264" x2="41.8112" y2="41.7011" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#39D373" />
-                    <stop offset="1" stop-color="#005F24" />
+                    <stop stopColor="#39D373" />
+                    <stop offset="1" stopColor="#005F24" />
                 </linearGradient>
                 <linearGradient id="paint2_linear_1_13551" x1="76.9267" y1="56.3304" x2="40.6717" y2="58.093" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#39D373" />
-                    <stop offset="1" stop-color="#005F24" />
+                    <stop stopColor="#39D373" />
+                    <stop offset="1" stopColor="#005F24" />
                 </linearGradient>
                 <linearGradient id="paint3_linear_1_13551" x1="56.4159" y1="22.331" x2="58.1888" y2="58.6563" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#39D373" />
-                    <stop offset="1" stop-color="#005F24" />
+                    <stop stopColor="#39D373" />
+                    <stop offset="1" stopColor="#005F24" />
                 </linearGradient>
             </defs>
         </svg>

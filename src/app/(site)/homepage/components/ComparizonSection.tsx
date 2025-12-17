@@ -1,5 +1,5 @@
 import Badge from "@/components/ui/Badge";
-import Logo from "../../../../public/Logos/Logo";
+import Logo from "../../../../../public/Logos/Logo";
 import { Check, Layers, X } from "lucide-react";
 import ComparisonCard from "@/components/ui/ComparisonCard";
 

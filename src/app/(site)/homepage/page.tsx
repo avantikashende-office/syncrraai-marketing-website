@@ -1,4 +1,8 @@
 
+ 
+
+export const dynamic = "force-dynamic";
+
 import StatsSection from "./components/StatsSection";
 import BusinessChallengesSection from "./components/BusinessChallengesSection";
 import Herosection from "./components/HeroSection";

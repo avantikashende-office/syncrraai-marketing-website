@@ -1,8 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useTranslation } from 'react-i18next';
 import { ArrowDown, ArrowUp } from "lucide-react";
-import Counter from '@/components/ui/Counter';
+
+const Counter = dynamic(
+  () => import('@/components/ui/Counter'),
+  { ssr: false }
+);
 import { motion } from "framer-motion";
 import { fadeInMain } from "@/utils/animations";
 

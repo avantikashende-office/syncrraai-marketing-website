@@ -4,15 +4,11 @@ import { useTranslation } from 'react-i18next';
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { Sparkles } from 'lucide-react';
-import { fadeInMain, waveContainer, waveLetters } from '@/utils/animations';
+import { fadeInMain } from '@/utils/animations';
 import { motion } from 'framer-motion';
 
 export default function Herosection() {
   const { t } = useTranslation();
-
-  const title = t("hero.title");
-  const highlight = t("hero.titleHighlight");
-  const fullTitle = `${title} ${highlight}`;
 
   return (
     <section className="hero-bg">

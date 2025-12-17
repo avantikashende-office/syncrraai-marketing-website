@@ -1,3 +1,7 @@
+ 
+export const dynamic = "force-dynamic";
+
+
 import FAQSection from "@/components/shared/FAQSection";
 import TryForFreeSection from "@/components/shared/TryForFreeSection";
 import HeroSection from "./components/HeroSection";

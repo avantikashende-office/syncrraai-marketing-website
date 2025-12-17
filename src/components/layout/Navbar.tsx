@@ -135,13 +135,13 @@ export default function Navbar() {
         {/* Center Nav Links */}
         <div className="nav-links">
           <Link href="/product-overview" className="nav-link">
-            {t('navbar.product')}
+            Product
           </Link>
           <Link href="/solutions" className="nav-link">
-            {t('navbar.solutions')}
+            Solutions
           </Link>
           <Link href="/pricing" className="nav-link">
-            {t('navbar.pricing')}
+            Pricing
           </Link>
           {/* <Link href="/resources" className="nav-link">
             {t('navbar.resources')}
@@ -173,10 +173,10 @@ export default function Navbar() {
           </div>
 
           <Link href="/login" className="text-sm nav-link">
-            {t('navbar.login')}
+            Login
           </Link>
           <Button variant="primary">
-            {t('navbar.startFreeTrial')}
+            Start Free Trial
           </Button>
         </div>
       </nav>

@@ -1,12 +1,17 @@
 "use client";
 
-import { BlogCarouselCard } from "@/components/ui/BlogCarouselCard";
-import CenterZoomCarousel from "@/components/ui/ReusableCarousel";
+import dynamic from "next/dynamic";
+import { BlogCarouselCard, BlogItem } from "@/components/ui/BlogCarouselCard";
+
+const CenterZoomCarousel = dynamic(
+  () => import("@/components/ui/ReusableCarousel"),
+  { ssr: false }
+);
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const blogCarouselData = [
+  const blogCarouselData: BlogItem[] = [
     {
       id: 1,
       title: "How AI Redefining Production Planning for Modern Factories",
@@ -66,7 +71,7 @@ export default function HeroSection() {
           activeScale={1}
           inactiveScale={0.88}
           renderItem={(item, isActive) => (
-            <BlogCarouselCard data={item} active={isActive} />
+            <BlogCarouselCard data={item as BlogItem} active={isActive} />
           )}
         />
       </div>
