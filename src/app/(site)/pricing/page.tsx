@@ -1,5 +1,7 @@
  
-export const dynamic = "force-dynamic";
+  export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 
 
 import FAQSection from "@/components/shared/FAQSection";

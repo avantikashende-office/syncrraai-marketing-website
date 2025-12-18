@@ -1,7 +1,9 @@
 
  
 
-export const dynamic = "force-dynamic";
+  export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 
 import StatsSection from "./components/StatsSection";
 import BusinessChallengesSection from "./components/BusinessChallengesSection";
