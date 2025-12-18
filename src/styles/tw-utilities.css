@@ -114,25 +114,23 @@
   }
 
   /* Navigation Patterns */
- .nav-container {
-  @apply fixed top-0 left-0 w-full z-50;
-  pointer-events: auto;
-}
-
-  /* Add background only when NOT at top */
-  .nav-container.scrolled {
-    background-color: rgba(0, 0, 0, 0.4); /* subtle dark bg */
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Light theme override */
-  .light .nav-container {
-    background-color: transparent;
-    color: black;
+  .nav-container {
+    @apply fixed top-0 left-0 w-full z-50 flex justify-center pointer-events-auto;
   }
 
   .nav-inner {
-    @apply max-w-[1123px] mx-auto px-8 flex items-center justify-between h-[87px] rounded-[52.5px];
+    @apply inline-flex px-[2%] items-center justify-between gap-8 rounded-full;
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+
+  .nav-container.scrolled .nav-inner {
+    @apply py-6;
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+  }
+  .light .nav-container .nav-inner {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
   }
 
   .nav-links {
@@ -153,7 +151,6 @@
   .nav-logo-link {
     @apply flex items-center gap-2;
   }
-
 
   /* Footer Patterns */
 
@@ -181,7 +178,7 @@
 
   .footer-link:hover {
     cursor: pointer;
-    color :white;
+    color: white;
   }
 
   .footer-icon {
@@ -584,7 +581,6 @@
     @apply w-full bg-gradient-to-r from-green-800 to-green-700 text-white py-2 rounded-md text-xs font-medium hover:opacity-90 transition cursor-pointer;
   }
 
-
   /* Pricing Hero Background */
   .pricing-hero-bg {
     @apply relative overflow-hidden bg-[#000000];
@@ -600,41 +596,24 @@
     transform: translateY(-80px);
   }
 
-  /* .hero-bg {
-    @apply relative overflow-hidden bg-black pb-[100vh];
-    z-index: 0;
-  }
-  .hero-bg::before {
-    content: "";
-    @apply absolute inset-0 pointer-events-none;
 
-    background-image: url("/bg.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-
-    z-index: -1;
-    opacity: 1;
-  } */
 
   .hero-bg {
     @apply relative overflow-hidden bg-black pb-[120vh];
     z-index: 0;
   }
 
-  /* Main backgrounds: bg.svg (full) + hero-top-bg.svg (bottom) */
   .hero-bg::before {
     content: "";
     @apply absolute inset-0 pointer-events-none;
 
-    background-image: url("/bg.svg"),
-      /* top background grid */ url("/homepage/hero-top-bg.svg"); /* bottom shape */
+    background-image: url("/bg.svg"), url("/homepage/hero-top-bg.svg");
 
     background-repeat: no-repeat, no-repeat;
 
-    background-size: cover, /* bg.svg full screen */ 100% auto; /* hero-top-bg.svg width full */
+    background-size: cover, 100% auto;
 
-    background-position: center top, /* bg.svg visible at top */ center bottom; /* hero-top-bg placed at bottom */
+    background-position: center top, center bottom;
 
     z-index: -1;
     opacity: 1;
