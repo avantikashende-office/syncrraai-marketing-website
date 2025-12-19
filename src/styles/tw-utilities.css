@@ -596,27 +596,66 @@
     transform: translateY(-80px);
   }
 
-
-
   .hero-bg {
-    @apply relative overflow-hidden bg-black pb-[120vh];
-    z-index: 0;
+    position: relative;
+    overflow: hidden;
+
+    padding-bottom: 120vh;
+    background: black;
+
+    perspective: 1600px;
+
+    /* 🔑 REQUIRED for 3D stacking */
+    isolation: isolate;
   }
+
+  /* ================= BACKGROUND GLOW ================= */
 
   .hero-bg::before {
     content: "";
-    @apply absolute inset-0 pointer-events-none;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 
-    background-image: url("/bg.svg"), url("/homepage/hero-top-bg.svg");
+    background-image: url("/homepage/hero-top-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
 
-    background-repeat: no-repeat, no-repeat;
-
-    background-size: cover, 100% auto;
-
-    background-position: center top, center bottom;
-
-    z-index: -1;
+    z-index: 0;
     opacity: 1;
+  }
+
+  /* ================= DASHBOARD ================= */
+
+  .hero-dashboard {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+
+    will-change: transform, filter;
+  }
+
+  .hero-dashboard img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    display: block;
+    backface-visibility: hidden;
+  }
+
+  /* ================= CONTENT ================= */
+
+  .hero-layout {
+    position: relative;
+    z-index: 10;
   }
 
   /* Hero Section */
