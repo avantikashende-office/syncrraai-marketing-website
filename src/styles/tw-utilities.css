@@ -722,32 +722,46 @@
     @apply text-2xl;
   }
 
-  /* Business Challenges */
+  /* ================= Business Challenges ================= */
+  /* ================= Business Challenges ================= */
+
   .challenges-wrapper {
-    @apply relative;
+    @apply relative w-full;
   }
 
-  .challenges-section {
-    @apply py-24 sticky top-0 h-screen w-full flex flex-col items-center justify-center;
-    margin-top: 8.75rem;
-    margin-bottom: 8.75rem;
-  }
+  /* Sticky full-screen section */
+    .challenges-section {
+      @apply sticky top-0 h-screen w-full flex items-center justify-center;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
 
-  .challenges-content {
-    @apply flex items-center gap-6;
-  }
+    /* Horizontal alignment */
+    .challenges-content {
+      @apply flex items-center gap-6;
+    }
 
-  .challenges-text {
-    @apply !font-medium text-6xl font-medium leading-tight relative z-10 text-white;
-  }
+    /* "Time to ditch" */
+    .challenges-text {
+      @apply text-white font-medium leading-tight relative z-10;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
 
-  .challenges-scroll-wrapper {
-    @apply relative overflow-hidden flex items-center;
-  }
+    /* Scroll words container */
+    .challenges-scroll-wrapper {
+      @apply relative flex items-center justify-start;
+      height: 120px;
+      min-width: 520px;
+      overflow: visible;
+    }
 
-  .challenges-scroll-item {
-    @apply flex items-center text-6xl font-medium leading-tight leading-none transition-all duration-300 ease-out;
-  }
+    /* Individual words */
+    .challenges-scroll-item {
+      @apply absolute font-medium leading-tight;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      white-space: nowrap;
+      will-change: transform;
+    }
 
   /* Customers Section */
   .customers-grid {

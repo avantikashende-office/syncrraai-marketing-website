@@ -12,21 +12,20 @@ const items = [
   "human errors",
 ];
 
-const ROW_H = 75;
+const ROW_H = 80;
 
 export default function BusinessChallengesSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
   const [activeIdx, setActiveIdx] = useState(0);
 
-  // --- FRAMER MOTION SETUP ---
-  const y = useMotionValue(187); // initial offset
-  const smoothY = useSpring(y, {
+  // Smooth scroll index (float)
+  const rawIndex = useMotionValue(0);
+  useSpring(rawIndex, {
     stiffness: 60,
     damping: 18,
-    mass: 0.3,
+    mass: 0.4,
   });
 
   useEffect(() => {
@@ -47,12 +46,10 @@ export default function BusinessChallengesSection() {
 
       rafRef.current = requestAnimationFrame(() => {
         const maxSteps = items.length - 1;
-        const idx = Math.min(Math.max(progress * maxSteps, 0), maxSteps);
+        const idx = progress * maxSteps;
 
+        rawIndex.set(idx);
         setActiveIdx(Math.round(idx));
-
-        // Update framer motion value instead of CSS transform
-        y.set(187 - Math.round(idx) * ROW_H);
       });
     };
 
@@ -64,7 +61,7 @@ export default function BusinessChallengesSection() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [rawIndex]);
 
   return (
     <div
@@ -76,37 +73,55 @@ export default function BusinessChallengesSection() {
         <div className="glow-background" />
 
         <div className="challenges-content">
-          <motion.span 
+          <motion.span
             className="challenges-text"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
+            style={{ flexShrink: 0 }}
           >
             Time to ditch
           </motion.span>
 
           <div className="challenges-scroll-wrapper">
+            <div className="relative h-[200px] flex items-center justify-center">
+              {items.map((text, i) => {
+                const distance = i - activeIdx;
 
-            {/* FRAMER MOTION WRAPPER (UI unchanged) */}
-            <motion.div
-              ref={innerRef}
-              className="will-change-transform"
-              style={{ y: smoothY }}
-            >
-              {items.map((text, i) => (
-                <div
-                  key={i}
-                  className="challenges-scroll-item"
-                  style={{
-                    color: activeIdx === i ? "#000000" : "#373739ff",
-                    opacity: activeIdx === i ? 1 : 0.4,
-                  }}
-                >
-                  {text}
-                </div>
-              ))}
-            </motion.div>
+                // vertical spacing
+                const y = distance * ROW_H;
 
+                // 🔑 CLEAN C-SHAPED CURVE (Green line)
+                // Using quadratic function: x = a * d² + b
+                const normalizedDistance = distance / 3; 
+                const curveStrength = 100;
+                
+                // Quadratic curve for C-shape
+                const x = curveStrength * (1 - Math.pow(normalizedDistance, 2));
+
+                // scale + opacity 
+                const scale = Math.max(0.6, 1 - Math.abs(distance) * 0.2);
+                const opacity = Math.max(0.25, 1 - Math.abs(distance) * 0.8);
+
+                return (
+                  <motion.div
+                    key={i}
+                    className="challenges-scroll-item"
+                    animate={{ y, x, scale,  opacity }}
+                    transition={{ type: "spring", stiffness: 80, damping: 22 }}
+                    style={{
+                      fontWeight: distance === 0 ? 500 : 300,
+                      position: "absolute",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {text}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
