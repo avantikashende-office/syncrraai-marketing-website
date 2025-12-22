@@ -599,17 +599,12 @@
   .hero-bg {
     position: relative;
     overflow: hidden;
-
+    height: 220vh;
     padding-bottom: 120vh;
     background: black;
-
     perspective: 1600px;
-
-    /* 🔑 REQUIRED for 3D stacking */
     isolation: isolate;
   }
-
-  /* ================= BACKGROUND GLOW ================= */
 
   .hero-bg::before {
     content: "";
@@ -625,8 +620,6 @@
     z-index: 0;
     opacity: 1;
   }
-
-  /* ================= DASHBOARD ================= */
 
   .hero-dashboard {
     position: absolute;
@@ -650,15 +643,10 @@
     display: block;
     backface-visibility: hidden;
   }
-
-  /* ================= CONTENT ================= */
-
   .hero-layout {
     position: relative;
     z-index: 10;
   }
-
-  /* Hero Section */
   .hero-button-group {
     @apply flex gap-6;
   }
