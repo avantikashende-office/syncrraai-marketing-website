@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-} from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Badge from "@/components/ui/Badge";
@@ -45,17 +40,9 @@ export default function Herosection() {
     [42, 0, -14]
   );
 
-  const rotateYRaw = useTransform(
-    scrollYProgress,
-    [0, 0.25],
-    [-6, 0]
-  );
+  const rotateYRaw = useTransform(scrollYProgress, [0, 0.25], [-6, 0]);
 
-  const zRaw = useTransform(
-    scrollYProgress,
-    [0, 0.25, 0.6],
-    [-420, -60, -260]
-  );
+  const zRaw = useTransform(scrollYProgress, [0, 0.25, 0.6], [-420, -60, -260]);
 
   const perspectiveRaw = useTransform(
     scrollYProgress,
@@ -63,23 +50,11 @@ export default function Herosection() {
     [220, 9000, 1800]
   );
 
-  const blurRaw = useTransform(
-    scrollYProgress,
-    [0, 0.15, 0.3],
-    [10, 2, 0]
-  );
+  const blurRaw = useTransform(scrollYProgress, [0, 0.15, 0.3], [10, 2, 0]);
 
-  const brightnessRaw = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    [0.7, 1]
-  );
+  const brightnessRaw = useTransform(scrollYProgress, [0, 0.3], [0.7, 1]);
 
-  const contrastRaw = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    [0.8, 1]
-  );
+  const contrastRaw = useTransform(scrollYProgress, [0, 0.3], [0.8, 1]);
 
   /* ================= SPRINGED (DELAYED) ================= */
 
@@ -116,7 +91,7 @@ export default function Herosection() {
           `,
         }}
       >
-        <img src="/bg.svg" alt="Dashboard" />
+        <img src="/bg.avif" alt="Dashboard" />
       </motion.div>
 
       {/* CONTENT */}
@@ -128,14 +103,10 @@ export default function Herosection() {
 
         <h1 className="hero-title-center">
           {t("hero.title")} <br />
-          <span className="gradient-text">
-            {t("hero.titleHighlight")}
-          </span>
+          <span className="gradient-text">{t("hero.titleHighlight")}</span>
         </h1>
 
-        <p className="hero-subtitle-center">
-          {t("hero.description")}
-        </p>
+        <p className="hero-subtitle-center">{t("hero.description")}</p>
 
         <div className="hero-button-group">
           <Button variant="primary">{t("hero.getStarted")}</Button>

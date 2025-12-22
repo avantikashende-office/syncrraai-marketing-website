@@ -45,14 +45,14 @@ export default function Herosection() {
     { ease: easeOut }
   );
 
+  // To rotate image X-line negavive change here
   const rotateXRaw = useTransform(
     scrollYProgress,
     [0, 0.25, 0.6],
-    [42, 0, -14],
+    [42, 0, 0],
     { ease: easeOut }
   );
 
-  // ⭐ micro yaw for realism
   const rotateYRaw = useTransform(
     scrollYProgress,
     [0, 0.25],
@@ -74,7 +74,6 @@ export default function Herosection() {
     { ease: easeOut }
   );
 
-  // 🔍 clarity = realism
   const blurRaw = useTransform(
     scrollYProgress,
     [0, 0.15, 0.3],
@@ -93,7 +92,6 @@ export default function Herosection() {
     [0.8, 1]
   );
 
-  /* ---------------- SPRINGED VALUES ---------------- */
 
   const y = useSpring(yRaw, spring);
   const scale = useSpring(scaleRaw, spring);
@@ -131,7 +129,7 @@ export default function Herosection() {
           `,
         }}
       >
-        <img src="/bg.svg" alt="Dashboard" />
+        <img src="/bg.avif" alt="Dashboard" />
       </motion.div>
 
       {/* CONTENT */}
