@@ -723,45 +723,47 @@
   }
 
   /* ================= Business Challenges ================= */
-  /* ================= Business Challenges ================= */
-
   .challenges-wrapper {
     @apply relative w-full;
   }
+  .challenges-section {
+    @apply sticky top-0 h-screen w-full flex items-center justify-center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .challenges-content {
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 5rem); /* responsive gap */
+  }
 
-  /* Sticky full-screen section */
-    .challenges-section {
-      @apply sticky top-0 h-screen w-full flex items-center justify-center;
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
+  .challenges-text {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    white-space: nowrap;
+  }
 
-    /* Horizontal alignment */
-    .challenges-content {
-      @apply flex items-center gap-6;
-    }
+  .challenges-scroll-items {
+    position: relative;
+    width: clamp(300px, 40vw, 560px);
+    height: 1em;
+  }
 
-    /* "Time to ditch" */
-    .challenges-text {
-      @apply text-white font-medium leading-tight relative z-10;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-    }
+  .challenges-scroll-item {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    white-space: nowrap;
+    will-change: transform;
+  }
 
-    /* Scroll words container */
-    .challenges-scroll-wrapper {
-      @apply relative flex items-center justify-start;
-      height: 120px;
-      min-width: 520px;
-      overflow: visible;
-    }
-
-    /* Individual words */
-    .challenges-scroll-item {
-      @apply absolute font-medium leading-tight;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      white-space: nowrap;
-      will-change: transform;
-    }
+  .challenges-scroll-wrapper {
+    position: relative;
+    width: clamp(320px, 40vw, 560px);
+    overflow: visible;
+  }
 
   /* Customers Section */
   .customers-grid {

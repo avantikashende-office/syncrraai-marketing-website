@@ -18,10 +18,11 @@ export default function BusinessChallengesSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
-  const [activeIdx, setActiveIdx] = useState(0);
+  const INITIAL_INDEX = 3;
+  const [activeIdx, setActiveIdx] = useState(INITIAL_INDEX);
 
-  // Smooth scroll index (float)
-  const rawIndex = useMotionValue(0);
+  const rawIndex = useMotionValue(INITIAL_INDEX);
+
   useSpring(rawIndex, {
     stiffness: 60,
     damping: 18,
@@ -78,50 +79,37 @@ export default function BusinessChallengesSection() {
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
-            style={{ flexShrink: 0 }}
           >
             Time to ditch
           </motion.span>
 
-          <div className="challenges-scroll-wrapper">
-            <div className="relative h-[200px] flex items-center justify-center">
-              {items.map((text, i) => {
-                const distance = i - activeIdx;
+          <div className="challenges-scroll-items">
+            {items.map((text, i) => {
+              const distance = i - activeIdx;
+              const y = distance * ROW_H;
 
-                // vertical spacing
-                const y = distance * ROW_H;
+              const normalizedDistance = distance / 3;
+              const curveStrength = 100;
 
-                // 🔑 CLEAN C-SHAPED CURVE (Green line)
-                // Using quadratic function: x = a * d² + b
-                const normalizedDistance = distance / 3; 
-                const curveStrength = 100;
-                
-                // Quadratic curve for C-shape
-                const x = curveStrength * (1 - Math.pow(normalizedDistance, 2));
+              const x = Math.max(
+                0,
+                -curveStrength * (1 - Math.pow(normalizedDistance, 2))
+              );
 
-                // scale + opacity 
-                const scale = Math.max(0.6, 1 - Math.abs(distance) * 0.2);
-                const opacity = Math.max(0.25, 1 - Math.abs(distance) * 0.8);
+              const scale = Math.max(0.6, 1 - Math.abs(distance) * 0.2);
+              const opacity = Math.max(0.25, 1 - Math.abs(distance) * 0.8);
 
-                return (
-                  <motion.div
-                    key={i}
-                    className="challenges-scroll-item"
-                    animate={{ y, x, scale,  opacity }}
-                    transition={{ type: "spring", stiffness: 80, damping: 22 }}
-                    style={{
-                      fontWeight: distance === 0 ? 500 : 300,
-                      position: "absolute",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {text}
-                  </motion.div>
-                );
-              })}
-            </div>
+              return (
+                <motion.span
+                  key={i}
+                  className="challenges-scroll-item"
+                  animate={{ y, x, scale, opacity }}
+                  transition={{ type: "spring", stiffness: 80, damping: 22 }}
+                >
+                  {text}
+                </motion.span>
+              );
+            })}
           </div>
         </div>
       </section>
