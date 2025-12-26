@@ -676,8 +676,9 @@
 
   /* Core Capabilities */
   .capabilities-grid {
-    @apply flex justify-between items-center gap-12 my-15;
+    @apply flex gap-12 my-15 items-stretch;
   }
+
   .capabilities-image {
     @apply rounded-3xl;
     height: 521px;
