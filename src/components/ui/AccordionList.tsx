@@ -62,16 +62,8 @@ export default function AccordionList({
                     opacity: 0,
                   }}
                   animate={{
-                    backgroundPositionX: [
-                      "-50%", 
-                      "200%", 
-                      "-50%", 
-                    ],
-                    opacity: [
-                      0,
-                      1, 
-                      1, 
-                    ],
+                    backgroundPositionX: ["-50%", "200%", "-50%"],
+                    opacity: [0, 1, 1],
                   }}
                   transition={{
                     duration: 1.6,
@@ -126,14 +118,7 @@ export default function AccordionList({
                     {item.description}
                   </p>
 
-                  {item.cta ? (
-                    item.cta
-                  ) : (
-                    <Button variant="outline">
-                      Learn More
-                      <ArrowUpRight className="ml-2" size={20} />
-                    </Button>
-                  )}
+                  {item.cta && item.cta}
                 </motion.div>
               )}
             </AnimatePresence>
