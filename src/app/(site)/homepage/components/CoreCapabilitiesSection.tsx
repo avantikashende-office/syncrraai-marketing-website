@@ -17,24 +17,28 @@ const capabilityData = [
     title: "Production Management",
     description:
       "Plan schedule & track every job in real time, no bottlenecks, no guesswork",
+    cta: <Button variant="outline">Learn More</Button>,
   },
   {
     key: "inventory",
     title: "Inventory & Materials",
     description:
       "Real-time stock visibility, material allocations, & automated consumption tracking",
+    cta: <Button variant="outline">Learn More</Button>,
   },
   {
     key: "procurement",
     title: "Procurement & Suppliers",
     description:
       "Manage suppliers, track purchase RM, & streamline the procurement lifecycle",
+    cta: <Button variant="outline">Learn More</Button>,
   },
   {
     key: "quality",
     title: "Quality Check & Rejections",
     description:
       "Automate QC stages, approvals & rejection management across the floor",
+    cta: <Button variant="outline">Learn More</Button>,
   },
 ];
 
@@ -61,11 +65,6 @@ export default function CoreCapabilitiesSection() {
             <br />
             and evolves simplifying complexity into seamless motion.
           </p>
-
-          <Button variant="outline">
-            Explore More
-            <ArrowUpRight size={20} />
-          </Button>
         </div>
       </div>
 
