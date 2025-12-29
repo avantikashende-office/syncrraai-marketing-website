@@ -19,12 +19,14 @@ import YourDataYourControlSection from "./components/YourDataYourControlSection"
 import FAQSection from "@/components/shared/FAQSection";
 import TryForFreeSection from "@/components/shared/TryForFreeSection";
 import PricingCardSection from "./components/PricingCardsSection";
+import ProcessSection from "./components/ProcessSection";
 export default function HomePage() {
     return (
         <>
             <Herosection />
             <StatsSection />
             <BusinessChallengesSection />
+            <ProcessSection />
             <CoreCapabilitiesSection />
             <StrategicBenefitsSection />
             <AIFeaturesOverviewSection />
