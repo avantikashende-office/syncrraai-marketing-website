@@ -17,7 +17,7 @@ export function AIFeaturesOverviewSection() {
           Infinite Possibilities.
         </h1>
 
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-7">
           <p className="subtitle-side">
             Designed to simplify complexities and empower data-backed decisions,
             <br />
@@ -33,9 +33,9 @@ export function AIFeaturesOverviewSection() {
       {/* GRID */}
       <div className="ai-grid">
         <div className="ai-grid-row-2col">
-          {/* BIG CARD */}
+          {/* LARGE CARD */}
           <EmptyCard className="ai-card">
-            <div className="ai-card-image">
+            <div className="ai-card-image-lg">
               <Image
                 src="/homepage/so.png"
                 alt="Smart Operations"
@@ -52,14 +52,15 @@ export function AIFeaturesOverviewSection() {
             </div>
           </EmptyCard>
 
+          {/* RIGHT STACK */}
           <div className="ai-grid-inner">
             <EmptyCard className="ai-card">
-              <div className="ai-card-image">
+              <div className="ai-card-image-sm">
                 <Image
                   src="/homepage/api.png"
                   alt="AI Powered Insights"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
 
@@ -72,7 +73,7 @@ export function AIFeaturesOverviewSection() {
             </EmptyCard>
 
             <EmptyCard className="ai-card">
-              <div className="ai-card-image">
+              <div className="ai-card-image-sm">
                 <Image
                   src="/homepage/af.png"
                   alt="AI Forecasting"
@@ -91,9 +92,10 @@ export function AIFeaturesOverviewSection() {
           </div>
         </div>
 
+        {/* BOTTOM ROW */}
         <div className="ai-grid-row-split">
           <EmptyCard className="ai-card">
-            <div className="ai-card-image">
+            <div className="ai-card-image-md">
               <Image
                 src="/homepage/aa.png"
                 alt="Agentic AI"
@@ -110,8 +112,9 @@ export function AIFeaturesOverviewSection() {
             </div>
           </EmptyCard>
 
+          {/* LARGE CARD */}
           <EmptyCard className="ai-card">
-            <div className="ai-card-image">
+            <div className="ai-card-image-lg">
               <Image
                 src="/homepage/99.png"
                 alt="98% Faster Automation"

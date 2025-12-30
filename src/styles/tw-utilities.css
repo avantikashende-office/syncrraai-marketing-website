@@ -701,46 +701,68 @@
   .comparison-title {
     @apply flex justify-center items-center gap-3 mb-6;
   }
+  /* ============================= */
+  /* GRID                          */
+  /* ============================= */
 
-  /* AI Features Grid */
- .ai-grid {
-  @apply grid grid-cols-1 gap-6;
-}
+  .ai-grid {
+    @apply grid grid-cols-1 gap-7;
+  }
 
-.ai-grid-row-2col {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
-}
+  .ai-grid-row-2col {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-7 items-stretch;
+  }
 
-.ai-grid-inner {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6;
-}
+  .ai-grid-inner {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-7 h-full;
+  }
 
-.ai-grid-row-split {
-  @apply grid grid-cols-1 lg:grid-cols-[60fr_40fr] gap-6;
-}
+  .ai-grid-row-split {
+    @apply grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-7 items-stretch;
+  }
 
-/* CARD */
-.ai-card {
-  @apply flex flex-col h-full p-5 sm:p-6 overflow-hidden;
-}
+  /* ============================= */
+  /* CARD                          */
+  /* ============================= */
 
-/* IMAGE — THIS IS THE KEY FIX */
-.ai-card-image {
-  @apply relative w-full flex-1 min-h-0 overflow-hidden rounded-xl mb-4;
-}
+  .ai-card {
+    @apply flex flex-col h-full p-7 overflow-hidden;
+  }
 
-/* TEXT */
-.ai-card-text {
-  @apply space-y-1;
-}
+  /* ============================= */
+  /* IMAGE VARIANTS                */
+  /* ============================= */
 
-.ai-card-title {
-  @apply text-lg sm:text-xl lg:text-2xl font-semibold text-white;
-}
+  /* Large / Dominant cards (1st + last) */
+  .ai-card-image-lg {
+    @apply relative w-full grow overflow-hidden rounded-2xl;
+  }
 
-.ai-card-subtitle {
-  @apply text-sm sm:text-base text-white/60 max-w-[95%];
-}
+  /* Medium dashboard cards */
+  .ai-card-image-md {
+    @apply relative w-full aspect-[16/9] overflow-hidden rounded-2xl;
+  }
+
+  /* Compact cards (stacked ones) */
+  .ai-card-image-sm {
+    @apply relative w-full aspect-[4/3] overflow-hidden rounded-2xl;
+  }
+
+  /* ============================= */
+  /* TEXT                          */
+  /* ============================= */
+
+  .ai-card-text {
+    @apply mt-7 space-y-2;
+  }
+
+  .ai-card-title {
+    @apply text-xl sm:text-2xl font-semibold text-white;
+  }
+
+  .ai-card-subtitle {
+    @apply text-sm sm:text-base text-white/60 max-w-[95%];
+  }
 
   /* ================= Business Challenges ================= */
   .challenges-wrapper {

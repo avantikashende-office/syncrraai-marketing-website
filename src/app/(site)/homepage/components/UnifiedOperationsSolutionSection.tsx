@@ -1,9 +1,10 @@
 "use client";
 
 import Badge from "@/components/ui/Badge";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInMain } from "@/utils/animations";
+import { Briefcase,  Sparkles } from "lucide-react";
+import { InlineNavigation } from "@/components/ui/INlineNavigation";
 
 export function UnifiedOperationsSolutionSection() {
   return (
@@ -13,12 +14,12 @@ export function UnifiedOperationsSolutionSection() {
       </div>
 
       <motion.h2
-        className=" gradient-gray-text title-center"
+        className="title-center"
         variants={fadeInMain}
         initial="initial"
         whileInView="animate"
       >
-        One System for Your <br /> Entire Plant
+        One Intelligence. Two Paths.
       </motion.h2>
 
       <motion.p
@@ -27,19 +28,46 @@ export function UnifiedOperationsSolutionSection() {
         initial="initial"
         whileInView="animate"
       >
-        A single ERP designed to manage planning, production, inventory, <br />
-        machines, teams, and financials all in one connected platform.
+        Syncrra fits your operations, whether you need an AI-first ERP or an AI
+        <br />
+        layer on top of your existing system.
       </motion.p>
 
-      <div className="unified-image-wrapper">
-        <Image
-          src={"/img/UnifiedSolution.png"}
-          alt="UnifiedSolution."
-          width={800}
-          height={0}
-          className="unified-image"
-        />
-      </div>
+      <InlineNavigation
+        items={[
+          {
+            id: "erp",
+            label: "Syncra ERP",
+            icon: <Briefcase className="w-[45%] h-[45%]" />,
+            content: {
+              title: "A Modern, AI-First ERP Built for Manufacturing",
+              image: "/homepage/1.png",
+              features: [
+                "End-to-end manufacturing ERP in one system",
+                "Built-in AI for monitoring, forecasting, and automation",
+                "Real-time visibility across plants, teams, and processes",
+                "Faster implementation without heavy customization",
+              ],
+            },
+          },
+          {
+            id: "ai",
+            label: "Syncrra AI Layer",
+            icon: <Sparkles className="w-[45%] h-[45%]" />,
+            content: {
+              title: "AI Layer on Top of Your Existing ERP",
+              image: "/homepage/2.png",
+              features: [
+                "AI-powered insights from existing ERP data",
+                "Natural language queries across production and operations",
+                "Anomaly detection, forecasting, and recommendations",
+                "No disruption to current workflows or infrastructure",
+              ],
+            },
+          },
+          
+        ]}
+      />
     </section>
   );
 }

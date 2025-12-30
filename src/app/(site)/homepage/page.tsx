@@ -28,8 +28,8 @@ export default function HomePage() {
             <BusinessChallengesSection />
             <ProcessSection />
             <CoreCapabilitiesSection />
-            <StrategicBenefitsSection />
             <AIFeaturesOverviewSection />
+             <StrategicBenefitsSection />
             <SeamlessIntegrationsSection />
             <UnifiedOperationsSolutionSection />
             <ComparizonSection />
