@@ -60,7 +60,7 @@ export function StrategicBenefitsSection() {
     {
       icon: "shield",
       title: "Secure and Centralized",
-      description:
+      description:   
         "Keep your operations safe and unified with enterprise-grade data security and centralized control.",
     },
     {
