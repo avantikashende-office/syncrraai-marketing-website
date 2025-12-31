@@ -184,7 +184,6 @@ const CustomersSection = () => {
                 </div>
 
                 <p className="testimonial-quote">
-                  {" "}
                   “Before Syncrra, keeping projects aligned felt impossible. Now
                   everything runs smoothly, and our clients notice the
                   difference.”
