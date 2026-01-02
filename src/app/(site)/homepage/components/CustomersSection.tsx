@@ -54,33 +54,38 @@ const CustomersSection = () => {
     <section className="section-container-gray space-y-8">
       <Badge label="CUSTOMERS" />
 
-      <motion.h1
-        className="title-side gradient-gray-text"
-        variants={fadeInMain}
-        initial="initial"
-        whileInView="animate"
-      >
-        Trusted by the Most
-        <br />
-        Innovative Companies
-      </motion.h1>
-
-      <div className="flex items-start justify-between">
-        <motion.p
-          className="subtitle-side"
+      <div className="flex items-center justify-between w-full">
+        {/* Left: Title */}
+        <motion.h1
+          className="title-side gradient-gray-text max-w-xl"
           variants={fadeInMain}
           initial="initial"
           whileInView="animate"
         >
-          Join 100k + customers who use our platform to take their
+          Trusted by the Most
           <br />
-          operational efforts to the next level.
-        </motion.p>
+          Innovative Companies
+        </motion.h1>
 
-        <Button variant="outline">
-          View Case Studies <ArrowUpRight className="ml-2" size={20} />
-        </Button>
+        {/* Right: Text + Button */}
+        <div className="flex flex-col items-start max-w-md">
+          <motion.p
+            className="subtitle-side mb-6"
+            variants={fadeInMain}
+            initial="initial"
+            whileInView="animate"
+          >
+            Join 100k+ customers who use our platform to take their
+            <br />
+            operational efforts to the next level.
+          </motion.p>
+
+          <Button variant="outline">
+            View Case Studies <ArrowUpRight className="ml-2" size={20} />
+          </Button>
+        </div>
       </div>
+
       <div className="customers-grid">
         <EmptyCard className="empty-card-black">
           <div className="customer-case-grid">
