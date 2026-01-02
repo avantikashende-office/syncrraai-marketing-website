@@ -6,6 +6,7 @@ import Testimonial from "./components/Testimonial";
 import TryForFreeSection from "@/components/shared/TryForFreeSection";
 import TrustedBy from "@/components/shared/TrustedBySection";
 import ManufacturingAsOne from "./components/ManufacturingAsOne";
+import { AllInOne } from "./components/AllInOne";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -18,6 +19,7 @@ export default function ProductOverview() {
       <HowItWorks />
       <ManufacturingAsOne />
       <StrategicBenefitsSection />
+      <AllInOne />
       <TrustedBy />
       <FAQSection />
       <TryForFreeSection />
