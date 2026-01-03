@@ -1,6 +1,7 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import { fadeInMain } from "@/utils/animations";
 
 const items = [
@@ -13,21 +14,14 @@ const items = [
 ];
 
 const ROW_H = 80;
+const CURVE_DEPTH = 140;
 
 export default function BusinessChallengesSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
-  const INITIAL_INDEX = 3;
-  const [activeIdx, setActiveIdx] = useState(INITIAL_INDEX);
-
-  const rawIndex = useMotionValue(INITIAL_INDEX);
-
-  useSpring(rawIndex, {
-    stiffness: 60,
-    damping: 18,
-    mass: 0.4,
-  });
+  const rawIndex = useMotionValue(3);
+  const [activeIdx, setActiveIdx] = useState(3);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -46,8 +40,8 @@ export default function BusinessChallengesSection() {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
       rafRef.current = requestAnimationFrame(() => {
-        const maxSteps = items.length - 1;
-        const idx = progress * maxSteps;
+        const maxIdx = items.length - 1;
+        const idx = progress * maxIdx;
 
         rawIndex.set(idx);
         setActiveIdx(Math.round(idx));
@@ -86,25 +80,28 @@ export default function BusinessChallengesSection() {
           <div className="challenges-scroll-items">
             {items.map((text, i) => {
               const distance = i - activeIdx;
-              const y = distance * ROW_H;
+              const y = distance * ROW_H * 1.2;
 
-              const normalizedDistance = distance / 3;
-              const curveStrength = 100;
-
-              const x = Math.max(
-                0,
-                -curveStrength * (1 - Math.pow(normalizedDistance, 2))
-              );
-
-              const scale = Math.max(0.6, 1 - Math.abs(distance) * 0.2);
-              const opacity = Math.max(0.25, 1 - Math.abs(distance) * 0.8);
+              const t = Math.min(Math.abs(distance) / 4, 1);
+              const eased = t * 0.7;
 
               return (
                 <motion.span
                   key={i}
                   className="challenges-scroll-item"
-                  animate={{ y, x, scale, opacity }}
-                  transition={{ type: "spring", stiffness: 80, damping: 22 }}
+                  style={{ translateY: "-50%" }}
+                  animate={{
+                    y,
+                    x: CURVE_DEPTH * eased,
+                    scale: 1 - eased * 0.9,
+                    opacity: 1 - eased * 0.9,
+                    filter: `blur(${eased * 8}px)`,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 90,
+                    damping: 24,
+                  }}
                 >
                   {text}
                 </motion.span>

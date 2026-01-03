@@ -59,6 +59,9 @@ export default function Navbar() {
           <Link href="/integrations" className="nav-link">
             Integrations
           </Link>
+          <Link href="/AIFeatures" className="nav-link">
+            AI Features
+          </Link>
         </div>
 
         {/* Right CTA */}

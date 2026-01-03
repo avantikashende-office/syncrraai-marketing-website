@@ -768,43 +768,61 @@
   .challenges-wrapper {
     @apply relative w-full;
   }
+
   .challenges-section {
     @apply sticky top-0 h-screen w-full flex items-center justify-center;
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+
   .challenges-content {
     display: flex;
-    align-items: center; /* vertical center */
+    align-items: center;
     justify-content: center;
-    gap: clamp(2rem, 5vw, 5rem); /* responsive gap */
+    gap: clamp(1.5rem, 1vw, 6rem);
   }
 
   .challenges-text {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3.2rem, 5.5vw, 4.2rem);
     font-weight: 500;
     white-space: nowrap;
+  }
+  .challenges-scroll-item {
+    font-size: clamp(3.2rem, 5.5vw, 4.2rem);
+    font-weight: 700;
+    white-space: nowrap;
+    color: #080808;
   }
 
   .challenges-scroll-items {
     position: relative;
-    width: clamp(300px, 40vw, 560px);
-    height: 1em;
+    width: clamp(320px, 42vw, 580px);
+    height: 800px;
+    padding-left: 1rem;
+
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
   }
 
+  /* SINGLE SOURCE OF TRUTH */
   .challenges-scroll-item {
     position: absolute;
+    left: 0;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    white-space: nowrap;
-    will-change: transform;
-  }
-
-  .challenges-scroll-wrapper {
-    position: relative;
-    width: clamp(320px, 40vw, 560px);
-    overflow: visible;
+    text-align: left;
+    will-change: transform, filter, opacity;
   }
 
   /* Customers Section */
