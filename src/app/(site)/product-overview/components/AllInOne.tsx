@@ -39,7 +39,7 @@ export function AllInOne() {
             label: "Metal Fabrication",
             icon: <Factory className="w-[45%] h-[45%]" />,
             video: {
-              src: "/videos/platform-demo.mp4",
+              src: "",
               poster: "/homepage/1.png",
             },
           },
@@ -48,7 +48,7 @@ export function AllInOne() {
             label: "Automotive",
             icon: <Car className="w-[45%] h-[45%]" />,
             video: {
-              src: "/videos/platform-demo.mp4",
+              src: "",
               poster: "/homepage/2.png",
             },
           },
@@ -58,7 +58,7 @@ export function AllInOne() {
             label: "Pharmaceuticals",
             icon: <Pill className="w-[45%] h-[45%]" />,
             video: {
-              src: "/videos/platform-demo.mp4",
+              src: "",
               poster: "/homepage/1.png",
             },
           },
@@ -67,7 +67,7 @@ export function AllInOne() {
             label: "Casting & Foundries",
             icon: <FireExtinguisher className="w-[45%] h-[45%]" />,
             video: {
-              src: "/videos/platform-demo.mp4",
+              src: "",
               poster: "/homepage/2.png",
             },
           },
