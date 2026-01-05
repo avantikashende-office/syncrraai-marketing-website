@@ -112,7 +112,7 @@ export function InlineNavigation({ items }: InlineNavigationProps) {
 
         {activeItem.content && (
           <div className="space-y-[2%] mt-10">
-            <h3 className="text-5xl w-full max-w-[50%] gradient-gray-text text-center md:text-left">
+            <h3 className="text-5xl w-full max-w-[70%] gradient-gray-text text-center md:text-left">
               {activeItem.content.title}
             </h3>
 

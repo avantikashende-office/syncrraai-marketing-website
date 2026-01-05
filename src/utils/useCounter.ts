@@ -12,7 +12,7 @@ export const useCounter = ({ from = 0, to, duration = 1 }: UseCounterProps) => {
     const rounded = useTransform(count, (latest) => Math.floor(latest));
     const ref = useRef<HTMLSpanElement | null>(null);
     const inView = useInView(ref, {
-        once: true,   
+        once: false,   
         margin: "-50px"
     });
 
