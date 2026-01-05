@@ -26,11 +26,11 @@ export function BlogCarouselCard({
 }: BlogCarouselCardProps) {
   return (
     <div
-      className={`relative h-[420px] w-full overflow-hidden rounded-2xl text-white shadow-xl transition-all ${
-        active ? "ring-2 ring-white/40" : "opacity-90"
+      className={`relative h-[420px] w-full overflow-hidden rounded-xl text-white shadow-xl transition-all ${
+        active ? " " : "opacity-90"
       }`}
     >
-      {/* Background Image */}
+      {/* Background Image */} 
       <img
         src={data.image}
         alt={data.title}
