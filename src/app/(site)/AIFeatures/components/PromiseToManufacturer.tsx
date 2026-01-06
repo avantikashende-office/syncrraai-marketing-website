@@ -1,10 +1,30 @@
 "use client";
 
+import EmptyCard from "@/components/ui/EmptyCard";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
+import { CircleOff, Users, X } from "lucide-react";
 import Image from "next/image";
 
 export default function PromiseToManufacturer() {
+  const promiseCards = [
+    {
+      title: "No Third-Party AI Training",
+      description:
+        "Your operational data is never used to train external AI models.",
+      icon: CircleOff,
+    },
+    {
+      title: "Zero Data Leakage",
+      description: "All your factory data stays fully isolated.",
+      icon: X,
+    },
+    {
+      title: "Role-Based Intelligence Access",
+      description: "Role-based access shows only relevant information.",
+      icon: Users,
+    },
+  ];
   return (
     <section className="section-container-gray  space-y-10">
       <motion.h2
@@ -26,7 +46,7 @@ export default function PromiseToManufacturer() {
         that
       </motion.p>
 
-      <div className="relative w-full aspect-[25/9] my-20">
+      <div className="relative w-full aspect-[23/7] my-20">
         <Image
           src="/img/Lock.png"
           alt="Security Lock"
@@ -45,6 +65,29 @@ export default function PromiseToManufacturer() {
             priority
           />
         </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-16 pt-[20%]">
+        {promiseCards.map((card, index) => {
+          const Icon = card.icon;
+
+          return (
+            <EmptyCard
+              key={index}
+              className="testimonial-card border flex flex-col justify-between items-center text-center !space-y-4"
+            >
+              <div className="flex justify-center items-center bg-[#444444] rounded-lg w-16 h-16">
+                <Icon fill="white" />
+              </div>
+
+              <h3 className="customer-testimonial-name max-w-[75%]">
+                {card.title}
+              </h3>
+
+              <p className="text-subdescription">{card.description}</p>
+            </EmptyCard>
+          );
+        })}
       </div>
     </section>
   );

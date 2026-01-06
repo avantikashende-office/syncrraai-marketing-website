@@ -93,9 +93,9 @@ export default function BusinessChallengesSection() {
                   animate={{
                     y,
                     x: CURVE_DEPTH * eased,
-                    scale: 1 - eased * 0.9,
+                    scale: 1 - eased * 1.2,
                     opacity: 1 - eased * 0.9,
-                    filter: `blur(${eased * 8}px)`,
+                    filter: `blur(${eased * 10}px)`,
                   }}
                   transition={{
                     type: "spring",

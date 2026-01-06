@@ -809,9 +809,9 @@
   }
   .challenges-scroll-item {
     font-size: clamp(3.2rem, 5.5vw, 4.2rem);
-    font-weight: 700;
+    font-weight: 500;
     white-space: nowrap;
-    color: #080808;
+    color: #171717;
   }
 
   .challenges-scroll-items {
@@ -1046,7 +1046,7 @@
   background-image: url("/img/integration-bg.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center top 100px; /* moves BG down */
+  background-position: center top 100pxchallenges-scroll-item; /* moves BG down */
 }
 
 /* Heading container */
