@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/ui/Button";
 import Logo from "../../../public/Logos/Logo";
+import NavDropdown from "./NavDropdown";
+import { Boxes, Brain, Plug } from "lucide-react";
 
 export default function Navbar() {
   const { i18n } = useTranslation();
@@ -41,31 +43,55 @@ export default function Navbar() {
         <Link href="/" className="nav-logo-link">
           <Logo />
         </Link>
-
-        {/* Center Links */}
-        <div className="nav-links">
-          <Link href="/product-overview" className="nav-link">
-            Product
-          </Link>
-          <Link href="/solutions" className="nav-link">
-            Solutions
-          </Link>
-          <Link href="/pricing" className="nav-link">
-            Pricing
-          </Link>
-          <Link href="/blog" className="nav-link">
-            Blog
-          </Link>
-          <Link href="/integrations" className="nav-link">
-            Integrations
-          </Link>
-          <Link href="/AIFeatures" className="nav-link">
-            AI Features
-          </Link>
+        <div className="flex-1 flex justify-center">
+          {/* Center Links */}
+          <div className="nav-links">
+            <NavDropdown
+              title="Product"
+              items={[
+                {
+                  label: "Product Overview",
+                  href: "/product-overview",
+                  icon: <Boxes />,
+                },
+                {
+                  label: "AI Features",
+                  href: "/AIFeatures",
+                  icon: <Brain />,
+                },
+                {
+                  label: "Integrations",
+                  href: "/integrations",
+                  icon: <Plug />,
+                },
+              ]}
+            />
+            <NavDropdown
+              title="Solutions"
+              items={[
+                { label: "Small Size Company", href: "/solutions/small-size" },
+                { label: "Mid Size Company", href: "/solutions/mid-size" },
+                { label: "Enterprise level", href: "/solutions/enterprise" },
+              ]}
+            />
+            <NavDropdown
+              title="About Us"
+              width="w-44"
+              items={[{ label: "Blog", href: "/blog" }]}
+            />
+            {/* <NavDropdown
+              title="Resources"
+              width="w-44"
+              items={[{ label: "Help Center", href: "/help" }]}
+            /> */}
+            <Link href="/pricing" className="nav-link">
+              Pricing
+            </Link>
+          </div>
         </div>
 
         {/* Right CTA */}
-        <div className="nav-cta-group">
+        <div className="nav-cta-group ml-auto">
           <select
             value={i18n.language}
             onChange={(e) => i18n.changeLanguage(e.target.value)}
