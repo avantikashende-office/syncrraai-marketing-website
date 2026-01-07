@@ -77,7 +77,10 @@ export default function Navbar() {
             <NavDropdown
               title="About Us"
               width="w-44"
-              items={[{ label: "Blog", href: "/blog" }]}
+              items={[
+                { label: "About Us", href: "/About" },
+                { label: "Blog", href: "/blog" },
+              ]}
             />
             {/* <NavDropdown
               title="Resources"
