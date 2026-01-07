@@ -17,15 +17,15 @@ export default function AskExploreVisualize() {
   return (
     <div className="relative overflow-visible">
       <section className="section-container space-y-12">
-        <h3 className="text-5xl w-full max-w-[50%] gradient-gray-text text-center md:text-left">
+        <h3 className="ai-feature-title">
           Ask, Explore, and Visualize Your Factory Data
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-[5%] items-center">
-          <ul className="space-y-[8%]">
+        <div className="ai-feature-section-grid">
+          <ul className="ai-feature-list">
             {FEATURES.map((feature, index) => (
-              <li key={index} className="flex items-start gap-[4%]">
-                <div className="flex-shrink-0 aspect-square p-1 min-w-[1.5rem] rounded-md bg-[#404040] flex items-center justify-center">
+              <li key={index} className="ai-feature-item">
+                <div className="ai-feature-check-icon">
                   <Check className="text-white text-sm" />
                 </div>
                 <p className="text-description">{feature.text}</p>
@@ -36,12 +36,12 @@ export default function AskExploreVisualize() {
       </section>
 
       {/* IMAGE */}
-      <div className="absolute right-0 top-[30%] w-[45%] h-[70%] pointer-events-none">
+      <div className="ai-image-right">
         <Image
           src="/img/1.png"
           alt="User"
           fill
-          className="object-cover object-[40%_center] rounded-tl-3xl rounded-bl-3xl"
+          className="ai-image-rounded-right"
           priority
         />
       </div>

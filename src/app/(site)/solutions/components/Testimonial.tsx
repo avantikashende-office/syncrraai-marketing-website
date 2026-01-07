@@ -7,7 +7,7 @@ export default function Testimonial() {
     <section className="section-container">
       <div className="border-t border-b border-[#404040] py-10">
         {/* Quote */}
-        <p className="text-4xl leading-tight max-w-[80%] text-[#404040]">
+        <p className="testimonial-quote-large">
           <span className="text-white">“Syncrra transformed </span>
           how we manage daily operations. What used to take hours across
           multiple tools now happens automatically in one place.”
@@ -26,7 +26,7 @@ export default function Testimonial() {
             />
             <div>
               <p className="text-white font-medium">Adam Smith</p>
-              <p className="text-sm text-[#A3A3A3]">
+              <p className="testimonial-user-role">
                 VP of Classic Roof India Ltd
               </p>
             </div>

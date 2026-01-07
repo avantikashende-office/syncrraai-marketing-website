@@ -21,7 +21,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`relative group border border-[#404040] rounded-xl card-hover p-6 overflow-hidden ${
+      className={`benefit-card-wrapper group ${
         imageIcon ? "card-base" : ""
       }`}
     >
@@ -46,10 +46,7 @@ export default function Card({
       {/* Optional */}
       {buttonLabel && (
         <div className="mt-4">
-          <button
-            onClick={buttonOnClick}
-            className="inline-flex border border-[#404040] items-center justify-center px-4 py-1 rounded-lg font-medium transition-all duration-200 active:scale-[0.97] hover:cursor-pointer hover:bg-white/10"
-          >
+          <button onClick={buttonOnClick} className="card-btn">
             {buttonLabel} <ArrowUpRight className="ml-1 w-4 h-4" />
           </button>
         </div>

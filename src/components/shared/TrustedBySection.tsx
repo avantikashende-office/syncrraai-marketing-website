@@ -49,7 +49,7 @@ export default function TrustedBy() {
       <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-32 bg-gradient-to-l from-black to-transparent" />
 
       {/* HEADER */}
-      <div className="relative z-10 mb-20 text-center">
+      <div className="relative z-10 mb-20  text-center">
         <h1 className="title-center">
           Trusted by the Most <br /> Innovative Companies
         </h1>

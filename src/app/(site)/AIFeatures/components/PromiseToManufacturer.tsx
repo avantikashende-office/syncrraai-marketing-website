@@ -46,7 +46,7 @@ export default function PromiseToManufacturer() {
         that
       </motion.p>
 
-      <div className="relative w-full aspect-[23/7] my-20">
+      <div className="ai-promise-image-wrapper">
         <Image
           src="/img/Lock.png"
           alt="Security Lock"
@@ -55,7 +55,7 @@ export default function PromiseToManufacturer() {
           priority
         />
 
-        <div className="absolute inset-x-0 bottom-0 z-10 translate-y-[65%]">
+        <div className="ai-promise-stars-overlay">
           <Image
             src="/img/stars.png"
             alt="Trust Stars"
@@ -67,20 +67,20 @@ export default function PromiseToManufacturer() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-16 pt-[20%]">
+      <div className="ai-promise-cards-grid">
         {promiseCards.map((card, index) => {
           const Icon = card.icon;
 
           return (
             <EmptyCard
               key={index}
-              className="testimonial-card border flex flex-col justify-between items-center text-center !space-y-4"
+              className="ai-promise-card"
             >
-              <div className="flex justify-center items-center bg-[#444444] rounded-lg w-16 h-16">
+              <div className="ai-promise-icon-wrapper">
                 <Icon fill="white" />
               </div>
 
-              <h3 className="customer-testimonial-name max-w-[75%]">
+              <h3 className="ai-promise-card-title">
                 {card.title}
               </h3>
 

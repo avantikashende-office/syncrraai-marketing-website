@@ -9,7 +9,7 @@ export default function Herosection() {
         <section className="integrations-hero-bg ">
 
             {/* Heading */}
-            <section className="integration-hero-layout pt-[120px]">
+            <section className="integration-hero-layout  hero-top-space  ">
                 <motion.h1 
                   className="gradient-gray-text title-center"
                   variants={fadeInMain}

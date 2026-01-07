@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function TestimonialSection() {
   return (
     <div className="relative overflow-visible">
-      <div className="absolute top-0 left-0 h-[33%] w-[20%]  pointer-events-none">
+      <div className="ai-testimonial-quote-decoration">
         <Image
           src="/img/quote.png"
           alt="Quote decoration"
@@ -19,14 +19,14 @@ export default function TestimonialSection() {
       </div>
 
       <section className="section-container-gray">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="ai-testimonial-grid">
           <motion.div
-            className="flex flex-col justify-center space-y-8"
+            className="ai-testimonial-content"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
           >
-            <div className="text-[#D4D4D4] flex gap-3 items-center">
+            <div className="ai-testimonial-company-header">
               <Settings size={50} />
               <motion.h3
                 className="text-4xl"
@@ -38,7 +38,7 @@ export default function TestimonialSection() {
               </motion.h3>
             </div>
 
-            <p className="text-2xl md:text-3xl leading-normal text-white">
+            <p className="ai-testimonial-quote">
               Before Syncrra, keeping projects aligned felt impossible. Now
               everything runs smoothly, and our clients notice the difference.
             </p>
@@ -52,12 +52,12 @@ export default function TestimonialSection() {
           <div />
         </div>
       </section>
-      <div className="absolute  right-0 bottom-0 w-[50%] h-[110%] pointer-events-none">
+      <div className="ai-testimonial-user-image">
         <Image
           src="/img/UserImage.png"
           alt="User"
           fill
-          className="object-cover object-[40%_center]"
+          className="ai-testimonial-user-image-content"
           priority
         />
       </div>

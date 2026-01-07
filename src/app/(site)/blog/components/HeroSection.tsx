@@ -34,7 +34,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="bg-[url('/blog/blog-bg-green.png')] bg-cover bg-no-repeat bg-position-[center_top_-99px] pt-[120px]">
+    <section className="bg-[url('/blog/blog-bg-green.png')] bg-cover bg-no-repeat bg-position-[center_top_-99px]  hero-top-space  ">
       <div className="section-container space-y-6">
         {/* Heading */}
         <motion.h2

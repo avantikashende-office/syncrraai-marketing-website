@@ -16,23 +16,23 @@ const FEATURES = [
 export default function MonitorActRealTime() {
   return (
     <div className="relative overflow-visible">
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[45%] h-[420px] pointer-events-none">
+      <div className="ai-image-left">
         <div className="relative w-full h-full overflow-hidden">
           <Image
             src="/img/2.png"
             alt="Monitor dashboard"
             fill
-            className="object-cover rounded-tr-3xl rounded-br-3xl"
+            className="ai-image-rounded-left"
             priority
           />
         </div>
       </div>
 
       <section className="section-container">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="ai-feature-section-grid-16">
           <div />
           <div className="space-y-12">
-            <h3 className="text-5xl max-w-xl gradient-gray-text">
+            <h3 className="ai-feature-title-xl">
               Monitor and Act in Real Time
             </h3>
 

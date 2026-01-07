@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import HowItWorksStep from "@/components/ui/HowItWorksSteps";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
@@ -26,6 +27,20 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+  const [scrollDir, setScrollDir] = useState<"up" | "down">("down");
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrollDir(y > lastY.current ? "down" : "up");
+      lastY.current = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="section-container relative">
       {/* HEADER */}
@@ -44,15 +59,19 @@ export default function HowItWorks() {
         </div>
       </div>
 
+      {/* BASE SPINE */}
+      <div className="absolute left-1/2 h-[70%] -translate-x-1/2 pointer-events-none">
+        <div className="hiw-spine" />
+      </div>
+
       {/* STEPS */}
-      <div className="space-y-28 relative z-10">
+      <div className="relative z-10">
         {steps.map((step, i) => (
           <HowItWorksStep
             key={i}
             index={i}
-            title={step.title}
-            description={step.description}
-            image={step.image}
+            scrollDir={scrollDir}
+            {...step}
           />
         ))}
       </div>

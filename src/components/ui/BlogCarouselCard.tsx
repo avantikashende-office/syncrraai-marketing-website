@@ -26,31 +26,21 @@ export function BlogCarouselCard({
 }: BlogCarouselCardProps) {
   return (
     <div
-      className={`relative h-[420px] w-full overflow-hidden rounded-xl text-white shadow-xl transition-all ${
-        active ? " " : "opacity-90"
-      }`}
+      className={`blog-carousel-card-wrapper  ${active ? " " : "opacity-90"}`}
     >
-      {/* Background Image */} 
-      <img
-        src={data.image}
-        alt={data.title}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+      {/* Background Image */}
+      <img src={data.image} alt={data.title} className="blog-carousel-img" />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col justify-end p-6">
-        {/* Title (INCREASED SIZE) */}
-        <h3 className="max-w-[90%] text-2xl leading-snug md:text-3xl">
-          {data.title}
-        </h3>
+      <div className="blog-carousel-content ">
+        <h3 className="blog-carousel-title">{data.title}</h3>
 
-        {/* Meta + Button (SAME LINE) */}
-        <div className="mt-4 flex items-center justify-between">
+        <div className="blog-carousel-bottom-content-wrapper">
           {/* Left meta */}
-          <div className="flex items-center gap-3 text-sm text-neutral-300">
+          <div className="blog-carousel-bottom-content ">
             <img
               src={data.authorAvatar}
               alt={data.author}

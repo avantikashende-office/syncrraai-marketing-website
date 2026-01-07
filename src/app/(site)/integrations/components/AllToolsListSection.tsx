@@ -12,31 +12,36 @@ const AllToolsListSection = () => {
     {
       imageIcon: "/integrations/sap.svg",
       title: "SAP",
-      description: "Enterprise ERP for finance and supply chain across global operations.",
+      description:
+        "Enterprise ERP for finance and supply chain across global operations.",
       buttonLabel: "Learn More",
     },
     {
       imageIcon: "/integrations/tallyprime.svg",
       title: "TallyPrime",
-      description: "Smart accounting for invoicing, GST, and financial reporting.",
+      description:
+        "Smart accounting for invoicing, GST, and financial reporting.",
       buttonLabel: "Learn More",
     },
     {
       imageIcon: "/integrations/oracle.svg",
       title: "Oracle NetSuite",
-      description: "Cloud platform for finance, commerce, and business management.",
+      description:
+        "Cloud platform for finance, commerce, and business management.",
       buttonLabel: "Learn More",
     },
     {
       imageIcon: "/integrations/zohobooks.svg",
       title: "Zoho Books",
-      description: "Online accounting software for billing, payments, and compliance.",
+      description:
+        "Online accounting software for billing, payments, and compliance.",
       buttonLabel: "Learn More",
     },
     {
       imageIcon: "/integrations/powerBI.svg",
       title: "Power BI",
-      description: "Analytics dashboards and data visualization for better decisions.",
+      description:
+        "Analytics dashboards and data visualization for better decisions.",
       buttonLabel: "Learn More",
     },
     {
@@ -48,7 +53,8 @@ const AllToolsListSection = () => {
     {
       imageIcon: "/integrations/shopify.svg",
       title: "Shopify",
-      description: "Sync products, orders, and stock across online and retail channels.",
+      description:
+        "Sync products, orders, and stock across online and retail channels.",
       buttonLabel: "Learn More",
     },
     {
@@ -58,9 +64,10 @@ const AllToolsListSection = () => {
       buttonLabel: "Learn More",
     },
     {
-      imageIcon: "/integrations/stripe.svg",  
+      imageIcon: "/integrations/stripe.svg",
       title: "Stripe",
-      description: "Online payments and subscription billing for global businesses.",
+      description:
+        "Online payments and subscription billing for global businesses.",
       buttonLabel: "Learn More",
     },
   ];
@@ -73,10 +80,9 @@ const AllToolsListSection = () => {
   return (
     <section>
       <div className="section-container   space-y-10">
-
         {/* ---- Heading + Search Bar ---- */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <motion.h2 
+        <div className="element-wrapper ">
+          <motion.h2
             className="text-3xl text-white"
             variants={fadeInMain}
             initial="initial"
@@ -95,18 +101,13 @@ const AllToolsListSection = () => {
               placeholder="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="
-                w-full bg-transparent border rounded-lg
-                py-3 pl-12 pr-4 text-white 
-                focus:outline-none focus:border-gray-300 transition
-              "
+              className="search-input"
             />
           </div>
         </div>
 
         {/* ---- Card Grid ---- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {filteredTools.length > 0 ? (
             filteredTools.map((tool, idx) => (
               <Card
@@ -120,12 +121,11 @@ const AllToolsListSection = () => {
             ))
           ) : (
             <p className="text-[#404040] col-span-full text-center py-10">
-              We are sorry, the Tool you are looking for does not exist in our list
+              We are sorry, the Tool you are looking for does not exist in our
+              list
             </p>
           )}
-
         </div>
-
       </div>
     </section>
   );

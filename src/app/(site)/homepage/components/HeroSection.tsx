@@ -44,7 +44,7 @@ export default function Herosection() {
         />
       </motion.div>
 
-      <div className="hero-layout pt-[120px] relative z-10 pointer-events-none">
+      <div className="hero-layout  hero-top-space   relative z-10 pointer-events-none">
         <Badge
           label={t("hero.badge")}
           icon={<Sparkles fill="white" size={18} />}

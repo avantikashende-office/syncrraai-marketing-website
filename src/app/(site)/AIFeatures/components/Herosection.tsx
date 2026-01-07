@@ -12,7 +12,7 @@ const HeroSection = () => {
     <div className="pricing-hero-bg">
       <section className="relative z-10 ">
         {/* TEXT */}
-        <div className="space-y-6 text-center max-w-4xl mx-auto pt-[200px]">
+        <div className="ai-hero-content">
           <div className="flex justify-center">
             <Badge icon={<Sparkles fill="white" />} label="AI Intelligence" />
           </div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <div className="h-[420px] w-fill pointer-events-none flex justify-center">
+      <div className="ai-hero-image-container">
         <div className="w-fill">
           <Image
             src="/img/AI-hero.png"
@@ -51,41 +51,41 @@ const HeroSection = () => {
       </div>
 
       {/* STATS (CONSTRAINED AGAIN) */}
-      <div className="flex justify-center pb-20">
-        <section className="mx-auto px-[5%] max-w-[90%]">
+      <div className="ai-hero-stats-wrapper">
+        <section className="ai-hero-stats-container">
           <motion.div
             className="stats-card"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-              <div className="space-y-3">
-                <h3 className="text-5xl font-bold gradient-text">
+            <div className="ai-hero-stats-grid">
+              <div className="ai-hero-stat-item">
+                <h3 className="ai-hero-stat-number">
                   <Counter to={30} />%
                 </h3>
                 <p className="text-xl">Reduced in Unplanned Downtime</p>
-                <p className="testimonial-user-role max-w-[70%] mx-auto md:mx-0">
+                <p className="ai-hero-stat-description">
                   Early anomaly detection prevents production breakdowns
                 </p>
               </div>
 
-              <div className="space-y-3">
-                <h3 className="text-5xl font-bold gradient-text">
+              <div className="ai-hero-stat-item">
+                <h3 className="ai-hero-stat-number">
                   <Counter to={2} />X
                 </h3>
                 <p className="text-xl">Faster Decision Making Cycles</p>
-                <p className="testimonial-user-role max-w-[70%] mx-auto md:mx-0">
+                <p className="ai-hero-stat-description">
                   Real-time insights enable instant operational action
                 </p>
               </div>
 
-              <div className="space-y-3">
-                <h3 className="text-5xl font-bold gradient-text">
+              <div className="ai-hero-stat-item">
+                <h3 className="ai-hero-stat-number">
                   <Counter to={2} />+ Days
                 </h3>
                 <p className="text-xl">Saved Per Week Per Plant</p>
-                <p className="testimonial-user-role max-w-[70%] mx-auto md:mx-0">
+                <p className="ai-hero-stat-description">
                   AI automates logs, reports, approvals seamlessly
                 </p>
               </div>

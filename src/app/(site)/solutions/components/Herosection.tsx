@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="section-container">
-      <div className=" pt-[120px]">
+      <div className="  hero-top-space  ">
         <div className="space-y-8">
           <div className="space-y-2">
             <motion.h1
@@ -43,23 +43,11 @@ export default function HeroSection() {
         </div>
 
         <div className="relative mx-auto mt-20 w-fit">
-          <div
-            className="pointer-events-none absolute -inset-8 rounded-2xl 
-    bg-[radial-gradient(ellipse_at_top,_rgba(0,255,140,0.35),_transparent_60%)]
-    blur-3xl"
-          />
+          <div className="solutions-hero-glow-top" />
 
-          <div
-            className="pointer-events-none absolute -inset-6 rounded-2xl 
-    bg-[radial-gradient(ellipse_at_left,_rgba(0,255,140,0.25),_transparent_60%)]
-    blur-3xl"
-          />
+          <div className="solutions-hero-glow-left" />
 
-          <div
-            className="pointer-events-none absolute -inset-6 rounded-2xl 
-    bg-[radial-gradient(ellipse_at_right,_rgba(0,255,140,0.25),_transparent_60%)]
-    blur-3xl"
-          />
+          <div className="solutions-hero-glow-right" />
 
           <div className="relative rounded-xl overflow-hidden">
             <Image
@@ -70,10 +58,7 @@ export default function HeroSection() {
               priority
               className="object-contain relative z-10"
             />
-            <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-48 
-      bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20"
-            />
+            <div className="solutions-hero-overlay" />
           </div>
         </div>
 

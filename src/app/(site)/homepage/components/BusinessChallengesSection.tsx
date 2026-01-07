@@ -95,7 +95,7 @@ export default function BusinessChallengesSection() {
                     x: CURVE_DEPTH * eased,
                     scale: 1 - eased * 1.2,
                     opacity: 1 - eased * 0.9,
-                    filter: `blur(${eased * 10}px)`,
+                    filter: `blur(${eased * 20}px)`,
                   }}
                   transition={{
                     type: "spring",

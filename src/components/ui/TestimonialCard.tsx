@@ -11,43 +11,21 @@ export type Testimonial = {
   avatar: string;
 };
 
-export default function TestimonialCard({
-  item,
-}: {
-  item: Testimonial;
-}) {
+export default function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <div
-      className="
-        shrink-0
-        w-[420px]
-        rounded-2xl
-        bg-[#0f0f0f]
-        p-6
-        text-white
-        shadow-xl
-        space-y-12
-      "
-    >
+    <div className="trustedby-testimonial-card ">
       {/* Header */}
-      <div className="mb-4 flex items-center gap-2">
+      <div className="trustedby-testimonial-card-company">
         <Settings />
-        <span className="customer-testimonial-company">
-          {item.company}
-        </span>
+        <span className="customer-testimonial-company">{item.company}</span>
       </div>
 
       {/* Quote */}
       <p className="testimonial-quote">“{item.quote}”</p>
 
       {/* User */}
-      <div className="flex items-center gap-3">
-        <Image
-          src={item.avatar}
-          alt={item.name}
-          width={44}
-          height={44}
-        />
+      <div className="trustedby-testimonial-card-user">
+        <Image src={item.avatar} alt={item.name} width={44} height={44} />
 
         <div className="testimonial-user-details">
           <p className="testimonial-user-name">{item.name}</p>

@@ -64,7 +64,7 @@ const FAQSection = () => {
         <Badge label="FAQ" />
       </div>
 
-      <h2 className="section-title-large text-center gradient-gray-text ">
+      <h2 className="title-center gradient-gray-text ">
         Frequently Asked Questions
       </h2>
 
