@@ -69,16 +69,16 @@ export default function Navbar() {
             <NavDropdown
               title="Solutions"
               items={[
-                { label: "Small Size Company", href: "/solutions/small-size" },
-                { label: "Mid Size Company", href: "/solutions/mid-size" },
-                { label: "Enterprise level", href: "/solutions/enterprise" },
+                { label: "Small Size Company", href: "/solutions" },
+                { label: "Mid Size Company", href: "/mid-size" },
+                { label: "Enterprise level", href: "/enterprise" },
               ]}
             />
             <NavDropdown
               title="About Us"
               width="w-44"
               items={[
-                { label: "About Us", href: "/About" },
+                { label: "About Us", href: "/about" },
                 { label: "Blog", href: "/blog" },
               ]}
             />

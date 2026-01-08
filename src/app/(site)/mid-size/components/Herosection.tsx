@@ -17,8 +17,8 @@ export default function HeroSection() {
               initial="initial"
               whileInView="animate"
             >
-              Lightweight ERP Power <br />
-              for Small Industries
+              Built to Scale Your <br />
+              Growing Operations
             </motion.h1>
           </div>
 
@@ -28,7 +28,8 @@ export default function HeroSection() {
             initial="initial"
             whileInView="animate"
           >
-            Run operations smoothly with AI-driven automation <br /> and clarity
+            Automate workflows, boost productivity, and scale <br />
+            without friction
           </motion.p>
 
           <motion.div

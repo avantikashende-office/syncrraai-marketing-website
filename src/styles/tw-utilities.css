@@ -1,7 +1,7 @@
 @layer utilities {
   /* Layout Patterns */
   .section-container {
-    @apply w-full mx-auto px-[5%] py-[10vw] max-w-[90%];
+    @apply w-full mx-auto px-[5%] py-[10vw] max-w-1440;
   }
 
   .section-container-gray {

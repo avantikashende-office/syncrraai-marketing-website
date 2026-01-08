@@ -17,8 +17,7 @@ export default function HeroSection() {
               initial="initial"
               whileInView="animate"
             >
-              Lightweight ERP Power <br />
-              for Small Industries
+              Enterprise Intelligence <br /> at Manufacturing Scale
             </motion.h1>
           </div>
 
@@ -28,7 +27,8 @@ export default function HeroSection() {
             initial="initial"
             whileInView="animate"
           >
-            Run operations smoothly with AI-driven automation <br /> and clarity
+            Unify large-scale operations with real-time insights <br /> and
+            control
           </motion.p>
 
           <motion.div
