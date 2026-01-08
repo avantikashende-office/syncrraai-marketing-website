@@ -50,12 +50,12 @@ export default function Herosection() {
           icon={<Sparkles fill="white" size={18} />}
         />
 
-        <h1 className="hero-title-center">
+        <h1 className="title-center">
           {t("hero.title")} <br />
           <span className="gradient-text">{t("hero.titleHighlight")}</span>
         </h1>
 
-        <p className="hero-subtitle-center">{t("hero.description")}</p>
+        <p className="subtitle-center">{t("hero.description")}</p>
 
         <div className="hero-button-group pointer-events-auto">
           <Button variant="primary">{t("hero.getStarted")}</Button>

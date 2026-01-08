@@ -40,7 +40,6 @@
 .outer-container {
   width: 1223px;
   margin: 0 auto;
-
 }
 @theme inline {
   --color-background: var(--background);
@@ -51,11 +50,12 @@
 
 body {
   background: var(--background);
+  overflow-x: hidden;
+
   color: var(--foreground);
   font-family: pulic-sans, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 /* globals.css */
 .no-scrollbar::-webkit-scrollbar {
