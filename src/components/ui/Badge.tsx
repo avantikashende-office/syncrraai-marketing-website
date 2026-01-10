@@ -2,12 +2,17 @@
 
 type BadgeProps = {
   label: string;
-  variant?: "default" | "plain" | "outline";
+  variant?: "default" | "plain" | "outline" | "transparent";
   icon?: React.ReactNode;
 };
 
-export default function Badge({ label, variant = "default", icon }: BadgeProps) {
+export default function Badge({
+  label,
+  variant = "default",
+  icon,
+}: BadgeProps) {
   const isPlain = variant === "plain";
+  const isTransparent = variant === "transparent";
   const isOutline = variant === "outline";
 
   return (
@@ -16,7 +21,8 @@ export default function Badge({ label, variant = "default", icon }: BadgeProps) 
         className={`
           ${isPlain ? "badge-plain" : ""}
           ${isOutline ? "badge-outline" : ""}
-          ${!isPlain && !isOutline ? "badge-content" : ""}
+          ${isTransparent ? "badge-transparent" : ""}
+          ${!isPlain && !isOutline  && !isTransparent ? "badge-content" : ""}
           flex items-center gap-2
         `}
       >

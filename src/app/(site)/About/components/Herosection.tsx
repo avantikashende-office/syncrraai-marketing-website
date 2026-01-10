@@ -9,9 +9,9 @@ import Image from "next/image";
 const HeroSection = () => {
   return (
     <section className="section-container">
-      <div className="space-y-10 ">
+      <div className="space-y-10 hero-top-space">
         <div className="flex justify-center">
-          <Badge icon={<Sparkles fill="white" />} label="About Us" />
+          <Badge label="About Us" />
         </div>
 
         <motion.h2

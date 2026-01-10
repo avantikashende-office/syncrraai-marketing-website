@@ -8,6 +8,7 @@ type ScrollingBadgesProps = {
   itemsBottom: string[];
   speed?: number;
   rowGap?: number;
+  variant?: "default" | "plain" | "outline" | "transparent";
 };
 
 export default function ScrollingBadges({
@@ -15,24 +16,34 @@ export default function ScrollingBadges({
   itemsBottom,
   speed = 35,
   rowGap = 40,
+  variant = "plain", 
 }: ScrollingBadgesProps) {
   return (
     <div className="scrolling-container" style={{ gap: rowGap }}>
-      <MarqueeRow items={itemsTop} direction="left" speed={speed} />
-
-      <MarqueeRow items={itemsBottom} direction="right" speed={speed} />
+      <MarqueeRow
+        items={itemsTop}
+        direction="left"
+        speed={speed}
+        variant={variant}
+      />
+      <MarqueeRow
+        items={itemsBottom}
+        direction="right"
+        speed={speed}
+        variant={variant}
+      />
     </div>
   );
 }
-
 
 type RowProps = {
   items: string[];
   direction: "left" | "right";
   speed: number;
+  variant?: "default" | "plain" | "outline" | "transparent";
 };
 
-function MarqueeRow({ items, direction, speed }: RowProps) {
+function MarqueeRow({ items, direction, speed, variant }: RowProps) {
   const repeated = [...items, ...items, ...items, ...items];
 
   return (
@@ -49,10 +60,10 @@ function MarqueeRow({ items, direction, speed }: RowProps) {
         }}
       >
         {repeated.map((text, i) => (
-          <Badge key={i} label={text} variant="plain"/>
+          // Now using the variant prop passed from the parent
+          <Badge key={i} label={text} variant={variant} />
         ))}
       </motion.div>
     </div>
   );
 }
-

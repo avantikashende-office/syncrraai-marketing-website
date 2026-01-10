@@ -61,21 +61,11 @@ export default function HeroSection() {
             whileInView="animate"
           >
             {/* GREEN GLOW */}
-            <div
-              className="
-      absolute
-      -inset-10
-      rounded-full
-      bg-green-500/30
-      blur-[120px]
-      opacity-70
-      pointer-events-none
-    "
-            />
+            
 
             {/* IMAGE */}
             <Image
-              src="/homepage/1.png"
+              src="/product-overview/po-hero.svg"
               alt="Dashboard preview"
               width={820}
               height={820}

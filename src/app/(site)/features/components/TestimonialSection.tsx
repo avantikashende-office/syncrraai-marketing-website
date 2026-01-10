@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function TestimonialSection() {
   return (
-    <div className="relative overflow-visible">
+    <div className="relative overflow-visible section-bg-gray">
       <div className="ai-testimonial-quote-decoration">
         <Image
           src="/img/quote.png"
@@ -18,7 +18,7 @@ export default function TestimonialSection() {
         />
       </div>
 
-      <section className="section-container-gray">
+      <section className="section-container">
         <div className="ai-testimonial-grid">
           <motion.div
             className="ai-testimonial-content"

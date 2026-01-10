@@ -36,10 +36,11 @@ export function InlineNavigation({ items }: InlineNavigationProps) {
   const activeItem = items[activeIndex];
 
   return (
-    <div className="px-[4%] flex flex-col items-center gap-[4%] w-full">
-      <div className="relative w-full">
+    <div className="inline-nav-wrapper">
+      {/* NAV */}
+      <div className="inline-nav">
         <div
-          className="grid w-full mb-6"
+          className="inline-nav-grid"
           style={{
             gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))`,
           }}
@@ -51,77 +52,56 @@ export function InlineNavigation({ items }: InlineNavigationProps) {
               <button
                 key={item.id}
                 onClick={() => setActive(item.id)}
-                className="flex flex-col items-center gap-4 focus:outline-none"
+                className="inline-nav-button"
               >
                 <motion.div
-                  animate={{ scale: isActive ? 1.1 : 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative z-10 w-15 h-15 rounded-full flex items-center justify-center bg-gradient-to-tr from-[#1C984B] to-[#171717]"
+                  animate={{ scale: isActive ? 1.06 : 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 28 }}
+                  className="inline-nav-icon"
                 >
-                  {item.icon}
+                  <div>{item.icon}</div>
                 </motion.div>
 
-                <span className="text-xs sm:text-xl text-white text-center">
-                  {item.label}
-                </span>
+                <span className="inline-nav-label">{item.label}</span>
               </button>
             );
           })}
         </div>
 
-        <div className="relative w-full">
-          <div className="w-full border-b border-[#404040]" />
+        {/* INDICATOR */}
+        <div className="inline-nav-indicator">
+          <div className="inline-nav-divider" />
 
           <motion.div
-            className="pointer-events-none absolute bottom-0 h-[3px]"
-            style={{
-              width: `${100 / items.length}%`,
-              backgroundImage:
-                "linear-gradient(90deg, transparent 0%, #16A34A 50%, transparent 100%)",
-            }}
+            className="inline-nav-active-bar"
+            style={{ width: `${100 / items.length}%` }}
             initial={false}
-            animate={{
-              left: `${activeIndex * (100 / items.length)}%`,
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            animate={{ left: `${activeIndex * (100 / items.length)}%` }}
+            transition={{ type: "spring", stiffness: 260, damping: 32 }}
           />
         </div>
       </div>
 
+      {/* CONTENT */}
       <motion.div
         key={active}
-        initial={{ opacity: 0, y: "5%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="w-full py-[4%]"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+        className="inline-nav-content"
       >
-        {activeItem.video && (
-          <div className="w-full flex justify-center">
-            <video
-              key={active}
-              src={activeItem.video.src}
-              poster={activeItem.video.poster}
-              autoPlay={activeItem.video.autoplay ?? true}
-              loop={activeItem.video.loop ?? true}
-              muted
-              playsInline
-              className="w-full"
-            />
-          </div>
-        )}
-
         {activeItem.content && (
-          <div className="space-y-[2%] mt-10">
-            <h3 className="text-5xl w-full max-w-[70%] gradient-gray-text text-center md:text-left">
+          <div className="inline-nav-content-inner">
+            <h3 className="inline-nav-title gradient-gray-text">
               {activeItem.content.title}
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-[5%] items-center">
-              <ul className="space-y-[8%]">
+            <div className="inline-nav-body">
+              <ul className="inline-nav-features">
                 {activeItem.content.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-[4%]">
-                    <div className="flex-shrink-0 aspect-square p-1 min-w-[1.5rem] rounded-md bg-[#404040] flex items-center justify-center">
-                      <Check className="text-white text-sm" />
+                  <li key={feature} className="inline-nav-feature">
+                    <div className="inline-nav-feature-icon">
+                      <Check className="w-4 h-4" />
                     </div>
                     <p className="text-description">{feature}</p>
                   </li>
@@ -133,7 +113,7 @@ export function InlineNavigation({ items }: InlineNavigationProps) {
                 alt={activeItem.content.title}
                 width={650}
                 height={650}
-                className="mx-auto"
+                className="inline-nav-image"
               />
             </div>
           </div>

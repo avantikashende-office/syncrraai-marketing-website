@@ -50,7 +50,7 @@ export default function HowItWorksStep({
             animate={isInView ? "animate" : "initial"}
             className="hiw-card"
           >
-            <div className="hiw-step-number top-10 left-20">{index + 1}</div>
+            {/* <div className="hiw-step-number top-10 left-20">{index + 1}</div> */}
             <Image
               src={image}
               alt={title}
@@ -106,7 +106,7 @@ export default function HowItWorksStep({
             animate={isInView ? "animate" : "initial"}
             className="hiw-card"
           >
-            <div className="hiw-step-number top-10 right-20">{index + 1}</div>
+            {/* <div className="hiw-step-number top-10 right-20">{index + 1}</div> */}
             <Image
               src={image}
               alt={title}

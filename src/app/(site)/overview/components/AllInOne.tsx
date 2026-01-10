@@ -8,7 +8,9 @@ import { InlineNavigation } from "@/components/ui/INlineNavigation";
 
 export function AllInOne() {
   return (
-    <section className="section-container-gray my-20 space-y-8">
+    <section className="section-bg-gray">
+
+    <div className="section-container my-20 space-y-8">
       <div className="flex justify-center">
         <Badge label="ALL IN ONE SOLUTION" />
       </div>
@@ -73,6 +75,7 @@ export function AllInOne() {
           },
         ]}
       />
+    </div>
     </section>
   );
 }

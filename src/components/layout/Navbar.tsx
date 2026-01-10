@@ -51,12 +51,12 @@ export default function Navbar() {
               items={[
                 {
                   label: "Product Overview",
-                  href: "/product-overview",
+                  href: "/overview",
                   icon: <Boxes />,
                 },
                 {
                   label: "AI Features",
-                  href: "/AIFeatures",
+                  href: "/features",
                   icon: <Brain />,
                 },
                 {
@@ -69,9 +69,9 @@ export default function Navbar() {
             <NavDropdown
               title="Solutions"
               items={[
-                { label: "Small Size Company", href: "/solutions" },
-                { label: "Mid Size Company", href: "/mid-size" },
-                { label: "Enterprise level", href: "/enterprise" },
+                { label: "Small Size Company", href: "/initial-level" },
+                { label: "Mid Size Company", href: "/mid-level" },
+                { label: "Enterprise level", href: "/enterprise-level" },
               ]}
             />
             <NavDropdown

@@ -10,19 +10,19 @@ const steps = [
     title: "Create your Account",
     description:
       "Sign up easily and map your factory layout, departments, BOMs, and roles.",
-    image: "/homepage/1.png",
+    image: "/product-overview/step-1.svg",
   },
   {
     title: "Configure Processes",
     description:
       "Define workflows, approvals, and production stages effortlessly.",
-    image: "/homepage/aa.png",
+    image: "/product-overview/step-2.svg",
   },
   {
     title: "Track & Optimize",
     description:
       "Monitor live data, reduce errors, and improve efficiency in real time.",
-    image: "/homepage/1.png",
+    image: "/product-overview/step-3.svg",
   },
 ];
 
@@ -67,12 +67,7 @@ export default function HowItWorks() {
       {/* STEPS */}
       <div className="relative z-10">
         {steps.map((step, i) => (
-          <HowItWorksStep
-            key={i}
-            index={i}
-            scrollDir={scrollDir}
-            {...step}
-          />
+          <HowItWorksStep key={i} index={i} scrollDir={scrollDir} {...step} />
         ))}
       </div>
     </section>

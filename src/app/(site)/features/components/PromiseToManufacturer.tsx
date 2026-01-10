@@ -3,6 +3,7 @@
 import EmptyCard from "@/components/ui/EmptyCard";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
+import { section } from "framer-motion/client";
 import { CircleOff, Users, X } from "lucide-react";
 import Image from "next/image";
 
@@ -26,7 +27,9 @@ export default function PromiseToManufacturer() {
     },
   ];
   return (
-    <section className="section-container-gray  space-y-10">
+    
+<section className="section-bg-gray">
+    <div className="section-container space-y-10">
       <motion.h2
         className="title-center"
         variants={fadeInMain}
@@ -89,6 +92,7 @@ export default function PromiseToManufacturer() {
           );
         })}
       </div>
+    </div>
     </section>
   );
 }

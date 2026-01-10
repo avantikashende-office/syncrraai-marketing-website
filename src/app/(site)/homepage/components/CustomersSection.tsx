@@ -51,7 +51,9 @@ const CustomersSection = () => {
   ];
 
   return (
-    <section className="section-container-gray space-y-8">
+    <section className="section-bg-gray">
+
+    <section className="section-container space-y-8">
       <Badge label="CUSTOMERS" />
 
       <div className="flex items-center justify-between w-full">
@@ -246,6 +248,7 @@ const CustomersSection = () => {
           ))}
         </div>
       </div>
+    </section>
     </section>
   );
 };

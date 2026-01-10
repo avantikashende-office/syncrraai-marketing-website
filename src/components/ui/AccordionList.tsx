@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Button from "./Button";
 
 type Item = {
   key: string;
@@ -27,11 +26,11 @@ export default function AccordionList({
   items,
   active,
   onSelect,
-  itemPaddingY = "py-6",
-  titleClassName = "text-2xl",
-  descriptionClassName = "text-description",
+  itemPaddingY = "py-4",
+  titleClassName = "text-lg sm:text-xl",
+  descriptionClassName = "text-sm sm:text-base",
   icon: Icon = ChevronRight,
-  containerClassName = "flex flex-col max-w-lg",
+  containerClassName = "flex flex-col",
 }: AccordionListProps) {
   const handleClick = (key: string) => {
     onSelect(active === key ? "" : key);
@@ -55,49 +54,42 @@ export default function AccordionList({
           >
             <AnimatePresence>
               {isActive && (
-                <motion.span
-                  key="border-sweep"
-                  initial={{
-                    backgroundPositionX: "-50%",
-                    opacity: 0,
-                  }}
-                  animate={{
-                    backgroundPositionX: ["-50%", "200%", "-50%"],
-                    opacity: [0, 1, 1],
-                  }}
-                  transition={{
-                    duration: 1.6,
-                    times: [0, 0.7, 1],
-                    ease: "easeInOut",
-                  }}
-                  className="
-        pointer-events-none
-        absolute
-        left-0
-        right-0
-        h-[2px]
-      "
-                  style={{
-                    bottom: "0px",
-                    backgroundImage:
-                      "linear-gradient(90deg, transparent 0%, #22c55e 50%, transparent 100%)",
-                    backgroundSize: "50% 100%",
-                    backgroundRepeat: "no-repeat",
-                    filter: "blur(1.5px)",
-                  }}
-                />
+                <motion.div
+                  key="progress-border"
+                  className="accordion-animation"
+                >
+                  {/* LINE + CIRCLE WRAPPER */}
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{
+                      duration: 4.4, 
+                      ease: "easeInOut",
+                    }}
+                    className="accordion-circle-line-container "
+                  >
+                    {/* LINE */}
+                    <div className="accordion-line" />
+
+                    {/* LEADING CIRCLE */}
+                    <span
+                      className="accordion-circle"
+                    />
+                  </motion.div>
+                </motion.div>
               )}
             </AnimatePresence>
 
             {/* HEADER */}
-            <div className="accordion-item-content">
-              <p className={titleClassName}>{item.title}</p>
+            <div className="accordion-item-content ">
+              <p className={`flex-1 ${titleClassName}`}>{item.title}</p>
 
               <motion.span
                 animate={{ rotate: isActive ? 90 : 0 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="shrink-0 mt-1"
               >
-                <Icon />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.span>
             </div>
 

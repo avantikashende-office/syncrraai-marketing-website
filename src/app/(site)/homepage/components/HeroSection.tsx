@@ -27,10 +27,10 @@ export default function Herosection() {
   return (
     <section
       ref={ref}
-      className="hero-bg relative h-[220vh] overflow-hidden bg-black"
+      className="hero-bg"
     >
       <motion.div
-        className="hero-dashboard sticky flex items-center justify-center"
+        className="hero-dashboard"
         style={{
           rotateX,
           transformPerspective: 1200,
@@ -44,7 +44,7 @@ export default function Herosection() {
         />
       </motion.div>
 
-      <div className="hero-layout  hero-top-space   relative z-10 pointer-events-none">
+      <div className="hero-layout hero-top-space  relative z-10 ">
         <Badge
           label={t("hero.badge")}
           icon={<Sparkles fill="white" size={18} />}
