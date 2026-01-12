@@ -1,5 +1,7 @@
 "use client";
 
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,18 +10,24 @@ type Item = {
   title: string;
   description: string;
   cta?: React.ReactNode;
+  image?: string;
+  imageAlt?: string;
 };
 
 type AccordionListProps = {
   items: Item[];
   active: string;
   onSelect: (key: string) => void;
-
   itemPaddingY?: string;
   titleClassName?: string;
   descriptionClassName?: string;
   icon?: React.ComponentType<{ className?: string; size?: number }>;
   containerClassName?: string;
+  showImage?: boolean;
+  imageClassName?: string;
+  wrapperClassName?: string;
+  autoNext?: boolean;
+  autoNextDuration?: number;
 };
 
 export default function AccordionList({
@@ -28,95 +36,196 @@ export default function AccordionList({
   onSelect,
   itemPaddingY = "py-4",
   titleClassName = "text-lg sm:text-xl",
-  descriptionClassName = "text-sm sm:text-base",
+  descriptionClassName = "my-3",
   icon: Icon = ChevronRight,
-  containerClassName = "flex flex-col",
+  containerClassName = "",
+  showImage = false,
+  imageClassName = "",
+  wrapperClassName = "",
+  autoNext = false,
+  autoNextDuration = 4400,
 }: AccordionListProps) {
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const handleClick = (key: string) => {
-    onSelect(active === key ? "" : key);
+    if (active === key) {
+      onSelect(items[0]?.key || key);
+      return;
+    }
+    onSelect(key);
   };
+  const [inView, setInView] = React.useState(false);
+
+  const activeItem = items.find((i) => i.key === active);
+  const activeImage = activeItem?.image;
+
+  useEffect(() => {
+if (!autoNext || items.length <= 1 || !inView) return;
+
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    timeoutRef.current = setTimeout(() => {
+      const currentIndex = items.findIndex((i) => i.key === active);
+      if (currentIndex === -1) return;
+
+      const nextIndex = (currentIndex + 1) % items.length;
+      onSelect(items[nextIndex].key);
+    }, autoNextDuration);
+
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [active, autoNext, autoNextDuration, items, onSelect, inView]);
 
   return (
-    <div className={containerClassName}>
-      {items.map((item) => {
-        const isActive = active === item.key;
+    <motion.div
+      className={showImage ? wrapperClassName : containerClassName}
+      viewport={{ amount: 0.35, once: false }}
+      onViewportEnter={() => setInView(true)}
+      onViewportLeave={() => setInView(false)}
+    >
+      {/* LEFT – Accordion */}
+      <div className="basis-[55%] min-w-0">
+        <div className={containerClassName}>
+          {items.map((item) => {
+            const isActive = active === item.key;
 
-        return (
-          <div
-            key={item.key}
-            onClick={() => handleClick(item.key)}
-            className={`accordion-item relative ${itemPaddingY}`}
-            style={{
-              ["--sweep-height" as any]: "3px",
-              ["--sweep-offset" as any]: "-4px",
-              ["--sweep-blur" as any]: "0px",
-            }}
-          >
-            <AnimatePresence>
-              {isActive && (
-                <motion.div
-                  key="progress-border"
-                  className="accordion-animation"
-                >
-                  {/* LINE + CIRCLE WRAPPER */}
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{
-                      duration: 4.4, 
-                      ease: "easeInOut",
-                    }}
-                    className="accordion-circle-line-container "
-                  >
-                    {/* LINE */}
-                    <div className="accordion-line" />
-
-                    {/* LEADING CIRCLE */}
-                    <span
-                      className="accordion-circle"
-                    />
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* HEADER */}
-            <div className="accordion-item-content ">
-              <p className={`flex-1 ${titleClassName}`}>{item.title}</p>
-
-              <motion.span
-                animate={{ rotate: isActive ? 90 : 0 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="shrink-0 mt-1"
+            return (
+              <div
+                key={item.key}
+                onClick={() => handleClick(item.key)}
+                className={`accordion-item relative ${itemPaddingY}`}
+                style={{
+                  ["--sweep-height" as any]: "3px",
+                  ["--sweep-offset" as any]: "-4px",
+                  ["--sweep-blur" as any]: "0px",
+                }}
               >
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </motion.span>
-            </div>
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      key="progress-border"
+                      className="accordion-animation"
+                    >
+                      <motion.div
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{
+                          duration: autoNextDuration / 1000,
+                          ease: "easeInOut",
+                        }}
+                        className="accordion-circle-line-container"
+                      >
+                        <div className="accordion-line" />
+                        <span className="accordion-circle" />
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-            {/* CONTENT */}
-            <AnimatePresence initial={false}>
-              {isActive && (
-                <motion.div
-                  key="content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: "easeInOut" }}
-                  className="overflow-hidden space-y-6"
-                >
-                  <p
-                    className={`accordion-description ${descriptionClassName}`}
+                {/* HEADER */}
+                <div className="accordion-item-content">
+                  <p className={` ${titleClassName}`}>{item.title}</p>
+
+                  <motion.span
+                    animate={{ rotate: isActive ? 90 : 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="shrink-0 mt-1"
                   >
-                    {item.description}
-                  </p>
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </motion.span>
+                </div>
 
-                  {item.cta && item.cta}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        );
-      })}
-    </div>
+                {/* CONTENT */}
+                <AnimatePresence initial={false}>
+                  {isActive && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: "easeInOut" }}
+                      className="overflow-hidden space-y-6"
+                    >
+                      <p
+                        className={`text-subdescription ${descriptionClassName}`}
+                      >
+                        {item.description}
+                      </p>
+
+                      {/* MOBILE IMAGE (below description) */}
+                      {showImage && item.image && (
+                        <div className="block lg:hidden">
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={item.image}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                              className="w-full"
+                            >
+                              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-3xl">
+                                <Image
+                                  src={item.image}
+                                  alt={
+                                    item.imageAlt ||
+                                    item.title ||
+                                    "Accordion image"
+                                  }
+                                  fill
+                                  className={imageClassName}
+                                  sizes="100vw"
+                                />
+                              </div>
+                            </motion.div>
+                          </AnimatePresence>
+                        </div>
+                      )}
+
+                      {item.cta && item.cta}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* RIGHT – Dynamic Image (only desktop/tablet large screens) */}
+      {showImage && (
+        <div className="hidden lg:flex basis-[45%] min-w-0 justify-end self-stretch">
+          <AnimatePresence mode="wait">
+            {activeImage && (
+              <motion.div
+                key={activeImage}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="w-full max-w-[520px] lg:max-w-[600px]"
+              >
+                {/* ✅ Taller Image Wrapper - extends BELOW */}
+                <div className="relative w-full aspect-[4/3] lg:aspect-[4/3] overflow-hidden rounded-3xl lg:translate-y-6">
+                  <Image
+                    src={activeImage}
+                    alt={
+                      activeItem?.imageAlt ||
+                      activeItem?.title ||
+                      "Accordion image"
+                    }
+                    fill
+                    className={imageClassName}
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    priority
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
+    </motion.div>
   );
 }
