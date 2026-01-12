@@ -1025,46 +1025,44 @@
     position: absolute;
     left: 0;
     width: 100%;
-    /* Ensure font-family and weight match exactly for alignment */
     font-size: clamp(3.2rem, 5.5vw, 4.2rem);
     font-weight: 500;
-    line-height: 1; /* Critical for vertical centering */
+    line-height: 1;
   }
   @media (max-width: 768px) {
-    /* 1. Prevent the extra scroll "ghost" space */
     .challenges-wrapper {
       height: auto !important;
+      overflow: visible;
     }
 
     .challenges-section {
-      position: relative; /* Remove sticky on mobile */
+      position: relative;
       height: auto;
       min-height: 350px;
-      padding: 4rem 0; /* Add padding so it doesn't look cramped */
+      padding: 4rem 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .challenges-content {
-      display: block; /* Allows overlaying */
+      display: block;
       width: 100%;
     }
 
     .mobile-view-wrapper {
-      position: relative; /* Anchor for the absolute text */
+      position: relative;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow: visible;
     }
 
-    /* 2. Absolute center the text in the gap */
     .mobile-overlay-text {
       position: absolute;
-
       z-index: 30;
-      top: 43%;
+      top: 40%;
       font-size: 2.2rem !important;
       font-weight: 700;
       text-align: center;
@@ -1073,12 +1071,10 @@
       pointer-events: none;
     }
 
-    /* Ensure the container doesn't have extra spacing */
     .scrolling-container {
       width: 100%;
       display: flex;
       flex-direction: column;
-      /* This gap will be controlled by your rowGap={120} prop */
     }
   }
 
@@ -1294,13 +1290,13 @@
   }
 
   /* AI Hero Section */
- .stat-arrow-icon {
-  @apply h-10 w-10 rounded-xl 
+  .stat-arrow-icon {
+    @apply h-10 w-10 rounded-xl 
          bg-emerald-500/15 
          text-emerald-400
          flex items-center justify-center
          shrink-0;
-}
+  }
 
   .ai-hero-content {
     @apply space-y-6 text-center max-w-4xl mx-auto pt-[200px];
@@ -1317,17 +1313,14 @@
   .ai-hero-stats-container {
     @apply mx-auto px-[5%] max-w-[90%];
   }
-.ai-hero-stats-grid {
-  @apply flex flex-wrap gap-12
+  .ai-hero-stats-grid {
+    @apply flex flex-wrap gap-12
          justify-between text-center md:text-left;
-}
+  }
 
-
-.ai-hero-stat-item {
-  @apply flex-1 space-y-2 min-w-[200px] ;
-}
-
-
+  .ai-hero-stat-item {
+    @apply flex-1 space-y-2 min-w-[200px];
+  }
 
   .ai-hero-stat-number {
     @apply text-5xl font-bold bg-gradient-to-r from-[#39D373] to-[#005F24] bg-clip-text text-transparent;

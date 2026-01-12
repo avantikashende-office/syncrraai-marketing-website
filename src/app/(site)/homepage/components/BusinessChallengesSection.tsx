@@ -89,13 +89,6 @@ export default function BusinessChallengesSection() {
       style={{ height: isMobile ? "auto" : `${items.length * 100}vh` }}
     >
       <section className="challenges-section">
-        {isMobile ? (
-          <>
-            <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-32 bg-gradient-to-r from-black/30 to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-32 bg-gradient-to-l from-black/30 to-transparent" />
-          </>
-        ) : null}
-
         <div className="glow-background" />
 
         <div className="challenges-content">
@@ -150,7 +143,7 @@ export default function BusinessChallengesSection() {
                 itemsBottom={items.slice(3)}
                 variant="transparent"
                 speed={40}
-                rowGap={120} 
+                rowGap={120}
               />
 
               <motion.span
