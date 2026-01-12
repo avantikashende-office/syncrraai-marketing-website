@@ -700,7 +700,7 @@
   .stats-grid {
     @apply text-white
          grid w-full
-         grid-cols-3
+         grid-cols-4
          gap-x-4 md:gap-x-8 lg:gap-x-12;
   }
   .stat-item {
@@ -1294,6 +1294,14 @@
   }
 
   /* AI Hero Section */
+ .stat-arrow-icon {
+  @apply h-10 w-10 rounded-xl 
+         bg-emerald-500/15 
+         text-emerald-400
+         flex items-center justify-center
+         shrink-0;
+}
+
   .ai-hero-content {
     @apply space-y-6 text-center max-w-4xl mx-auto pt-[200px];
   }
@@ -1309,21 +1317,24 @@
   .ai-hero-stats-container {
     @apply mx-auto px-[5%] max-w-[90%];
   }
+.ai-hero-stats-grid {
+  @apply flex flex-wrap gap-12
+         justify-between text-center md:text-left;
+}
 
-  .ai-hero-stats-grid {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left;
-  }
 
-  .ai-hero-stat-item {
-    @apply space-y-3;
-  }
+.ai-hero-stat-item {
+  @apply flex-1 space-y-2 min-w-[200px] ;
+}
+
+
 
   .ai-hero-stat-number {
     @apply text-5xl font-bold bg-gradient-to-r from-[#39D373] to-[#005F24] bg-clip-text text-transparent;
   }
 
   .ai-hero-stat-description {
-    @apply text-sm max-w-[70%] mx-auto md:mx-0;
+    @apply text-sm md:mx-0;
     color: #939393;
   }
 
