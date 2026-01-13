@@ -8,11 +8,10 @@ const YourDataYourControlSection = () => {
   return (
     <section className="section-container   flex justify-center items-center">
       <div className="data-control-card">
-
         {/* LEFT TEXT BLOCK */}
         <div className="data-control-text">
           <div>
-            <motion.h2 
+            <motion.h2
               className="data-control-title-gray"
               variants={fadeInMain}
               initial="initial"
@@ -20,7 +19,7 @@ const YourDataYourControlSection = () => {
             >
               Your Data. Your Control.
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               className="data-control-title-bold"
               variants={fadeInMain}
               initial="initial"
@@ -30,20 +29,21 @@ const YourDataYourControlSection = () => {
             </motion.h3>
           </div>
 
-          <motion.p 
+          <motion.p
             className="data-control-description"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
           >
-            Syncrra safeguards your manufacturing data with enterprise-grade security. 
-            All transactions, logs, and records stay encrypted and fully under your control.
+            Syncrra is built with enterprise-grade security at its core. Your
+            operational data remains protected through encrypted storage,
+            controlled access, and continuous monitoring, ensuring complete
+            ownership and peace of mind.
           </motion.p>
         </div>
 
         {/* RIGHT BADGE IMAGES */}
         <div className="data-control-badges">
-
           {/* SOC2 */}
           <Image
             src="/img/soc.png"
@@ -57,7 +57,7 @@ const YourDataYourControlSection = () => {
           <Image
             src="/img/ISO.png"
             alt="ISO 27001"
-             width={200}
+            width={200}
             height={150}
             className="data-control-badge-image"
           />
@@ -66,13 +66,11 @@ const YourDataYourControlSection = () => {
           <Image
             src="/img/GDPR.png"
             alt="GDPR compliance"
-             width={200}
+            width={200}
             height={150}
             className="data-control-badge-image"
           />
-
         </div>
-
       </div>
     </section>
   );

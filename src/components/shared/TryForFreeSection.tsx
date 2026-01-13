@@ -17,8 +17,8 @@ const TryForFreeSection = () => {
           className="object-contain"
         />
         {/* CONTENT */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2">
-          <div className="flex flex-col justify-center space-y-8 px-10 md:pl-20 md:pr-40 py-20 md:py-28">
+        <div className="relative z-10 ">
+          <div className="flex flex-col justify-center space-y-6 px-10 md:px-30 py-20 md:py-20">
             <motion.h2
               variants={fadeInMain}
               initial="initial"
@@ -34,7 +34,8 @@ const TryForFreeSection = () => {
               whileInView="animate"
               className="text-lg text-white/70 max-w-md"
             >
-              Start taking control of your business today
+              Start bringing structure, visibility, and control to your
+              operations today.
             </motion.p>
 
             <Button variant="primary" className="w-fit">

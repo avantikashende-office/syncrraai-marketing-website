@@ -52,185 +52,171 @@ const CustomersSection = () => {
 
   return (
     <section className="section-bg-gray">
+      <section className="section-container space-y-8">
+        <Badge label="CUSTOMERS" />
 
-    <section className="section-container space-y-8">
-      <Badge label="CUSTOMERS" />
-
-      <div className="flex items-center justify-between w-full">
-        {/* Left: Title */}
-        <motion.h1
-          className="title-side gradient-gray-text max-w-xl"
-          variants={fadeInMain}
-          initial="initial"
-          whileInView="animate"
-        >
-          Trusted by the Most
-          <br />
-          Innovative Companies
-        </motion.h1>
-
-        {/* Right: Text + Button */}
-        <div className="flex flex-col items-start max-w-md">
-          <motion.p
-            className="subtitle-side mb-6"
+        <div className="flex  justify-between w-full">
+          {/* Left: Title */}
+          <motion.h1
+            className="title-side gradient-gray-text max-w-[60%]"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"
           >
-            Join 100k+ customers who use our platform to take their
-            <br />
-            operational efforts to the next level.
-          </motion.p>
+            Trusted by Forward-Thinking Manufacturing Teams
+          </motion.h1>
 
-          <Button variant="outline">
-            View Case Studies <ArrowUpRight className="ml-2" size={20} />
-          </Button>
-        </div>
-      </div>
-
-      <div className="customers-grid">
-        <EmptyCard className="empty-card-black">
-          <div className="customer-case-grid">
-            {/* LEFT CONTENT */}
-            <div className="customer-case-left">
-              <div className="customer-case-content">
-                <p className="customer-case-label">CASE STUDY</p>
-
-                <motion.h2
-                  className="customer-case-title"
-                  variants={fadeInMain}
-                  initial="initial"
-                  whileInView="animate"
-                >
-                  Customer Story
-                </motion.h2>
-
-                <motion.p
-                  className="text-subdescription"
-                  variants={fadeInMain}
-                  initial="initial"
-                  whileInView="animate"
-                >
-                  How Classic Roof Manufacturing automated 80% of production
-                  tracking and reduced delays by 50% using Syncrra ERP.
-                </motion.p>
-              </div>
-
-              {/* TAGS */}
-              <div className="customer-case-tags">
-                <Badge
-                  label={"200-500 Employees"}
-                  variant="outline"
-                  icon={<UserRound size={16} />}
-                />
-                <Badge
-                  label={"2025"}
-                  variant="outline"
-                  icon={<Clock3 size={16} />}
-                />
-              </div>
-            </div>
-
-            {/* MIDDLE COLUMN */}
-            <div className="customer-case-middle">
-              {/* TOP ROW: Logo + Title */}
-              <div className="customer-case-logo-row">
-                <Image
-                  src="/img/ClassicLogo.png"
-                  alt="Customer Image"
-                  height={250}
-                  width={250}
-                  className="customer-case-logo"
-                />
-                <motion.h2
-                  className="customer-case-title"
-                  variants={fadeInMain}
-                  initial="initial"
-                  whileInView="animate"
-                >
-                  Classic Roof
-                </motion.h2>
-              </div>
-
-              {/* BOTTOM BUTTON (right aligned) */}
-              <div className="customer-case-button-row">
-                <Button variant="secondary">
-                  View Case Studies <ChevronRight className="ml-2" size={20} />
-                </Button>
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="w-full h-full">
-              <Image
-                src="/img/customers-section-1.png"
-                alt="Customer Image"
-                height={650}
-                width={650}
-                className="customer-case-image"
-              />
-            </div>
+          {/* Right: Text + Button */}
+          <div className="">
+            <motion.p
+              className="subtitle-side "
+              variants={fadeInMain}
+              initial="initial"
+              whileInView="animate"
+            >
+              Join organisations using Syncrra to bring structure, visibility,
+              and intelligence into their manufacturing operations.
+            </motion.p>
           </div>
-        </EmptyCard>
+        </div>
 
-        <div className="mt-25">
-          <EmptyCard className="empty-card-black relative overflow-visible">
-            <div className="grid grid-cols-2">
-              {/* LEFT CONTENT */}
-              <div className="testimonial-card">
-                <div className="customer-testimonial-header">
-                  <Settings />
-                  <motion.h3
-                    className="customer-testimonial-company"
+        <div className="customers-grid">
+          <EmptyCard className="empty-card-black">
+            <div className="customer-case-grid">
+              <div className="customer-case-left">
+                <div className="customer-case-content">
+                  <p className="customer-case-label">CASE STUDY</p>
+
+                  <motion.h2
+                    className="customer-case-title"
                     variants={fadeInMain}
                     initial="initial"
                     whileInView="animate"
                   >
-                    GreenWorks
-                  </motion.h3>
+                    Customer Story
+                  </motion.h2>
+
+                  <motion.p
+                    className="text-subdescription"
+                    variants={fadeInMain}
+                    initial="initial"
+                    whileInView="animate"
+                  >
+                    How Classic Roof streamlined production tracking and reduced
+                    operational delays by introducing real-time visibility and
+                    system-driven workflows with Syncrra.
+                  </motion.p>
                 </div>
 
-                <p className="testimonial-quote">
-                  “Before Syncrra, keeping projects aligned felt impossible. Now
-                  everything runs smoothly, and our clients notice the
-                  difference.”
-                </p>
+                {/* TAGS */}
+                <div className="customer-case-tags">
+                  <Badge
+                    label={"200-500 Employees"}
+                    variant="outline"
+                    icon={<UserRound size={16} />}
+                  />
+                  <Badge
+                    label={"2025"}
+                    variant="outline"
+                    icon={<Clock3 size={16} />}
+                  />
+                </div>
+              </div>
 
-                <div className="testimonial-user-details">
-                  <p className="testimonial-user-name">Brendan</p>
-                  <p className="testimonial-user-role">
-                    Marketing Director at StratIQ
-                  </p>
+              {/* MIDDLE COLUMN */}
+              <div className="customer-case-middle">
+                {/* TOP ROW: Logo + Title */}
+                <div className="customer-case-logo-row">
+                  <Image
+                    src="/img/ClassicLogo.png"
+                    alt="Customer Image"
+                    height={250}
+                    width={250}
+                    className="customer-case-logo"
+                  />
+                  <motion.h2
+                    className="customer-case-title"
+                    variants={fadeInMain}
+                    initial="initial"
+                    whileInView="animate"
+                  >
+                    Classic Roof
+                  </motion.h2>
+                </div>
+
+                {/* BOTTOM BUTTON (right aligned) */}
+                <div className="customer-case-button-row">
+                  <Button variant="secondary">
+                    View Case Study <ChevronRight className="ml-2" size={20} />
+                  </Button>
                 </div>
               </div>
 
               {/* RIGHT IMAGE */}
-              <div className="relative h-full overflow-visible">
+              <div className="w-full h-full">
                 <Image
-                  src="/img/UserImage.png"
-                  alt="User"
-                  width={720}
-                  height={720}
-                  className="absolute bottom-0 right-0 w-auto h-[140%] object-cover object-bottom"
+                  src="/img/customers-section-1.png"
+                  alt="Customer Image"
+                  height={650}
+                  width={650}
+                  className="customer-case-image"
                 />
               </div>
             </div>
           </EmptyCard>
-        </div>
 
-        <div className="testimonial-cards-grid">
+          <div className="mt-25">
+            <EmptyCard className="empty-card-black relative overflow-visible">
+              <div className="grid grid-cols-2">
+                <div className="testimonial-card">
+                  <div className="customer-testimonial-header">
+                    <Settings />
+                    <motion.h3
+                      className="customer-testimonial-company"
+                      variants={fadeInMain}
+                      initial="initial"
+                      whileInView="animate"
+                    >
+                      GreenWorks
+                    </motion.h3>
+                  </div>
+
+                  <p className="testimonial-quote">
+                    “Before Syncrra, keeping projects aligned felt impossible.
+                    Now everything runs smoothly, and our clients notice the
+                    difference.”
+                  </p>
+
+                  <div className="testimonial-user-details">
+                    <p className="testimonial-user-name">Brendan</p>
+                    <p className="testimonial-user-role">
+                      Marketing Director at StratIQ
+                    </p>
+                  </div>
+                </div>
+
+                {/* RIGHT IMAGE */}
+                <div className="relative h-full overflow-visible">
+                  <Image
+                    src="/img/UserImage.png"
+                    alt="User"
+                    width={720}
+                    height={720}
+                    className="absolute bottom-0 right-0 w-auto h-[140%] object-cover object-bottom"
+                  />
+                </div>
+              </div>
+            </EmptyCard>
+          </div>
+
+          {/* <div className="testimonial-cards-grid">
           {testimonials.map((item, index) => (
             <EmptyCard key={index} className="testimonial-card">
-              {/* Header */}
               <div className="customer-testimonial-header">
                 <Settings />
                 <h3 className="customer-testimonial-company">{item.company}</h3>
-              </div>
+              </div>              <p className="testimonial-quote">{item.quote}</p>
 
-              {/* Quote */}
-              <p className="testimonial-quote">{item.quote}</p>
-
-              {/* User Info */}
               <div className="testimonial-user-info">
                 <Image
                   src={item.avatar}
@@ -246,9 +232,9 @@ const CustomersSection = () => {
               </div>
             </EmptyCard>
           ))}
+        </div> */}
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 };

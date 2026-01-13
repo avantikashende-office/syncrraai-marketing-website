@@ -28,8 +28,8 @@ const PricingCardSection = () => {
         initial="initial"
         whileInView="animate"
       >
-        Pick the plan that fits your needs today and scales <br />
-        effortlessly with your team
+        Select a plan that fits your current needs and scales smoothly as your
+        teams, plants, and operations grow.
       </motion.p>
       <PricingSection />
       <div className="stats-card">
@@ -40,11 +40,9 @@ const PricingCardSection = () => {
             initial="initial"
             whileInView="animate"
           >
-            Not sure which plans is for you?
+            Not sure which plan is right for you? <br /> Compare plans to find
+            the best fit for your team and operations.
           </motion.p>
-          <p className="text-lg text-white">
-            Compare Plans to find what’s right for your team.
-          </p>
         </div>
         <div className="flex items-center gap-6">
           <Button variant="opposite">Compare Plans</Button>

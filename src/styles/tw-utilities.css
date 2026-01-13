@@ -373,7 +373,6 @@
     @apply flex items-center justify-between;
   }
 
- 
   .accordion-animation {
     @apply pointer-events-none absolute left-0 right-0 bottom-0 h-[2px];
   }
@@ -728,10 +727,9 @@
          flex items-center justify-center;
   }
   /* Core Capabilities */
- .capabilities-grid {
-  @apply flex flex-col lg:flex-row gap-12 my-15 justify-center;
-}
-
+  .capabilities-grid {
+    @apply flex flex-col lg:flex-row gap-12 my-15 justify-center;
+  }
 
   .unified-image-wrapper {
     @apply flex justify-center items-center p-15;
@@ -840,7 +838,17 @@
   }
 
   .comparison-title {
-    @apply flex justify-center items-center gap-3 mb-6 text-white font-semibold;
+    @apply flex items-center justify-center gap-2 sm:gap-3
+         px-4 py-2 sm:py-3
+         text-3xl sm:text-2xl font-medium;
+  }
+  .comparison-logo {
+    @apply w-auto;
+    height: 1em; /* matches text size automatically */
+  }
+  .comparison-icon-title {
+    width: 1em;
+    height: 1em;
   }
 
   /* Comparison Card */
@@ -852,6 +860,9 @@
 
   .light .comparison-card {
     background-color: #f5f5f5;
+  }
+  .comparison-content {
+    @apply flex flex-col gap-1 sm:gap-2;
   }
 
   .comparison-border {
@@ -883,18 +894,22 @@
 
   .comparison-item {
     @apply flex items-start gap-3 py-2 sm:py-4;
-    min-height: 3.5rem;
   }
 
   .comparison-icon {
     @apply min-w-[18px] text-sm sm:text-base flex-shrink-0;
     color: #d4d4d4;
   }
-
   .comparison-text {
-    @apply text-sm sm:text-base md:text-lg leading-snug;
+    @apply text-sm sm:text-base md:text-lg leading-snug font-medium;
     color: #d4d4d4;
     word-break: break-word;
+  }
+
+  .comparison-description {
+    @apply text-xs sm:text-sm leading-relaxed;
+    color: #a3a3a3;
+    max-width: 95%;
   }
 
   .comparison-divider {

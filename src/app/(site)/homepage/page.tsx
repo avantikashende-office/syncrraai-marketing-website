@@ -36,7 +36,7 @@ export default function HomePage() {
             <PricingCardSection />
             <CustomersSection />
             <FAQSection />
-            <YourDataYourControlSection />
+            {/* <YourDataYourControlSection /> */}
             <TryForFreeSection />
             
         </>
