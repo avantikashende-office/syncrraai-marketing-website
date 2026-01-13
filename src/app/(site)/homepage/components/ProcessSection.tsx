@@ -28,15 +28,13 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        <div className="integrations-image-wrapper">
           <Image
-            src={"/homepage/process-section.png"}
+            src={"/homepage/process.gif"}
             alt="UnifiedSolution."
             width={800}
             height={0}
-            className="integrations-image"
+            className="process-image"
           />
-        </div>
       </div>
     </section>
   );

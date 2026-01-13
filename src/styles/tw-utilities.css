@@ -874,12 +874,12 @@
   }
 
   .comparison-border {
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  pointer-events: none;
-}
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+  }
 
   .comparison-border-green {
     background: linear-gradient(
@@ -890,11 +890,11 @@
   }
 
   .comparison-inner {
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: #0b0b0b; /* your card bg */
-}
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: #0b0b0b; /* your card bg */
+  }
 
   .light .comparison-inner {
     background-color: #f5f5f5;
@@ -1216,6 +1216,10 @@
     color: #939393;
   }
 
+  /* Process section */
+  .process-image {
+    @apply w-full  h-[40%] object-contain;
+  }
   /* Integrations Section */
 
   .integrations-image-wrapper {
