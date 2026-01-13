@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import React from "react";
 
 interface FeatureItem {
@@ -23,33 +24,101 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({
   return (
     <div className={`comparison-card ${className}`}>
       {/* ---- BORDER WRAPPER ---- */}
-      <div
+      {/* <div
         className={`comparison-border ${
           showGreenBorder ? "comparison-border-green" : ""
         }`}
       >
-        {/* Inner layer MUST NOT cover border = inset: 1px */}
         <div className="comparison-inner" />
-      </div>
+      </div> */}
+
+      {showGreenBorder && (
+        <div className="pointer-events-none absolute inset-0 rounded-[10px]">
+          <div className="absolute inset-0 rounded-sm border border-neutral-700" />
+
+          <motion.div
+            className="absolute left-[2px] right-[2px] top-0 h-[2px] rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(0,255,140,0.9), transparent)",
+            }}
+            initial={{ x: "-100%", opacity: 1 }}
+            animate={{ x: ["-100%", "100%", "100%"] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              times: [0, 0.25, 1],
+            }}
+          />
+
+          <motion.div
+            className="absolute right-0 top-[2px] bottom-[2px] w-[2px] rounded-full"
+            style={{
+              background:
+                "linear-gradient(180deg, transparent, rgba(0,255,140,0.9), transparent)",
+            }}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: ["-100%", "100%"], opacity: [0, 1, 1, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              delay: 1,
+            }}
+          />
+
+          <motion.div
+            className="absolute left-[2px] right-[2px] bottom-0 h-[2px] rounded-full"
+            style={{
+              background:
+                "linear-gradient(270deg, transparent, rgba(0,255,140,0.9), transparent)",
+            }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: ["100%", "-100%"], opacity: [0, 1, 1, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              delay: 2,
+            }}
+          />
+
+          <motion.div
+            className="absolute left-0 top-[2px] bottom-[2px] w-[2px] rounded-full"
+            style={{
+              background:
+                "linear-gradient(0deg, transparent, rgba(0,255,140,0.9), transparent)",
+            }}
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: ["100%", "-100%"], opacity: [0, 1, 1, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              delay: 3,
+            }}
+          />
+        </div>
+      )}
 
       {/* ---- CONTENT ---- */}
       <ul className="comparison-list">
-  {features.map((item, idx) => (
-    <li key={idx}>
-      <div className="comparison-item">
-        <p className="comparison-icon">{item.icon}</p>
+        {features.map((item, idx) => (
+          <li key={idx}>
+            <div className="comparison-item">
+              <p className="comparison-icon">{item.icon}</p>
 
-        <div className="comparison-content">
-          <p className="comparison-text">{item.text}</p>
-          <p className="comparison-description">{item.description}</p>
-        </div>
-      </div>
+              <div className="comparison-content">
+                <p className="comparison-text">{item.text}</p>
+                <p className="comparison-description">{item.description}</p>
+              </div>
+            </div>
 
-      {item.showDivider && <div className="comparison-divider" />}
-    </li>
-  ))}
-</ul>
-
+            {item.showDivider && <div className="comparison-divider" />}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
