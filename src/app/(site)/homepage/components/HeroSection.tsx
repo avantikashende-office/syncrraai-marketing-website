@@ -16,7 +16,7 @@ export default function Herosection() {
     offset: ["start start", "end start"],
   });
 
-  const rotateXRaw = useTransform(scrollYProgress, [0, 0.35], [30, -15]);
+  const rotateXRaw = useTransform(scrollYProgress, [0, 0.35], [15, -10]);
 
   const rotateX = useSpring(rotateXRaw, {
     stiffness: 50,
@@ -33,18 +33,18 @@ export default function Herosection() {
         className="hero-dashboard"
         style={{
           rotateX,
-          transformPerspective: 1200,
+          transformPerspective: "clamp(800px, 100vw, 1200px)",
           transformOrigin: "50% 100%",
         }}
       >
         <img
           src="/bg.svg"
           alt="Dashboard"
-          className="w-full mx-auto  max-w-[90%] will-change-transform"
+          className="w-full mx-auto max-w-[95vw] will-change-transform"
         />
       </motion.div>
 
-      <div className="hero-layout hero-top-space  relative z-10 ">
+      <div className="hero-layout hero-top-space relative z-10">
         <Badge
           label={t("hero.badge")}
           icon={<Sparkles fill="white" size={18} />}

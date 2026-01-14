@@ -15,36 +15,39 @@ const FEATURES = [
 
 export default function SmartFormsForManufacturing() {
   return (
-    <div className="relative overflow-visible mb-[5%]">
-      <section className="section-container space-y-12">
-        <h3 className="ai-feature-title">
-          Smart Forms Built for Manufacturing Workflows
-        </h3>
+    <section className="content-section mb-[5%]">
+      <div className="content-wrap">
+        <div className="split-block">
+          <div className="split-pane">
+            <h3 className="split-title title-side gradient-gray-text">
+              Smart Forms Built for Manufacturing Workflows
+            </h3>
 
-        <div className="ai-feature-section-grid">
-          <ul className="ai-feature-list">
-            {FEATURES.map((feature, index) => (
-              <li key={index} className="ai-feature-item">
-                <div className="ai-feature-check-icon">
-                  <Check className="text-white text-sm" />
-                </div>
-                <p className="text-description">{feature.text}</p>
-              </li>
-            ))}
-          </ul>
+            <ul className="ai-feature-list max-w-xl">
+              {FEATURES.map((feature, index) => (
+                <li key={index} className="ai-feature-item">
+                  <div className="ai-feature-check-icon">
+                    <Check className="text-white text-sm" />
+                  </div>
+                  <p className="text-description">{feature.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="split-media">
+            <div className="split-media-frame">
+              <Image
+                src="/img/3.png"
+                alt="User"
+                fill
+                className="split-media-img"
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </section>
-
-      {/* IMAGE */}
-      <div className="ai-image-right">
-        <Image
-          src="/img/3.png"
-          alt="User"
-          fill
-          className="ai-image-rounded-right"
-          priority
-        />
       </div>
-    </div>
+    </section>
   );
 }

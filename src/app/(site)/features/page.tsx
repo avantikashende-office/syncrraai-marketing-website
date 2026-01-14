@@ -3,10 +3,9 @@ import TrustedBy from "@/components/shared/TrustedBySection";
 import TryForFreeSection from "@/components/shared/TryForFreeSection";
 import HeroSection from "./components/Herosection";
 import TestimonialSection from "./components/TestimonialSection";
-import AskExploreVisualize from "./components/AskExploreVisualize";
-import MonitorActRealTime from "./components/MonitorActRealTime";
-import SmartFormsForManufacturing from "./components/SmartFormsForManufacturing";
+
 import PromiseToManufacturer from "./components/PromiseToManufacturer";
+import FeaturesSection from "./components/FeaturesSection";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -16,9 +15,7 @@ export default function AIFeatures() {
     <>
       <HeroSection />
       <TestimonialSection />
-      <AskExploreVisualize />
-      <MonitorActRealTime />
-      <SmartFormsForManufacturing />
+      <FeaturesSection />
       <PromiseToManufacturer />
       <FAQSection />
       <TrustedBy />
