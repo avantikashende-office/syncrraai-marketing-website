@@ -42,7 +42,7 @@ export default function CoreCapabilitiesSection() {
 
   return (
     <section className="section-container">
-      <div className="space-y-6">
+      <div className="space-y-6 py-6">
         <Badge label="KEY FEATURES" />
 
         <motion.h2
@@ -68,9 +68,10 @@ export default function CoreCapabilitiesSection() {
         items={capabilityData}
         active={active}
         onSelect={setActive}
+        itemPaddingY="py-8"
         showImage
+        showRunnerLine={true}
         autoNext={true}
-        wrapperClassName="capabilities-grid"
       />
     </section>
   );

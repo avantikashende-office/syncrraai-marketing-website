@@ -89,7 +89,7 @@ export default function BusinessChallengesSection() {
       style={{ height: isMobile ? "auto" : `${items.length * 100}vh` }}
     >
       <section className="challenges-section">
-          {/* <div className="glow-background" /> */}
+          <div className="glow-background" />
 
         {/* Glow ONLY in center */}
         {/* <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">

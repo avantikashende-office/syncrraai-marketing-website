@@ -124,6 +124,7 @@ export function StrategicBenefitsSection() {
           speed={60}
         />
       </div>
+      <div className="section-container"></div>
     </section>
   );
 }

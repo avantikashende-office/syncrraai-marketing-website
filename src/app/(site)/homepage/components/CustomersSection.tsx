@@ -55,10 +55,10 @@ const CustomersSection = () => {
       <section className="section-container space-y-8">
         <Badge label="CUSTOMERS" />
 
-        <div className="flex  justify-between w-full">
+        <div className="flex flex-col gap-6 w-full md:flex-row md:justify-between md:items-start">
           {/* Left: Title */}
           <motion.h1
-            className="title-side gradient-gray-text max-w-[60%]"
+            className="title-side gradient-gray-text"
             variants={fadeInMain}
             initial="initial"
             whileInView="animate"

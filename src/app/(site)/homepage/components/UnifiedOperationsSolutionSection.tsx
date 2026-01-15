@@ -3,8 +3,8 @@
 import Badge from "@/components/ui/Badge";
 import { motion } from "framer-motion";
 import { fadeInMain } from "@/utils/animations";
-import { Briefcase, Sparkles } from "lucide-react";
 import { InlineNavigation } from "@/components/ui/INlineNavigation";
+import { Browsers, Sparkle } from "@phosphor-icons/react";
 
 export function UnifiedOperationsSolutionSection() {
   return (
@@ -40,7 +40,7 @@ export function UnifiedOperationsSolutionSection() {
             {
               id: "erp",
               label: "Syncra ERP",
-              icon: <Briefcase className="w-[90%] h-[90%]" />,
+              icon: <Browsers fill="white" size={25}/>,
               content: {
                 title: "A Modern, AI-First ERP Built for Manufacturing",
                 image: "/homepage/1.png",
@@ -55,7 +55,7 @@ export function UnifiedOperationsSolutionSection() {
             {
               id: "ai",
               label: "Syncrra AI Layer",
-              icon: <Sparkles className="w-[90%] h-[90%]" />,
+              icon: <Sparkle fill="white" size={25}/>,
               content: {
                 title: "AI Layer on Top of Your Existing ERP",
                 image: "/homepage/2.png",

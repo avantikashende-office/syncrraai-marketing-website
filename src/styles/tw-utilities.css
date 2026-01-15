@@ -247,7 +247,7 @@
     opacity: 1;
   } */
 
-   .glow-background {
+  .glow-background {
     @apply absolute inset-0 pointer-events-none -z-10;
     background: radial-gradient(
       circle at center,
@@ -431,7 +431,7 @@
   }
 
   .accordion-line {
-    @apply h-full w-full bg-green-500;
+    @apply relative h-full w-full overflow-hidden bg-gradient-to-r to-green-300 via-green-600 from-green-900;
   }
 
   .accordion-circle {
@@ -443,7 +443,7 @@
           border-1
           border-green-300
           rounded-full
-          bg-green-500
+          bg-green-300
           shadow-[0_0_8px_rgba(34,197,94,0.7)];
   }
   /* FAQ Specific */
@@ -999,64 +999,61 @@
   /* ============================= */
   /* GRID                          */
   /* ============================= */
-
   .ai-grid {
-    @apply grid grid-cols-1 gap-7;
+    @apply grid grid-cols-1 gap-5 md:gap-6 lg:gap-6;
   }
 
   .ai-grid-row-2col {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-7 items-stretch;
+    /* 2-col starts at md, not lg */
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch;
   }
 
   .ai-grid-inner {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-7 h-full;
+    /* always stacked on md+, only split in sm (optional) */
+    @apply grid grid-cols-1 gap-5 md:gap-6 h-full;
   }
 
   .ai-grid-row-split {
-    @apply grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-7 items-stretch;
+    /* bottom row becomes 2-col at md too */
+    @apply grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 md:gap-6 items-stretch;
   }
 
-  /* ============================= */
-  /* CARD                          */
-  /* ============================= */
-
+  /* CARD */
   .ai-card {
-    @apply flex flex-col h-full p-7 overflow-hidden;
+    @apply flex flex-col h-full p-2 sm:p-3 overflow-hidden rounded-3xl;
   }
 
+  /* IMAGE WRAPPERS — 4 STRUCTURES */
   /* ============================= */
-  /* IMAGE VARIANTS                */
-  /* ============================= */
+  /* Desktop/Laptop default ratios (KEEP these) */
 
-  /* Large / Dominant cards (1st + last) */
-  .ai-card-image-lg {
-    @apply relative w-full grow overflow-hidden rounded-2xl;
+  /* 1) TOP LEFT: Smart Operations */
+  .ai-card-image-hero {
+    @apply relative w-full overflow-hidden rounded-md aspect-[7/7] sm:aspect-[7/7];
   }
 
-  /* Medium dashboard cards */
-  .ai-card-image-md {
-    @apply relative w-full aspect-[16/9] overflow-hidden rounded-2xl;
+  /* 2) RIGHT STACK */
+  .ai-card-image-stack {
+    @apply relative w-full overflow-hidden rounded-md aspect-[16/9] sm:aspect-[29/10];
   }
 
-  /* Compact cards (stacked ones) */
-  .ai-card-image-sm {
-    @apply relative w-full aspect-[4/3] overflow-hidden rounded-2xl;
+  /* 3) BOTTOM LEFT wide */
+  .ai-card-image-wide {
+    @apply relative w-full overflow-hidden rounded-md aspect-[16/9] sm:aspect-[20/9];
   }
 
-  /* ============================= */
-  /* TEXT                          */
-  /* ============================= */
+  /* 4) BOTTOM RIGHT stat */
+  .ai-card-image-stat {
+    @apply relative w-full overflow-hidden rounded-md aspect-[16/10] sm:aspect-[3/2];
+  }
 
+  /* TEXT */
   .ai-card-text {
-    @apply mt-7 space-y-2;
+    @apply px-3 py-2;
   }
 
   .ai-card-title {
-    @apply text-xl sm:text-2xl font-semibold text-white;
-  }
-
-  .ai-card-subtitle {
-    @apply text-sm sm:text-base text-white/60 max-w-[95%];
+    @apply text-lg sm:text-lg font-medium text-white tracking-tight;
   }
 
   /* Business Challenges */
@@ -1088,7 +1085,7 @@
   }
   .challenges-scroll-items {
     position: relative;
-    color: #26be4cc2;
+    color: #000000c2;
     width: clamp(200px, 40vw, 550px);
     height: clamp(300px, 40vh, 500px);
     display: flex;
@@ -1284,14 +1281,20 @@
   }
   /* Integrations Section */
   .integrations-image-wrapper {
-    @apply flex justify-center items-center;
-    margin-block: clamp(3rem, 8vh, 4rem);
+    @apply flex justify-center items-center w-full;
   }
 
   .integrations-image {
-    @apply rounded-xl flex border w-full object-cover;
+    @apply relative w-full overflow-hidden rounded-xl;
     max-width: min(1123px, 95vw);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    aspect-ratio: 20 / 9;
+  }
+
+  /* Slightly taller ratio on mobile so it doesn’t look flat */
+  @media (max-width: 640px) {
+    .integrations-image {
+      aspect-ratio: 4 / 3;
+    }
   }
 
   /* Strategic Benefits */
@@ -1316,6 +1319,11 @@
 
   .split-pane {
     @apply w-full space-y-8 px-[clamp(1rem,5vw,3rem)] py-[clamp(3rem,8vh,6rem)]
+         lg:w-1/2;
+  }
+
+  .split-pane-left-aligned {
+    @apply w-full space-y-8 pr-[clamp(1rem,5vw,3rem)] py-[clamp(3rem,8vh,6rem)]
          lg:w-1/2;
   }
 
@@ -1658,18 +1666,19 @@
 
 /* Icon */
 .inline-nav-icon {
-  @apply relative z-10 rounded-full flex items-center justify-center
+  @apply relative z-10 rounded-full flex items-center justify-center hover:cursor-pointer
          bg-gradient-to-tr from-[#1C984B] to-[#171717]
          w-[3.2rem] h-[3.2rem]
          sm:w-[3.6rem] sm:h-[3.6rem]
          md:w-[4rem] md:h-[4rem]
          will-change-transform;
+  ;
 }
 
 /* Label */
 .inline-nav-label {
   @apply text-white text-center text-sm sm:text-base md:text-lg
-         transition-all duration-200;
+         transition-all duration-200          hover:cursor-pointer;
 }
 
 /* Indicator */

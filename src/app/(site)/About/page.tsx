@@ -13,9 +13,8 @@ export default function About() {
     <>
       <HeroSection />
       <Journey />
-      <MeetThePeople />
+      {/* <MeetThePeople /> */}
       <JoinOurTeam />
-      <FAQSection />
       <TryForFreeSection />
     </>
   );

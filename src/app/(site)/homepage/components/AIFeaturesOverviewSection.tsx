@@ -1,7 +1,9 @@
+"use client";
+
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
 import EmptyCard from "@/components/ui/EmptyCard";
-import { ArrowUpRight } from "lucide-react";
+import { fadeInMain } from "@/utils/animations";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function AIFeaturesOverviewSection() {
@@ -11,22 +13,32 @@ export function AIFeaturesOverviewSection() {
       <div className="space-y-8">
         <Badge label="AI FEATURES" />
 
-        <h1 className="title-side gradient-gray-text">
-          One Platform.
-          <br />
-          Infinite Possibilities.
-        </h1>
-
-        <div className="flex items-start justify-between gap-7">
-          <p className="subtitle-side">
-            Designed to simplify complexities and empower data-backed decisions,
+        <div className="flex flex-col gap-6 w-full md:flex-row md:justify-between md:items-start">
+          {/* Left: Title */}
+          <motion.h1
+            className="title-side gradient-gray-text md:w-1/2 "
+            variants={fadeInMain}
+            initial="initial"
+            whileInView="animate"
+          >
+            One Platform.
             <br />
-            it is your single source of truth for smarter business growth.
-          </p>
+            Infinite Possibilities.
+          </motion.h1>
 
-          <Button variant="outline">
-            Explore More <ArrowUpRight size={20} />
-          </Button>
+          {/* Right: Text */}
+          <div className="md:w-1/2">
+            <motion.p
+              className="subtitle-side"
+              variants={fadeInMain}
+              initial="initial"
+              whileInView="animate"
+            >
+              Designed to simplify complexities and empower data-backed
+              decisions, it is your single source of truth for smarter business
+              growth.
+            </motion.p>
+          </div>
         </div>
       </div>
 
@@ -35,9 +47,9 @@ export function AIFeaturesOverviewSection() {
         <div className="ai-grid-row-2col">
           {/* LARGE CARD */}
           <EmptyCard className="ai-card">
-            <div className="ai-card-image-lg">
+            <div className="ai-card-image-hero">
               <Image
-                src="/homepage/so.png"
+                src="/homepage/so.gif"
                 alt="Smart Operations"
                 fill
                 className="object-cover"
@@ -46,7 +58,7 @@ export function AIFeaturesOverviewSection() {
 
             <div className="ai-card-text">
               <h4 className="ai-card-title">Smart Operations</h4>
-              <p className="ai-card-subtitle">
+              <p className="text-subdescription">
                 AI-driven workflows across manufacturing operations
               </p>
             </div>
@@ -55,9 +67,9 @@ export function AIFeaturesOverviewSection() {
           {/* RIGHT STACK */}
           <div className="ai-grid-inner">
             <EmptyCard className="ai-card">
-              <div className="ai-card-image-sm">
+              <div className="ai-card-image-stack">
                 <Image
-                  src="/homepage/api.png"
+                  src="/homepage/api.svg"
                   alt="AI Powered Insights"
                   fill
                   className="object-cover"
@@ -66,16 +78,16 @@ export function AIFeaturesOverviewSection() {
 
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Powered Insights</h4>
-                <p className="ai-card-subtitle">
+                <p className="text-subdescription">
                   Instant insights from real-time operational data
                 </p>
               </div>
             </EmptyCard>
 
             <EmptyCard className="ai-card">
-              <div className="ai-card-image-sm">
+              <div className="ai-card-image-stack">
                 <Image
-                  src="/homepage/af.png"
+                  src="/homepage/aiF.svg"
                   alt="AI Forecasting"
                   fill
                   className="object-cover"
@@ -84,7 +96,7 @@ export function AIFeaturesOverviewSection() {
 
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Forecasting</h4>
-                <p className="ai-card-subtitle">
+                <p className="text-subdescription">
                   Predict demand, risks, and performance trends
                 </p>
               </div>
@@ -95,9 +107,9 @@ export function AIFeaturesOverviewSection() {
         {/* BOTTOM ROW */}
         <div className="ai-grid-row-split">
           <EmptyCard className="ai-card">
-            <div className="ai-card-image-md">
+            <div className="ai-card-image-wide">
               <Image
-                src="/homepage/aa.png"
+                src="/homepage/aa.svg"
                 alt="Agentic AI"
                 fill
                 className="object-cover"
@@ -106,7 +118,7 @@ export function AIFeaturesOverviewSection() {
 
             <div className="ai-card-text">
               <h4 className="ai-card-title">Agentic AI</h4>
-              <p className="ai-card-subtitle">
+              <p className="text-subdescription">
                 Ask questions. Get actions, insights instantly
               </p>
             </div>
@@ -114,9 +126,9 @@ export function AIFeaturesOverviewSection() {
 
           {/* LARGE CARD */}
           <EmptyCard className="ai-card">
-            <div className="ai-card-image-lg">
+            <div className="ai-card-image-stat">
               <Image
-                src="/homepage/99.png"
+                src="/homepage/989.svg"
                 alt="98% Faster Automation"
                 fill
                 className="object-cover"
@@ -125,7 +137,7 @@ export function AIFeaturesOverviewSection() {
 
             <div className="ai-card-text">
               <h4 className="ai-card-title">98% Faster Automation</h4>
-              <p className="ai-card-subtitle">
+              <p className="text-subdescription">
                 AI-powered automation at operational scale
               </p>
             </div>
