@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -37,7 +38,14 @@ export default function HeroSection() {
             initial="initial"
             whileInView="animate"
           >
-            <Button>Get Started</Button>
+            <Link
+              href="https://app.syncrra.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>Get Started</Button>
+            </Link>
+
             <Button variant="secondary">Book a Demo</Button>
           </motion.div>
         </div>

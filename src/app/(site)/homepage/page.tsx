@@ -1,9 +1,5 @@
-
- 
-
-  export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
-
 
 import StatsSection from "./components/StatsSection";
 import BusinessChallengesSection from "./components/BusinessChallengesSection";
@@ -21,24 +17,24 @@ import TryForFreeSection from "@/components/shared/TryForFreeSection";
 import PricingCardSection from "./components/PricingCardsSection";
 import ProcessSection from "./components/ProcessSection";
 export default function HomePage() {
-    return (
-        <>
-            <Herosection />
-            <StatsSection />
-            <BusinessChallengesSection />
-            <ProcessSection />
-            <CoreCapabilitiesSection />
-            <AIFeaturesOverviewSection />
-             <StrategicBenefitsSection />
-            <SeamlessIntegrationsSection />
-            <UnifiedOperationsSolutionSection />
-            <ComparizonSection />
-            <PricingCardSection />
-            <CustomersSection />
-            <FAQSection />
-            {/* <YourDataYourControlSection /> */}
-            <TryForFreeSection />
-            
-        </>
-    );
+  return (
+    <>
+      <Herosection />
+      <StatsSection />
+      <BusinessChallengesSection />
+      <ProcessSection />
+      <CoreCapabilitiesSection />
+      <AIFeaturesOverviewSection />
+      <StrategicBenefitsSection />
+      <UnifiedOperationsSolutionSection />
+      <SeamlessIntegrationsSection />
+
+      <ComparizonSection />
+      <PricingCardSection />
+      <CustomersSection />
+      <FAQSection />
+      {/* <YourDataYourControlSection /> */}
+      <TryForFreeSection />
+    </>
+  );
 }

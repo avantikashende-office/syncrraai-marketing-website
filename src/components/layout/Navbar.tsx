@@ -88,27 +88,33 @@ export default function Navbar() {
                 { label: "Enterprise level", href: "/enterprise-level" },
               ]}
             />
-            <Link href="/pricing" className="nav-link">
+            {/* <Link href="/pricing" className="nav-link">
               Pricing
-            </Link>
+            </Link> */}
           </div>
         </div>
 
         {/* Right CTA */}
         <div className="nav-cta-group ml-auto">
-          <select
+          {/* <select
             value={i18n.language}
             onChange={(e) => i18n.changeLanguage(e.target.value)}
             className="nav-select bg-transparent"
           >
             <option value="en">EN</option>
             <option value="hi">हि</option>
-          </select>
+          </select> */}
 
           <Link href="/login" className="nav-link text-sm">
             Login
           </Link>
-          <Button variant="primary">Start Free Trial</Button>
+          <Link
+            href="https://app.syncrra.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Start Free Trial</Button>
+          </Link>
         </div>
       </motion.nav>
     </header>

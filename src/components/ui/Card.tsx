@@ -21,9 +21,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`benefit-card-wrapper group ${
-        imageIcon ? "card-base" : ""
-      }`}
+      className={`benefit-card-wrapper group ${imageIcon ? "card-base" : ""}`}
     >
       {!imageIcon && !buttonLabel && <div className="card-glow" />}
       {/*   OPTIONAL - ICON / IMAGE   */}
@@ -37,20 +35,22 @@ export default function Card({
         </div>
       ) : null}
 
-      {/* Title */}
-      <h3 className="card-text-title">{title}</h3>
+      <div className="card-content-items">
+        {/* Title */}
+        <h3 className="card-text-title">{title}</h3>
 
-      {/* Description */}
-      <p className="card-text-description">{description}</p>
+        {/* Description */}
+        <p className="card-text-description">{description}</p>
 
-      {/* Optional */}
-      {buttonLabel && (
-        <div className="mt-4">
-          <button onClick={buttonOnClick} className="card-btn">
-            {buttonLabel} <ArrowUpRight className="ml-1 w-4 h-4" />
-          </button>
-        </div>
-      )}
+        {/* Optional */}
+        {buttonLabel && (
+          <div>
+            <button onClick={buttonOnClick} className="card-btn">
+              {buttonLabel} <ArrowUpRight className="ml-1 w-4 h-4" />
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

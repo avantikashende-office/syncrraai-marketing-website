@@ -125,30 +125,31 @@ const CustomersSection = () => {
 
               {/* MIDDLE COLUMN */}
               <div className="customer-case-middle">
-                {/* TOP ROW: Logo + Title */}
-                <div className="customer-case-logo-row">
-                  <Image
-                    src="/img/ClassicLogo.png"
-                    alt="Customer Image"
-                    height={250}
-                    width={250}
-                    className="customer-case-logo"
-                  />
-                  <motion.h2
-                    className="customer-case-title"
-                    variants={fadeInMain}
-                    initial="initial"
-                    whileInView="animate"
-                  >
-                    Classic Roof
-                  </motion.h2>
-                </div>
+                <div className="customer-case-middle-top">
+                  <div className="customer-case-logo-row">
+                    <Image
+                      src="/img/ClassicLogo.png"
+                      alt="Customer Image"
+                      height={250}
+                      width={250}
+                      className="customer-case-logo"
+                    />
+                    <motion.h2
+                      className="customer-case-title"
+                      variants={fadeInMain}
+                      initial="initial"
+                      whileInView="animate"
+                    >
+                      Classic Roof
+                    </motion.h2>
+                  </div>
 
-                {/* BOTTOM BUTTON (right aligned) */}
-                <div className="customer-case-button-row">
-                  <Button variant="secondary">
-                    View Case Study <ChevronRight className="ml-2" size={20} />
-                  </Button>
+                  <div className="customer-case-button-row">
+                    <Button variant="secondary" className="customer-case-btn">
+                      View Case Study{" "}
+                      <ChevronRight className="ml-2" size={20} />
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -165,10 +166,11 @@ const CustomersSection = () => {
             </div>
           </EmptyCard>
 
-          <div className="mt-25">
-            <EmptyCard className="empty-card-black relative overflow-visible">
-              <div className="grid grid-cols-2">
-                <div className="testimonial-card">
+          <div className="mt-30">
+            <EmptyCard className="empty-card-black relative overflow-hidden md:overflow-visible">
+              <div className="grid grid-cols-1 md:grid-cols-2  md:gap-10">
+                {/* LEFT */}
+                <div className="testimonial-card order-1">
                   <div className="customer-testimonial-header">
                     <Settings />
                     <motion.h3
@@ -196,13 +198,18 @@ const CustomersSection = () => {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="relative h-full overflow-visible">
+                <div className="relative order-2 flex justify-center md:justify-end">
                   <Image
                     src="/img/UserImage.png"
                     alt="User"
                     width={720}
                     height={720}
-                    className="absolute bottom-0 right-0 w-auto h-[140%] object-cover object-bottom"
+                    className="
+            w-[240px] sm:w-[320px] md:w-auto
+            h-auto md:h-[140%]
+            object-cover object-bottom
+            md:absolute md:bottom-0 md:right-0
+          "
                   />
                 </div>
               </div>

@@ -15,12 +15,12 @@ export default function ProductOverview() {
   return (
     <>
       <Herosection />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <HowItWorks />
       <ManufacturingAsOne />
       <StrategicBenefitsSection />
-      <AllInOne />
-      <TrustedBy />
+      {/* <AllInOne /> */}
+      {/* <TrustedBy /> */}
       <FAQSection />
       <TryForFreeSection />
     </>

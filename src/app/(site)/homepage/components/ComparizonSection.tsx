@@ -9,35 +9,35 @@ const ComparizonSection = () => {
     {
       icon: <Check size={22} />,
       text: "Role-based dashboards built for every function",
-      description:
-        "Each user sees exactly what they need, based on role, responsibility, and approvals.",
+      // description:
+      //   "Each user sees exactly what they need, based on role, responsibility, and approvals.",
       showDivider: true,
     },
     {
       icon: <Check size={22} />,
       text: "Agentic AI that generates insights and reports on demand",
-      description:
-        "Ask questions, analyse trends, and get answers instantly without manual reporting.",
+      // description:
+      //   "Ask questions, analyse trends, and get answers instantly without manual reporting.",
       showDivider: true,
     },
     {
       icon: <Check size={22} />,
       text: "AI-driven demand, risk, and downtime forecasting",
-      description:
-        "Anticipate issues before they impact production or delivery timelines.",
+      // description:
+      //   "Anticipate issues before they impact production or delivery timelines.",
       showDivider: true,
     },
     {
       icon: <Check size={22} />,
       text: "Scrap, rejection, and quality analytics built into workflows",
-      description: "Identify root causes early and prevent repeat losses.",
+      // description: "Identify root causes early and prevent repeat losses.",
       showDivider: true,
     },
     {
       icon: <Check size={22} />,
       text: "Fast onboarding without heavy customisation",
-      description:
-        "Designed to adapt to your operations, not the other way around.",
+      // description:
+      //   "Designed to adapt to your operations, not the other way around.",
     },
   ];
 
@@ -45,34 +45,34 @@ const ComparizonSection = () => {
     {
       icon: <X size={22} />,
       text: "Limited collaboration across departments",
-      description:
-        "Data remains siloed, forcing teams to rely on manual coordination.",
+      // description:
+      //   "Data remains siloed, forcing teams to rely on manual coordination.",
       showDivider: true,
     },
     {
       icon: <X size={22} />,
       text: "Rigid and hard-to-scale systems",
-      description:
-        "Changes often require costly customisation and long implementation cycles.",
+      // description:
+      //   "Changes often require costly customisation and long implementation cycles.",
       showDivider: true,
     },
     {
       icon: <X size={22} />,
       text: "Basic dashboards with delayed insights",
-      description:
-        "Reporting is static and disconnected from real-time operations.",
+      // description:
+      //   "Reporting is static and disconnected from real-time operations.",
       showDivider: true,
     },
     {
       icon: <X size={22} />,
       text: "Minimal or reactive analytics",
-      description: "Insights arrive too late to influence outcomes.",
+      // description: "Insights arrive too late to influence outcomes.",
       showDivider: true,
     },
     {
       icon: <X size={22} />,
       text: "Outdated and complex user experiences",
-      description: "High training effort and low day-to-day adoption.",
+      // description: "High training effort and low day-to-day adoption.",
     },
   ];
 

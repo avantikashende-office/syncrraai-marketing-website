@@ -44,8 +44,8 @@ export default function BusinessChallengesSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
-  const rawIndex = useMotionValue(0);
-  const [activeIdx, setActiveIdx] = useState(0);
+  const rawIndex = useMotionValue(3);
+  const [activeIdx, setActiveIdx] = useState(3);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -85,11 +85,20 @@ export default function BusinessChallengesSection() {
   return (
     <div
       ref={wrapperRef}
-      className="challenges-wrapper"
-      style={{ height: isMobile ? "auto" : `${items.length * 100}vh` }}
+      className="challenges-wrapper  bg-no-repeat bg-center "
+      style={{
+        height: isMobile ? "auto" : `${items.length * 100}vh`,
+        // backgroundImage: "url('/homepage/greenCricleBG.svg')",
+        backgroundSize: "1200px",
+      }}
     >
-      <section className="challenges-section">
-          <div className="glow-background" />
+      <section
+        className="
+    challenges-section
+   
+  "
+      >
+        <div className="glow-background " />
 
         {/* Glow ONLY in center */}
         {/* <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">

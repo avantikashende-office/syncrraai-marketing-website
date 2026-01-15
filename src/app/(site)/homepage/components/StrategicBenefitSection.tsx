@@ -8,45 +8,43 @@ const ScrollingBadges = dynamic(
   () => import("@/components/ui/ScrollingBadges"),
   { ssr: false }
 );
+import { Workflow, LayoutGrid, Shield, Zap, LucideIcon } from "lucide-react";
 import {
-  Workflow,
-  LayoutGrid,
-  Rocket,
-  Shield,
-  Settings,
-  Zap,
-  LucideIcon,
-  Smile,
-  ChartColumnBig,
-} from "lucide-react";
+  ChartBar,
+  Gear,
+  LegoSmiley,
+  Lightning,
+  Lock,
+  RocketLaunch,
+} from "@phosphor-icons/react";
 
 export function StrategicBenefitsSection() {
   const iconMap: Record<string, LucideIcon> = {
     workflow: Workflow,
     grid: LayoutGrid,
-    smile: Smile,
-    settings: Settings,
-    chart: ChartColumnBig,
-    rocket: Rocket,
-    shield: Shield,
-    zap: Zap,
+    logoSmile: LegoSmiley,
+    gear: Gear,
+    chartBar: ChartBar,
+    rocket: RocketLaunch,
+    lock: Lock,
+    lightning: Lightning,
   };
 
   const BENEFITS = [
     {
-      icon: "smile",
+      icon: "logoSmile",
       title: "AI-Driven Insights",
       description:
         "Transform raw data into real-time dashboards and reports. Let AI generate analytics that help you make smarter, faster decisions.",
     },
     {
-      icon: "settings",
+      icon: "gear",
       title: "Workflow Automation",
       description:
         "Streamline approvals, tasks, and reporting with intelligent automation reducing manual effort and boosting operational speed.",
     },
     {
-      icon: "chart",
+      icon: "chartBar",
       title: "Customizable Dashboards",
       description:
         "Design your workspace your way. Build personalized dashboards and visual KPIs tailored to your business metrics.",
@@ -58,13 +56,13 @@ export function StrategicBenefitsSection() {
         "Whether you're a startup or enterprise, SyncRRA grows with your business — adapting to your evolving workflows and needs.",
     },
     {
-      icon: "shield",
+      icon: "lock",
       title: "Secure and Centralized",
-      description:   
+      description:
         "Keep your operations safe and unified with enterprise-grade data security and centralized control.",
     },
     {
-      icon: "zap",
+      icon: "lightning",
       title: "Maximum Efficiency",
       description:
         "Maximum efficiency with integrated solutions that eliminate bottlenecks, saving time and costs.",
@@ -124,7 +122,6 @@ export function StrategicBenefitsSection() {
           speed={60}
         />
       </div>
-      <div className="section-container"></div>
     </section>
   );
 }

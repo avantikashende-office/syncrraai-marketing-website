@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function Herosection() {
   const { t } = useTranslation();
@@ -25,10 +26,7 @@ export default function Herosection() {
   });
 
   return (
-    <section
-      ref={ref}
-      className="hero-bg"
-    >
+    <section ref={ref} className="hero-bg">
       <motion.div
         className="hero-dashboard"
         style={{
@@ -44,7 +42,7 @@ export default function Herosection() {
         />
       </motion.div>
 
-      <div className="hero-layout hero-top-space relative z-10">
+      <div className="hero-layout   relative z-10">
         <Badge
           label={t("hero.badge")}
           icon={<Sparkles fill="white" size={18} />}
@@ -58,7 +56,13 @@ export default function Herosection() {
         <p className="subtitle-center">{t("hero.description")}</p>
 
         <div className="hero-button-group pointer-events-auto">
-          <Button variant="primary">{t("hero.getStarted")}</Button>
+          <Link
+            href="https://app.syncrra.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Get Started</Button>
+          </Link>
           <Button variant="secondary">{t("hero.bookDemo")}</Button>
         </div>
       </div>

@@ -6,7 +6,7 @@ import React from "react";
 interface FeatureItem {
   icon?: React.ReactNode;
   text: string;
-  description: string;
+  description?: string;
   showDivider?: boolean;
 }
 

@@ -4,7 +4,6 @@ import ApptwareLogo from "../../../public/Logos/ApptwareLogo";
 import FooterLine from "../../../public/Logos/FooterLine";
 import Logo from "../../../public/Logos/Logo";
 import Syncrra from "../../../public/Logos/Syncrra";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { NewsletterCard } from "./NewsletterCard";
 import Link from "next/link";
 
@@ -27,7 +26,7 @@ export function Footer() {
             </Link>
           </div>
 
-          <div className="footer-grid-icons">
+          {/* <div className="footer-grid-icons">
             <div className="footer-icon">
               <Instagram size={18} />
             </div>
@@ -43,7 +42,7 @@ export function Footer() {
             <div className="footer-icon">
               <Twitter fill="#171717" size={18} />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-grid">
@@ -52,13 +51,14 @@ export function Footer() {
             <p className="footer-col-title">Pages</p>
             <ul className="space-y-1">
               <li>
-                <span className="footer-link">About Us</span>
+                <Link href="/features" className="footer-link">
+                  Features
+                </Link>
               </li>
               <li>
-                <span className="footer-link">Features</span>
-              </li>
-              <li>
-                <span className="footer-link">Product</span>
+                <Link href="/overview" className="footer-link">
+                  Product
+                </Link>
               </li>
               <li>
                 <span className="footer-link">Pricing</span>
@@ -71,19 +71,32 @@ export function Footer() {
             <p className="footer-col-title">Company</p>
             <ul className="space-y-1">
               <li>
-                <span className="footer-link">Careers</span>
+                <Link
+                  className="footer-link"
+                  href="https://apptware.com/careers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Careers
+                </Link>
               </li>
               <li>
-                <span className="footer-link">Guide</span>
+                <Link href="/about" className="footer-link">
+                  About Us
+                </Link>
               </li>
               <li>
-                <span className="footer-link">Startup Program</span>
+                <li>
+                  <Link href="/blog" className="footer-link">
+                    Blog
+                  </Link>
+                </li>
               </li>
             </ul>
           </div>
 
           {/* Support */}
-          <div>
+          {/* <div>
             <p className="footer-col-title">Support</p>
             <ul className="space-y-1">
               <li>
@@ -99,7 +112,7 @@ export function Footer() {
                 <span className="footer-link">System Status</span>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Resources */}
           <div>
@@ -108,9 +121,7 @@ export function Footer() {
               <li>
                 <span className="footer-link">FAQ</span>
               </li>
-              <li>
-                <span className="footer-link">Blog</span>
-              </li>
+
               <li>
                 <span className="footer-link">Privacy Policy</span>
               </li>
@@ -120,8 +131,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter column */}
-          <NewsletterCard />
+          {/* <NewsletterCard /> */}
         </div>
 
         <div className="flex justify-center items-center w-full max-w-4xl mx-auto">

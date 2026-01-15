@@ -11,27 +11,17 @@ export default function HeroSection() {
       <div className="hero-top-space  ">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
           <div className="space-y-8">
-            <div className="space-y-2">
-              <motion.h1
-                className="gradient-gray-text title-side font-bold"
-                variants={fadeInMain}
-                initial="initial"
-                whileInView="animate"
-              >
-                One Platform.
-                <br />
-                Every Manufacturing
-              </motion.h1>
-
-              <motion.h1
-                className="gradient-text title-side "
-                variants={fadeInMain}
-                initial="initial"
-                whileInView="animate"
-              >
-                Workflow.
-              </motion.h1>
-            </div>
+            <motion.h1
+              className="gradient-gray-text title-side"
+              variants={fadeInMain}
+              initial="initial"
+              whileInView="animate"
+            >
+              One Platform.
+              <br />
+              Every Manufacturing
+              <span className="gradient-text title-side "> Workflow.</span>
+            </motion.h1>
 
             <motion.p
               className="subtitle-side"
@@ -40,7 +30,7 @@ export default function HeroSection() {
               whileInView="animate"
             >
               Empower your enterprise with an AI-powered ERP that learns,
-              adapts, and evolves — simplifying complexity into seamless motion.
+              adapts, and evolves - simplifying complexity into seamless motion.
             </motion.p>
 
             <motion.div
@@ -60,14 +50,11 @@ export default function HeroSection() {
             initial="initial"
             whileInView="animate"
           >
-            {/* GREEN GLOW */}
-            
-
             {/* IMAGE */}
             <Image
               src="/product-overview/po-hero.svg"
               alt="Dashboard preview"
-              width={820}
+              width={1220}
               height={820}
               className="relative z-10 object-contain"
               priority

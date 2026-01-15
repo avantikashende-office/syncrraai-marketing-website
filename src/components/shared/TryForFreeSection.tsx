@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import { motion } from "framer-motion";
 import { fadeInMain } from "@/utils/animations";
 import Image from "next/image";
+import Link from "next/link";
 
 const TryForFreeSection = () => {
   return (
@@ -38,9 +39,15 @@ const TryForFreeSection = () => {
               operations today.
             </motion.p>
 
-            <Button variant="primary" className="w-fit">
-              Get Started
-            </Button>
+            <Link
+              href="https://app.syncrra.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="primary" className="w-fit">
+                Get Started
+              </Button>
+            </Link>
           </div>
           <div />
         </div>
