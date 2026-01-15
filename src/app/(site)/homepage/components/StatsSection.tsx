@@ -11,7 +11,7 @@ const Counter = dynamic(() => import("@/components/ui/Counter"), {
 
 export default function StatsSection() {
   return (
-    <section className="section-container">
+    <section className="section-container relative z-10">
       <motion.div
         className="stats-card "
         variants={fadeInMain}

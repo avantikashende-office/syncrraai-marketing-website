@@ -89,8 +89,21 @@ export default function BusinessChallengesSection() {
       style={{ height: isMobile ? "auto" : `${items.length * 100}vh` }}
     >
       <section className="challenges-section">
-        <div className="glow-background" />
+          {/* <div className="glow-background" /> */}
 
+        {/* Glow ONLY in center */}
+        {/* <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+          <img
+            src="/homepage/greenCricleBG.svg"
+            alt=""
+            className="
+    w-[900px] sm:w-[1200px] md:w-[1500px]
+    max-w-none opacity-100
+    [mask-image:radial-gradient(circle,black_55%,transparent_75%)]
+    [-webkit-mask-image:radial-gradient(circle,black_55%,transparent_75%)]
+  "
+          />
+        </div> */}
         <div className="challenges-content">
           {!isMobile ? (
             <motion.span

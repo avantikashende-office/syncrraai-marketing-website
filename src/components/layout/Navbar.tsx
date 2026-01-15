@@ -59,23 +59,16 @@ export default function Navbar() {
                   href: "/features",
                   icon: <Brain />,
                 },
-                {
-                  label: "Integrations",
-                  href: "/integrations",
-                  icon: <Plug />,
-                },
+                // {
+                //   label: "Integrations",
+                //   href: "/integrations",
+                //   icon: <Plug />,
+                // },
               ]}
             />
+
             <NavDropdown
-              title="Solutions"
-              items={[
-                { label: "Small Size Company", href: "/initial-level" },
-                { label: "Mid Size Company", href: "/mid-level" },
-                { label: "Enterprise level", href: "/enterprise-level" },
-              ]}
-            />
-            <NavDropdown
-              title="About Us"
+              title="Company"
               width="w-44"
               items={[
                 { label: "About Us", href: "/about" },
@@ -87,6 +80,14 @@ export default function Navbar() {
               width="w-44"
               items={[{ label: "Help Center", href: "/help" }]}
             /> */}
+            <NavDropdown
+              title="Why Syncrra"
+              items={[
+                { label: "Small Size Company", href: "/initial-level" },
+                { label: "Mid Size Company", href: "/mid-level" },
+                { label: "Enterprise level", href: "/enterprise-level" },
+              ]}
+            />
             <Link href="/pricing" className="nav-link">
               Pricing
             </Link>
