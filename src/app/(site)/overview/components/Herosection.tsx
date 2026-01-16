@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className="section-container">
       <div className="hero-top-space  ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
           <div className="space-y-8">
             <motion.h1
               className="gradient-gray-text title-side"

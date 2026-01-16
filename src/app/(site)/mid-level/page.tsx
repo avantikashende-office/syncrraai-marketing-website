@@ -13,7 +13,7 @@ export default function MidSize() {
       <HeroSection />
       <Testimonial />
       <PainPoints />
-      <TrustedBy />
+            {/* <TrustedBy /> */}
       <TryForFreeSection />
     </>
   );

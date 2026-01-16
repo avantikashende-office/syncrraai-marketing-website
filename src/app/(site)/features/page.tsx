@@ -18,7 +18,7 @@ export default function AIFeatures() {
       <FeaturesSection />
       <PromiseToManufacturer />
       <FAQSection />
-      <TrustedBy />
+            {/* <TrustedBy /> */}
       <TryForFreeSection />
     </>
   );

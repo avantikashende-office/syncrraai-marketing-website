@@ -13,7 +13,7 @@ export default function Enterprise() {
       <HeroSection />
       <Testimonial />
       <PainPoints />
-      <TrustedBy />
+      {/* <TrustedBy /> */}
       <TryForFreeSection />
     </>
   );

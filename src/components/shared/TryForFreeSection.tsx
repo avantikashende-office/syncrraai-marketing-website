@@ -11,7 +11,7 @@ const TryForFreeSection = () => {
     <section className="section-container">
       <div className="relative overflow-hidden rounded-xl">
         <Image
-          src="/img/Tryfree.png"
+          src="/img/Tryfree.svg"
           alt="Syncrra Dashboard Preview"
           fill
           priority

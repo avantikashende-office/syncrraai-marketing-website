@@ -13,7 +13,7 @@ export default function Solutions() {
       <HeroSection />
       <Testimonial />
       <PainPoints />
-      <TrustedBy />
+            {/* <TrustedBy /> */}
       <TryForFreeSection />
     </>
   );

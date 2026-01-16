@@ -1,16 +1,29 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/ui/Button";
 import Logo from "../../../public/Logos/Logo";
 import NavDropdown from "./NavDropdown";
-import { Boxes, Brain, Plug } from "lucide-react";
+import { Boxes, Brain } from "lucide-react";
+import NavMobileView from "./NavMobileView";
+import { List } from "@phosphor-icons/react";
+
+type MobileSection = null | "product" | "company" | "why";
 
 export default function Navbar() {
   const { i18n } = useTranslation();
   const { scrollY } = useScroll();
+
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<MobileSection>(null);
 
   const paddingY = useTransform(scrollY, [0, 100], [34, 16]);
   const background = useTransform(
@@ -20,6 +33,33 @@ export default function Navbar() {
   );
   const blur = useTransform(scrollY, [0, 80], ["blur(0px)", "blur(14px)"]);
   const offsetY = useTransform(scrollY, [0, 80], [0, 20]);
+
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false);
+    setOpenSection(null);
+  };
+
+  const toggleSection = (section: Exclude<MobileSection, null>) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
+
+  const mobileItems = {
+    product: [
+      { label: "Product Overview", href: "/overview" },
+      { label: "AI Features", href: "/features" },
+      // { label: "Integrations", href: "/integrations" }, // future requirement
+    ],
+    company: [
+      { label: "About Us", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      // { label: "Help Center", href: "/help" }, // future requirement
+    ],
+    why: [
+      { label: "Small Size Company", href: "/initial-level" },
+      { label: "Mid Size Company", href: "/mid-level" },
+      { label: "Enterprise level", href: "/enterprise-level" },
+    ],
+  } as const;
 
   return (
     <header className="nav-container">
@@ -40,11 +80,12 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" className="nav-logo-link">
+        <Link href="/" className="nav-logo-link" onClick={closeMobileMenu}>
           <Logo />
         </Link>
-        <div className="flex-1 flex justify-center">
-          {/* Center Links */}
+
+        {/* Desktop Center Links */}
+        <div className="hidden md:flex flex-1 justify-center">
           <div className="nav-links">
             <NavDropdown
               title="Product"
@@ -75,11 +116,13 @@ export default function Navbar() {
                 { label: "Blog", href: "/blog" },
               ]}
             />
+
             {/* <NavDropdown
               title="Resources"
               width="w-44"
               items={[{ label: "Help Center", href: "/help" }]}
             /> */}
+
             <NavDropdown
               title="Why Syncrra"
               items={[
@@ -88,14 +131,15 @@ export default function Navbar() {
                 { label: "Enterprise level", href: "/enterprise-level" },
               ]}
             />
+
             {/* <Link href="/pricing" className="nav-link">
               Pricing
             </Link> */}
           </div>
         </div>
 
-        {/* Right CTA */}
-        <div className="nav-cta-group ml-auto">
+        {/* Desktop Right CTA */}
+        <div className="hidden md:flex nav-cta-group ml-auto">
           {/* <select
             value={i18n.language}
             onChange={(e) => i18n.changeLanguage(e.target.value)}
@@ -108,6 +152,7 @@ export default function Navbar() {
           <Link href="/login" className="nav-link text-sm">
             Login
           </Link>
+
           <Link
             href="https://app.syncrra.ai/"
             target="_blank"
@@ -116,7 +161,42 @@ export default function Navbar() {
             <Button>Start Free Trial</Button>
           </Link>
         </div>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden ml-auto flex items-center gap-3">
+          <Link
+            href="https://app.syncrra.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="text-xl nav-link">Login</span>
+          </Link>
+
+          <button
+            className="p-2  hover:text-green-500 hover:cursor-pointer"
+            onClick={() => {
+              setIsMobileOpen(true);
+              setOpenSection(null);
+            }}
+            aria-label="Open menu"
+          >
+            <List size={22} />
+          </button>
+        </div>
       </motion.nav>
+
+      {/* MOBILE FULLSCREEN PANEL */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <NavMobileView
+            isOpen={isMobileOpen}
+            openSection={openSection}
+            mobileItems={mobileItems}
+            onClose={closeMobileMenu}
+            onToggleSection={toggleSection}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }
