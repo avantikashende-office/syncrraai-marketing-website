@@ -25,7 +25,7 @@ export const SwitchChip: React.FC<SwitchChipProps> = ({
   const shouldShowBadge = showBadge && badgeText && active === "left";
 
   return (
-    <div ref={ref} className="relative flex flex-col items-center w-fit">
+    <div ref={ref} className="switch-chip-wrapper">
       <AnimatePresence>
         {shouldShowBadge && (
           <motion.div
@@ -41,7 +41,7 @@ export const SwitchChip: React.FC<SwitchChipProps> = ({
         )}
       </AnimatePresence>
 
-      <div className="flex items-center bg-transparent border border-[#404040] rounded-full px-1 py-1 relative transition-all w-fit overflow-hidden">
+      <div className="switch-chip-container ">
         <div
           className="
             absolute top-1 bottom-1 w-1/2 rounded-full 
@@ -55,21 +55,13 @@ export const SwitchChip: React.FC<SwitchChipProps> = ({
 
         <button
           onClick={() => onChange("left")}
-          className={`
-            relative z-10 text-sm font-medium px-5 py-2 rounded-full transition-all hover:cursor-pointer
-            ${active === "left" ? "text-white" : "text-[#737373]"}
-          `}
-        >
+          className={`switch-chip-left-btn ${active === "left" ? "text-white" : "text-[#737373]"}`}>
           {leftLabel}
         </button>
 
         <button
           onClick={() => onChange("right")}
-          className={`
-            relative z-10 text-sm font-medium px-5 py-2 rounded-full transition-all hover:cursor-pointer
-            ${active === "right" ? "text-white" : "text-[#737373]"}
-          `}
-        >
+          className={` switch-chip-right-btn ${active === "right" ? "text-white" : "text-[#737373]"} `}>
           {rightLabel}
         </button>
       </div>

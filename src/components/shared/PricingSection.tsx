@@ -11,20 +11,18 @@ export default function PricingSection() {
   const plans = transformPlans(mode);
 
   return (
-    <section className="space-y-12 py-6">
-      <div className="flex flex-col items-center gap-6">
+    <section className="price-cards-wrapper">
+      <div className="price-switch-chip-wrapper">
         <SwitchChip
           leftLabel="Monthly"
           rightLabel="Yearly"
           badgeText="Save 20%"
           active={mode === "monthly" ? "left" : "right"}
-          onChange={(value) =>
-            setMode(value === "left" ? "monthly" : "yearly")
-          }
+          onChange={(value) => setMode(value === "left" ? "monthly" : "yearly")}
         />
       </div>
 
-      <div className="flex gap-5 justify-center">
+      <div className="price-cards-container">
         {plans.map((plan) => (
           <PricingCard key={plan.id} {...plan} />
         ))}
