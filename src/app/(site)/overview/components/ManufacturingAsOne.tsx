@@ -5,32 +5,39 @@ import { useState } from "react";
 
 const capabilityData = [
   {
-    key: "production",
-    title: "Production Management",
-    description:
-      "Plan schedule & track every job in real time, no bottlenecks, no guesswork",
-    image: "/product-overview/ManufacturingAsOne.svg",
-  },
-  {
-    key: "inventory",
-    title: "Inventory & Materials",
-    description:
-      "Real-time stock visibility, material allocations, & automated consumption tracking",
-    image: "/product-overview/ManufacturingAsOne.svg",
-  },
-  {
     key: "procurement",
     title: "Procurement & Suppliers",
     description:
+      "Plan schedule & track every job in real time, no bottlenecks, no guesswork",
+    image: "/product-overview/m1.svg",
+  },
+  {
+    key: "inventory",
+    title: "Materials & Inventory",
+    description:
+      "Real-time stock visibility, material allocations, & automated consumption tracking",
+    image: "/product-overview/m2.svg",
+  },
+  {
+    key: "machine",
+    title: "Machine Monitoring",
+    description:
       "Manage suppliers, track purchase RM, & streamline the procurement lifecycle",
-    image: "/product-overview/ManufacturingAsOne.svg",
+    image: "/product-overview/m3.svg",
+  },
+   {
+    key: "production",
+    title: "Production Management",
+    description:
+      "Manage suppliers, track purchase RM, & streamline the procurement lifecycle",
+    image: "/product-overview/m4.svg",
   },
   {
     key: "quality",
-    title: "Quality Check & Rejections",
+    title: "Quality Control",
     description:
       "Automate QC stages, approvals & rejection management across the floor",
-    image: "/product-overview/ManufacturingAsOne.svg",
+    image: "/product-overview/m5.svg",
   },
 ];
 
@@ -43,7 +50,7 @@ export default function ManufacturingAsOne() {
         {/* LEFT */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <h1 className="title-side gradient-gray-text">
+            <h1 className="title-side gradient-gray-text max-w-[70%]">
               All Your Manufacturing Processes Working as One
             </h1>
 
@@ -61,6 +68,7 @@ export default function ManufacturingAsOne() {
             itemPaddingY="py-6"
             autoNext={true}
             showRunnerLine={true}
+            autoNextDuration = {4200}
             showImage
             imageClassName =""
           />

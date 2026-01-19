@@ -687,8 +687,8 @@
     @apply relative z-10 text-sm font-medium px-5 py-2 rounded-full transition-all hover:cursor-pointer;
   }
 
-  .switch-chip-right-btn  {
-@apply  relative z-10 text-sm font-medium px-5 py-2 rounded-full transition-all hover:cursor-pointer ;
+  .switch-chip-right-btn {
+    @apply relative z-10 text-sm font-medium px-5 py-2 rounded-full transition-all hover:cursor-pointer;
   }
   /* Pricing Cards */
   .price-cards-wrapper {
@@ -1505,15 +1505,15 @@
   }
 
   .split-media {
-    @apply relative w-full lg:w-1/2;
+    @apply relative w-full flex  justify-end  lg:w-1/2 overflow-visible;
   }
 
   .split-media-frame {
-    @apply relative h-[280px] w-full sm:h-[360px] md:h-[450px] lg:h-full;
+    @apply relative h-[40%] aspect-[16/10] flex items-center justify-center overflow-visible;
   }
 
   .split-media-img {
-    @apply object-cover;
+    @apply object-cover overflow-visible;
   }
 
   /* Data Control Section */
