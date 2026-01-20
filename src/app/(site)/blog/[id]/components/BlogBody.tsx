@@ -44,11 +44,6 @@ export default function BlogBody({ blog, allBlogs }: BlogBodyProps) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const currentIndex = allBlogs.findIndex((b) => b.id === blog.id);
-  const prevBlog = currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
-  const nextBlog =
-    currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : null;
-
   return (
     <section className="section-container">
       <div className="grid gap-14 md:grid-cols-[350px_1fr]">

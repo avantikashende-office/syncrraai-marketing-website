@@ -45,7 +45,7 @@ export default function FeaturesSection() {
         imageAlt="User"
         imageClassName="ai-image-right-rounded"
       />
-
+x
       <FeatureList
         title="Monitor and Act in Real Time"
         features={monitorFeatures}

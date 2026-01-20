@@ -93,8 +93,8 @@ export default async function BlogDetailsPage({
 
         <div className="mx-auto py-10 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {blogDetailsData
-            .filter((b) => b.id !== blog.id) 
-            .slice(0, 3) 
+            .filter((b) => b.id !== blog.id)
+            .slice(0, 3)
             .map((b) => (
               <BlogCard
                 key={b.id}

@@ -204,8 +204,8 @@ export default function AccordionList({
           </div>
 
           {/* RIGHT – Dynamic Image (split-media) */}
-          <div className="split-media hidden lg:block">
-            <div className="split-media-frame">
+          <div className="media hidden lg:block">
+            <div className="media-frame">
               <AnimatePresence mode="wait">
                 {activeImage && (
                   <motion.div
@@ -224,7 +224,7 @@ export default function AccordionList({
                         "Accordion image"
                       }
                       fill
-                      className={`split-media-img rounded-xl ${imageClassName}`}
+                      className={`media-img rounded-xl ${imageClassName}`}
                       sizes="(max-width: 1024px) 100vw, 600px"
                       priority
                     />

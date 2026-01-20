@@ -3,7 +3,6 @@
 import EmptyCard from "@/components/ui/EmptyCard";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
-import { section } from "framer-motion/client";
 import { CircleOff, Users, X } from "lucide-react";
 import Image from "next/image";
 
