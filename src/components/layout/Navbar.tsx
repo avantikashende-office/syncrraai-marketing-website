@@ -164,13 +164,13 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden ml-auto flex items-center gap-3">
-          <Link
+          {/* <Link
             href="https://app.syncrra.ai/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <span className="text-xl nav-link">Login</span>
-          </Link>
+          </Link> */}
 
           <button
             className="p-2  hover:text-green-500 hover:cursor-pointer"

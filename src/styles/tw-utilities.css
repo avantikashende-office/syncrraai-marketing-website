@@ -175,7 +175,7 @@
   }
 
   .nav-mobile-header {
-    @apply flex items-center justify-between px-6 py-5 border-b border-green-800;
+    @apply flex items-center justify-between px-6 py-5 border-b border-[#171717];
   }
 
   .nav-mobile-sections {
@@ -183,7 +183,7 @@
   }
 
   .nav-mobile-section-btn {
-    @apply flex items-center justify-between gap-6 py-5 text-xl border-b border-green-800/50;
+    @apply flex items-center justify-between gap-6 py-5 text-xl border-b border-[#171717]/50;
   }
 
   .nav-mobile-items {
@@ -1910,7 +1910,7 @@
 } */
 
 .inline-nav-title {
-  @apply max-w-3xl text-[clamp(1.6rem,3vw,3rem)];
+  @apply md:max-w-[50%]  text-[clamp(1.6rem,3vw,3rem)];
 }
 
 /* Body */
