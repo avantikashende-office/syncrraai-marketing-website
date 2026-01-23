@@ -29,10 +29,8 @@ export function UnifiedOperationsSolutionSection() {
           initial="initial"
           whileInView="animate"
         >
-          Syncrra fits your operations, whether you need an AI-first ERP or an
-          AI
-          <br />
-          layer on top of your existing system.
+          Syncrra adapts to your operating model. Choose a full AI-first ERP, or
+          add an AI intelligence layer on top of your existing systems.
         </motion.p>
 
         <InlineNavigation
@@ -40,27 +38,27 @@ export function UnifiedOperationsSolutionSection() {
             {
               id: "erp",
               label: "Syncra ERP",
-              icon: <Browsers fill="white" size={25}/>,
+              icon: <Browsers fill="white" size={25} />,
               content: {
                 title: "A Modern, AI-First ERP Built for Manufacturing",
                 image: "/homepage/1.png",
                 features: [
-                  "End-to-end manufacturing ERP in one system",
-                  "Built-in AI for monitoring, forecasting, and automation",
-                  "Real-time visibility across plants, teams, and processes",
-                  "Faster implementation without heavy customization",
+                  "End-to-end manufacturing ERP in one unified system",
+                  "Built-in AI for monitoring, forecasting, and operational automation",
+                  "Real-time visibility across plants, teams, and workflows",
+                  "Faster implementation without heavy customisation or dependency on external tools",
                 ],
               },
             },
             {
               id: "ai",
               label: "Syncrra AI Layer",
-              icon: <Sparkle fill="white" size={25}/>,
+              icon: <Sparkle fill="white" size={25} />,
               content: {
                 title: "AI Layer on Top of Your Existing ERP",
                 image: "/homepage/2.png",
                 features: [
-                  "AI-powered insights from existing ERP data",
+                  "AI-powered insights from your existing ERP data",
                   "Natural language queries across production and operations",
                   "Anomaly detection, forecasting, and recommendations",
                   "No disruption to current workflows or infrastructure",

@@ -32,7 +32,7 @@ export function BlogCarouselCard({
       <img src={data.image} alt={data.title} className="blog-carousel-img" />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
+<div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 sm:from-black/80 sm:via-black/40 to-transparent" />
 
       {/* Content */}
       <div className="blog-carousel-content ">

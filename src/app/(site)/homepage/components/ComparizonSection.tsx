@@ -88,7 +88,9 @@ const ComparizonSection = () => {
         </h2>
 
         <p className="subtitle-center">
-          See how Syncrra compares against others in performance and growth
+          See how Syncrra compares to traditional ERPs and fragmented AI tools
+          when it comes to operational intelligence, scalability, and real-world
+          execution.
         </p>
       </section>
       {/*  Horizontal on mobile, grid on desktop */}

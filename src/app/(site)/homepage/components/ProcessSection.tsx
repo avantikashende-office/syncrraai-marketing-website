@@ -23,18 +23,18 @@ export default function ProcessSection() {
         </motion.h2>
         <div className="flex justify-between">
           <p className="subtitle-center">
-            From planning to production to quality all connected and
-            intelligent.
+            From planning and inventory to production, quality, dispatch, and
+            billing, every step runs as one connected, approval-driven workflow.
           </p>
         </div>
 
-          <Image
-            src={"/homepage/process.gif"}
-            alt="UnifiedSolution."
-            width={800}
-            height={0}
-            className="process-image"
-          />
+        <Image
+          src={"/homepage/process.gif"}
+          alt="UnifiedSolution."
+          width={800}
+          height={0}
+          className="process-image"
+        />
       </div>
     </section>
   );

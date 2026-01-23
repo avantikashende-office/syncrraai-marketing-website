@@ -11,28 +11,28 @@ const capabilityData = [
     key: "production",
     title: "Production Management",
     description:
-      "Plan schedule & track every job in real time, no bottlenecks, no guesswork",
+      "Plan, schedule, and track production in real time with full visibility into machine availability, work-in-progress, and approvals. No bottlenecks. No guesswork.",
     image: "/img/CoreCapabilitiesSection.jpg",
   },
   {
     key: "inventory",
     title: "Inventory & Materials",
     description:
-      "Real-time stock visibility, material allocations, & automated consumption tracking",
+      "Track raw materials, work-in-progress, and finished goods across plants with clear status visibility and controlled consumption at every stage",
     image: "/img/1.png",
   },
   {
     key: "procurement",
     title: "Procurement & Suppliers",
     description:
-      "Manage suppliers, track purchase RM, & streamline the procurement lifecycle",
+      "Manage suppliers, purchase orders, and material receipts within the same workflow, ensuring timely availability without overstocking or last-minute follow-ups",
     image: "/img/2.png",
   },
   {
     key: "quality",
     title: "Quality Check & Rejections",
     description:
-      "Automate QC stages, approvals & rejection management across the floor",
+      "Enforce approval-driven quality checks, handle rejections seamlessly, and maintain complete traceability for audits and compliance",
     image: "/img/3.png",
   },
 ];
@@ -41,7 +41,7 @@ export default function CoreCapabilitiesSection() {
   const [active, setActive] = useState(capabilityData[0].key);
 
   return (
-    <section className="section-container">
+    <section className="section-container z-30 relative">
       <div className="space-y-6 py-6">
         <Badge label="KEY FEATURES" />
 
@@ -57,9 +57,9 @@ export default function CoreCapabilitiesSection() {
 
         <div className="flex justify-between">
           <p className="subtitle-side">
-            Empower your enterprise with an AI-powered ERP that learns, adapts,{" "}
-            <br />
-            and evolves simplifying complexity into seamless motion.
+            Syncrra brings every operational function into one intelligent
+            system, removing manual coordination and ensuring every team works
+            from the same real-time data.
           </p>
         </div>
       </div>

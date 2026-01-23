@@ -76,6 +76,12 @@
     color: #939393;
   } */
 
+  .stat-title {
+    @apply font-medium text-center leading-normal;
+    font-size: clamp(1rem, 2vw, 1.75rem); /* mobile → desktop */
+    transition: font-size 0.35s ease;
+  }
+
   .title-side {
     @apply font-medium leading-tight;
     font-size: clamp(2rem, 3.5vw, 3.75rem); /* mobile → desktop */
@@ -315,7 +321,7 @@
   } */
 
   .glow-background {
-    @apply absolute inset-0 pointer-events-none -z-10;
+    @apply absolute inset-0 pointer-events-none z-0;
     background: radial-gradient(
       circle at center,
       rgba(57, 211, 116, 0.879) 0%,
@@ -1210,16 +1216,22 @@
 
   /* Business Challenges */
   .challenges-wrapper {
-    @apply relative w-full;
+    @apply relative w-full z-10;
   }
 
   .challenges-section {
     @apply sticky top-0 w-full flex items-center justify-center;
     height: clamp(400px, 80vh, 100vh);
-    min-height: 100vh; /* ensures full viewport minimum */
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: transparent;
   }
 
   .challenges-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1229,7 +1241,7 @@
   }
 
   .challenges-text {
-    font-size: clamp(2rem, 6vw, 4.2rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 500;
     white-space: nowrap;
   }
@@ -1254,7 +1266,7 @@
     position: absolute;
     left: 0;
     width: 100%;
-    font-size: clamp(2rem, 6vw, 4.2rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 500;
     line-height: 1;
   }
@@ -1653,7 +1665,7 @@
   }
 
   .ai-hero-stat-item {
-    @apply flex-1 space-y-2;
+    @apply flex-1 space-y-2 text-center ;
     min-width: clamp(150px, 30vw, 200px);
   }
 
@@ -1806,26 +1818,35 @@
 
 /* Blog-caarousel-card component */
 .blog-carousel-card-wrapper {
-  @apply relative w-full h-[420px] overflow-hidden rounded-xl text-white shadow-xl transition-all;
+  @apply relative w-full overflow-hidden rounded-xl text-white shadow-xl transition-all;
+  /* Responsive height instead of fixed 420px */
+  @apply h-[320px] sm:h-[360px] md:h-[420px] lg:h-[460px] xl:h-[520px];
 }
 
 .blog-carousel-content {
-  @apply relative z-10 flex h-full flex-col justify-end p-6;
+  @apply relative z-10 flex h-full flex-col justify-end p-4 sm:p-5 md:p-6;
 }
 
 .blog-carousel-title {
-  @apply max-w-[90%] text-2xl leading-snug md:text-3xl;
+  /* Responsive title sizing + improved wrapping */
+  @apply max-w-[95%] text-lg leading-snug sm:text-xl md:text-2xl lg:text-3xl;
 }
+
 .blog-carousel-img {
   @apply absolute inset-0 h-full w-full object-cover;
 }
 
 .blog-carousel-bottom-content-wrapper {
-  @apply mt-4 flex items-center justify-between;
+  @apply mt-3 sm:mt-4 flex items-center justify-between gap-3;
 }
 
 .blog-carousel-bottom-content {
-  @apply flex items-center gap-3 text-sm text-neutral-300;
+  @apply flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-neutral-300;
+}
+
+/* Make author/date wrap cleanly on mobile */
+.blog-carousel-bottom-content span {
+  @apply whitespace-nowrap;
 }
 
 /* Testimonial card Trusted BY section */

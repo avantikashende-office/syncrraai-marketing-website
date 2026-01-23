@@ -50,10 +50,14 @@ export default function Herosection() {
 
         <h1 className="title-center">
           {t("hero.title")} <br />
-          <span className="gradient-text">{t("hero.titleHighlight")}</span>
+          <span className="gradient-text">Connected Intelligence</span>
         </h1>
 
-        <p className="subtitle-center">{t("hero.description")}</p>
+        <p className="subtitle-center">
+          Syncrra brings your operations into one intelligent system. From gate
+          entry to billing, every action is connected, traceable, and driven by
+          real-time intelligence.
+        </p>
 
         <div className="hero-button-group pointer-events-auto">
           <Link

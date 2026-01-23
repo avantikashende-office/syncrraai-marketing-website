@@ -34,9 +34,9 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="bg-[url('/blog/blog-bg-green.png')] bg-cover bg-no-repeat bg-position-[center_top_-99px]  hero-top-space  ">
+    <section className="bg-[url('/blog/blog-bg-green.png')] bg-cover bg-no-repeat bg-position-[center_top_-99px] hero-top-space">
+      {/* Heading container */}
       <div className="section-container space-y-6">
-        {/* Heading */}
         <motion.h2
           className="title-center gradient-gray-text"
           variants={fadeInMain}
@@ -46,29 +46,38 @@ export default function HeroSection() {
           The Manufacturing Intelligence Hub
         </motion.h2>
 
-        {/* Subtitle */}
         <motion.p
           className="subtitle-center"
           variants={fadeInMain}
           initial="initial"
           whileInView="animate"
         >
-          Discover how AI-driven automation is transforming production, <br />{" "}
+          Discover how AI-driven automation is transforming production, <br />
           quality, and profitability.
         </motion.p>
       </div>
-      <div className="h-screen ">
-        <CenterZoomCarousel
-          items={blogCarouselData}
-          itemWidth="55%"
-          itemHeight="100%"
-          gap={32}
-          activeScale={1}
-          inactiveScale={0.88}
-          renderItem={(item, isActive) => (
-            <BlogCarouselCard data={item} active={isActive} />
-          )}
-        />
+
+      {/* Carousel container */}
+      <div
+        
+      >
+        {/* Responsive height behavior:
+            - mobile: content height
+            - tablet+: stable hero height
+        */}
+        <div className="min-h-[420px] sm:min-h-[520px] md:min-h-[600px] lg:min-h-[680px]">
+          <CenterZoomCarousel
+            items={blogCarouselData}
+            itemWidth="clamp(280px, 70vw, 900px)"
+            itemHeight="100%"
+            gap={24}
+            activeScale={1}
+            inactiveScale={0.88}
+            renderItem={(item, isActive) => (
+              <BlogCarouselCard data={item} active={isActive} />
+            )}
+          />
+        </div>
       </div>
     </section>
   );

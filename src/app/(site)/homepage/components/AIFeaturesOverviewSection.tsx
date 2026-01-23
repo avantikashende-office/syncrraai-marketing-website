@@ -34,9 +34,9 @@ export function AIFeaturesOverviewSection() {
               initial="initial"
               whileInView="animate"
             >
-              Designed to simplify complexities and empower data-backed
-              decisions, it is your single source of truth for smarter business
-              growth.
+              Built to simplify complex operations and enable faster,
+              data-driven decisions across manufacturing, supply chain, and
+              finance. All from one connected system.
             </motion.p>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function AIFeaturesOverviewSection() {
             <div className="ai-card-text">
               <h4 className="ai-card-title">Smart Operations</h4>
               <p className="text-subdescription">
-                AI-driven workflows across manufacturing operations
+                A unified operational layer that connects planning, production, quality, dispatch, and billing into one continuous, system-driven flow.
               </p>
             </div>
           </EmptyCard>
@@ -79,7 +79,7 @@ export function AIFeaturesOverviewSection() {
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Powered Insights</h4>
                 <p className="text-subdescription">
-                  Instant insights from real-time operational data
+                  Get instant answers from live operational data. Ask questions in natural language and receive clear summaries, trends, and visual insights.
                 </p>
               </div>
             </EmptyCard>
@@ -97,7 +97,7 @@ export function AIFeaturesOverviewSection() {
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Forecasting</h4>
                 <p className="text-subdescription">
-                  Predict demand, risks, and performance trends
+                  Anticipate demand, identify risks, and spot performance trends early using predictive models built on your operational data.
                 </p>
               </div>
             </EmptyCard>
@@ -119,7 +119,7 @@ export function AIFeaturesOverviewSection() {
             <div className="ai-card-text">
               <h4 className="ai-card-title">Agentic AI</h4>
               <p className="text-subdescription">
-                Ask questions. Get actions, insights instantly
+                An intelligent assistant that understands your workflows, supports daily decisions, and helps teams act faster without switching tools.
               </p>
             </div>
           </EmptyCard>
@@ -136,9 +136,9 @@ export function AIFeaturesOverviewSection() {
             </div>
 
             <div className="ai-card-text">
-              <h4 className="ai-card-title">98% Faster Automation</h4>
+              <h4 className="ai-card-title">Up to 98% Faster Automation</h4>
               <p className="text-subdescription">
-                AI-powered automation at operational scale
+               Automate approvals, validations, and routine operational tasks to reduce manual effort and accelerate execution across teams.
               </p>
             </div>
           </EmptyCard>

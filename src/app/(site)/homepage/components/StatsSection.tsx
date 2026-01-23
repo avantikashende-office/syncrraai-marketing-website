@@ -11,7 +11,12 @@ const Counter = dynamic(() => import("@/components/ui/Counter"), {
 
 export default function StatsSection() {
   return (
-    <section className="section-container relative z-10">
+    <section className="section-container relative z-10 space-y-10">
+      {/* <p className="stat-title  gradient-text">
+        Syncrra brings your operations into one intelligent system. <br />
+        From gate entry to billing, every action is connected, traceable, and
+        driven by real-time intelligence.
+      </p> */}
       <motion.div
         className="stats-card "
         variants={fadeInMain}
@@ -23,29 +28,34 @@ export default function StatsSection() {
           {/* STAT 1 */}
           <div className="ai-hero-stat-item">
             <div className="ai-hero-stat-number">
-              <Counter to={70} />%
+              <Counter to={65} />%
             </div>
-            <p className="text-xl">Time Saved</p>
-            <p className="ai-hero-stat-description">On Manual Data Tasks</p>
+            <p className="text-xl">Lower Operational Overheads</p>
+            <p className="ai-hero-stat-description">
+              Through controlled inventory, fewer errors, and automated
+              workflows
+            </p>
           </div>
 
           {/* STAT 2 */}
           <div className="ai-hero-stat-item">
             <div className="ai-hero-stat-number">
-              <Counter to={40} />%
+              <Counter to={8} />x
             </div>
-            <p className="text-xl">Cost Reduction</p>
-            <p className="ai-hero-stat-description">In Operational Overhead</p>
+            <p className="text-xl">Faster Decision-Making</p>
+            <p className="ai-hero-stat-description">
+              With real-time operational visibility and AI-driven insights
+            </p>
           </div>
 
           {/* STAT 3 */}
           <div className="ai-hero-stat-item">
             <div className="ai-hero-stat-number">
-              <Counter to={10} />x
+              <Counter to={99} />%
             </div>
-            <p className="text-xl">Faster Decisions</p>
+            <p className="text-xl">Data Accuracy</p>
             <p className="ai-hero-stat-description">
-              With Real-time Visibility
+              Enabled by scan-based tracking and approval-driven validation
             </p>
           </div>
 
@@ -55,7 +65,9 @@ export default function StatsSection() {
               <Counter to={99} />%
             </div>
             <p className="text-xl">Data Accuracy</p>
-            <p className="ai-hero-stat-description">Automated Validation</p>
+            <p className="ai-hero-stat-description">
+              Enabled by scan-based tracking and approval-driven validation
+            </p>
           </div>
         </div>
       </motion.div>

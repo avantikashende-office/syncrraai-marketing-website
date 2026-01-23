@@ -6,7 +6,7 @@ import Card from "@/components/ui/Card";
 
 const ScrollingBadges = dynamic(
   () => import("@/components/ui/ScrollingBadges"),
-  { ssr: false }
+  { ssr: false },
 );
 import { Workflow, LayoutGrid, Shield, Zap, LucideIcon } from "lucide-react";
 import {
@@ -35,37 +35,37 @@ export function StrategicBenefitsSection() {
       icon: "logoSmile",
       title: "AI-Driven Insights",
       description:
-        "Transform raw data into real-time dashboards and reports. Let AI generate analytics that help you make smarter, faster decisions.",
+        "Turn live operational data into clear insights. Ask questions in natural language and get instant summaries, trends, and visual answers—without navigating multiple modules or reports.",
     },
     {
       icon: "gear",
       title: "Workflow Automation",
       description:
-        "Streamline approvals, tasks, and reporting with intelligent automation reducing manual effort and boosting operational speed.",
+        "Automate approvals, handoffs, and validations across inventory, production, quality, dispatch, and billing—reducing manual follow-ups and operational delays.",
     },
     {
       icon: "chartBar",
       title: "Customizable Dashboards",
       description:
-        "Design your workspace your way. Build personalized dashboards and visual KPIs tailored to your business metrics.",
+        "Build role-based dashboards that show exactly what matters to each user—from plant performance and inventory health to dispatch status and financial metrics.",
     },
     {
       icon: "rocket",
       title: "Scalable and Adaptive",
       description:
-        "Whether you're a startup or enterprise, SyncRRA grows with your business — adapting to your evolving workflows and needs.",
+        "Designed for growing and complex operations. Easily scale across plants, warehouses, and teams while maintaining centralized control and local flexibility.",
     },
     {
       icon: "lock",
       title: "Secure and Centralized",
       description:
-        "Keep your operations safe and unified with enterprise-grade data security and centralized control.",
+        "Enforce who can see, act, approve, and get notified at every step. Syncrra’s role-based security and activity trails keep operations secure and audit-ready.",
     },
     {
       icon: "lightning",
-      title: "Maximum Efficiency",
+      title: "Maximum Operational Efficiency",
       description:
-        "Maximum efficiency with integrated solutions that eliminate bottlenecks, saving time and costs.",
+        "Reduce errors, prevent rework, and eliminate bottlenecks with system-enforced processes that keep teams aligned and operations moving without manual intervention.",
     },
   ];
 
@@ -84,9 +84,10 @@ export function StrategicBenefitsSection() {
 
         {/* Subtitle */}
         <p className="subtitle-center">
-          Experience the next level of productivity and precision with SyncRRA s
-          AI-powered ERP designed to automate, analyze, and accelerate every
-          business operation.
+          Syncrra helps manufacturing and operations teams eliminate manual
+          coordination, enforce process discipline, and gain real-time
+          visibility across every function - all through one connected ERP
+          platform.
         </p>
 
         {/* GRID */}
@@ -101,25 +102,33 @@ export function StrategicBenefitsSection() {
           ))}
         </div>
       </div>
-      <div>
+      <div className="pb-10">
         <ScrollingBadges
           itemsTop={[
-            "Faster Decisions",
-            "Data-Driven",
-            "Efficiency Boost",
-            "Growth",
-            "Operational Agility",
-            "Intelligence",
+            "Operational Intelligence",
+            "Workflow Automation",
+            "End-to-End Visibility",
+            "Approval-Driven Processes",
+            "Real-Time Insights",
+            "Process Discipline",
+            "Data-Backed Decisions",
+            "Connected Operations",
+            "Zero Manual Coordination",
+            "Audit-Ready Systems",
           ]}
           itemsBottom={[
-            "Smart Insights",
-            "Dynamic KPIs",
-            "Insight Automation",
-            "Built for Growth",
-            "AI Dashboards",
-            "Process Optimization",
+            "Role-Based Control",
+            "Smart Manufacturing",
+            "Predictive Operations",
+            "System-Enforced Workflows",
+            "Inventory Accuracy",
+            "Production Transparency",
+            "Dispatch Precision",
+            "Financial Alignment",
+            "Scalable Architecture",
+            "Enterprise-Grade Security",
           ]}
-          speed={60}
+          speed={90}
         />
       </div>
     </section>

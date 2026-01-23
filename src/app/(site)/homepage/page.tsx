@@ -27,7 +27,7 @@ export default function HomePage() {
       <AIFeaturesOverviewSection />
       <StrategicBenefitsSection />
       <UnifiedOperationsSolutionSection />
-      <SeamlessIntegrationsSection />
+      {/* <SeamlessIntegrationsSection /> */}
 
       <ComparizonSection />
       <PricingCardSection />

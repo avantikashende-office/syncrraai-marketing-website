@@ -1,6 +1,5 @@
 "use client";
 
-import Card from "@/components/ui/Card";
 import PainPointsCard from "@/components/ui/PainPointsCard";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";

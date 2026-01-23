@@ -29,7 +29,7 @@ export default function Navbar() {
   const background = useTransform(
     scrollY,
     [0, 80],
-    ["rgba(0,0,0,0)", "rgba(0,0,0,0.1)"]
+    ["rgba(0,0,0,0)", "rgba(0,0,0,0.1)"],
   );
   const blur = useTransform(scrollY, [0, 80], ["blur(0px)", "blur(14px)"]);
   const offsetY = useTransform(scrollY, [0, 80], [0, 20]);
@@ -123,14 +123,9 @@ export default function Navbar() {
               items={[{ label: "Help Center", href: "/help" }]}
             /> */}
 
-            <NavDropdown
-              title="Why Syncrra"
-              items={[
-                { label: "Small Size Company", href: "/initial-level" },
-                { label: "Mid Size Company", href: "/mid-level" },
-                { label: "Enterprise level", href: "/enterprise-level" },
-              ]}
-            />
+            <Link href="/why-syncrra" className="nav-link">
+              Why Syncrra
+            </Link>
 
             {/* <Link href="/pricing" className="nav-link">
               Pricing

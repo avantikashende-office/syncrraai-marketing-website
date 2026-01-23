@@ -19,7 +19,7 @@ export function SeamlessIntegrationsSection() {
         initial="initial"
         whileInView="animate"
       >
-        Seamless Integrations, <br /> Zero Friction
+        Seamless Integrations, <br /> Zero Operational Friction
       </motion.h1>
 
       <div className="integrations-image-wrapper">
@@ -40,8 +40,7 @@ export function SeamlessIntegrationsSection() {
         initial="initial"
         whileInView="animate"
       >
-        Plug Syncrra into your workflow with just a click. <br />
-        No messy setups, no dev tie needed, just instant productivit
+        Plug Syncrra into your existing ecosystem in minutes. No complex configurations, no brittle dependencies—just reliable, system-driven integration.
       </motion.p>
       <div className="flex justify-center">
         <Button variant="primary">Try Syncrra for Free </Button>
