@@ -12,28 +12,28 @@ const capabilityData = [
     title: "Production Management",
     description:
       "Plan, schedule, and track production in real time with full visibility into machine availability, work-in-progress, and approvals. No bottlenecks. No guesswork.",
-    image: "/img/CoreCapabilitiesSection.jpg",
+    image: "/img/ppc.svg",
   },
   {
     key: "inventory",
     title: "Inventory & Materials",
     description:
       "Track raw materials, work-in-progress, and finished goods across plants with clear status visibility and controlled consumption at every stage",
-    image: "/img/1.png",
+    image: "/img/inventory.svg",
   },
   {
     key: "procurement",
     title: "Procurement & Suppliers",
     description:
       "Manage suppliers, purchase orders, and material receipts within the same workflow, ensuring timely availability without overstocking or last-minute follow-ups",
-    image: "/img/2.png",
+    image: "/img/sales.svg",
   },
   {
     key: "quality",
     title: "Quality Check & Rejections",
     description:
       "Enforce approval-driven quality checks, handle rejections seamlessly, and maintain complete traceability for audits and compliance",
-    image: "/img/3.png",
+    image: "/img/quality.svg",
   },
 ];
 

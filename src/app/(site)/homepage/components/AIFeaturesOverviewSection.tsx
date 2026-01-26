@@ -5,8 +5,11 @@ import EmptyCard from "@/components/ui/EmptyCard";
 import { fadeInMain } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 export function AIFeaturesOverviewSection() {
+  const tiltRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="section-container space-y-16">
       {/* HEADER */}
@@ -59,7 +62,9 @@ export function AIFeaturesOverviewSection() {
             <div className="ai-card-text">
               <h4 className="ai-card-title">Smart Operations</h4>
               <p className="text-subdescription">
-                A unified operational layer that connects planning, production, quality, dispatch, and billing into one continuous, system-driven flow.
+                A unified operational layer that connects planning, production,
+                quality, dispatch, and billing into one continuous,
+                system-driven flow.
               </p>
             </div>
           </EmptyCard>
@@ -67,19 +72,54 @@ export function AIFeaturesOverviewSection() {
           {/* RIGHT STACK */}
           <div className="ai-grid-inner">
             <EmptyCard className="ai-card">
-              <div className="ai-card-image-stack">
-                <Image
-                  src="/homepage/api.svg"
-                  alt="AI Powered Insights"
-                  fill
-                  className="object-cover"
-                />
+              <div
+                ref={tiltRef}
+                className="ai-card-image-stack bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.35)_0%,rgba(0,0,0,0.85)_55%,#000_75%)]
+ flex items-center justify-center"
+              >
+                {/* LEFT IMAGE */}
+                <motion.div
+                  animate={{ rotateZ: [-6, 6, -6] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative w-[60%] h-full mt-20 -mr-20 z-10"
+                >
+                  <Image
+                    src="/homepage/left.svg"
+                    alt="AI Powered Insights"
+                    fill
+                    className="object-contain"
+                  />
+                </motion.div>
+
+                {/* RIGHT IMAGE */}
+                <motion.div
+                  animate={{ rotateZ: [6, -6, 6] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative w-[60%] h-full mt-10 -ml-20 z-0"
+                >
+                  <Image
+                    src="/homepage/right.svg"
+                    alt="AI Powered Insights"
+                    fill
+                    className="object-contain"
+                  />
+                </motion.div>
               </div>
 
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Powered Insights</h4>
                 <p className="text-subdescription">
-                  Get instant answers from live operational data. Ask questions in natural language and receive clear summaries, trends, and visual insights.
+                  Get instant answers from live operational data. Ask questions
+                  in natural language and receive clear summaries, trends, and
+                  visual insights.
                 </p>
               </div>
             </EmptyCard>
@@ -97,7 +137,8 @@ export function AIFeaturesOverviewSection() {
               <div className="ai-card-text">
                 <h4 className="ai-card-title">AI Forecasting</h4>
                 <p className="text-subdescription">
-                  Anticipate demand, identify risks, and spot performance trends early using predictive models built on your operational data.
+                  Anticipate demand, identify risks, and spot performance trends
+                  early using predictive models built on your operational data.
                 </p>
               </div>
             </EmptyCard>
@@ -119,7 +160,9 @@ export function AIFeaturesOverviewSection() {
             <div className="ai-card-text">
               <h4 className="ai-card-title">Agentic AI</h4>
               <p className="text-subdescription">
-                An intelligent assistant that understands your workflows, supports daily decisions, and helps teams act faster without switching tools.
+                An intelligent assistant that understands your workflows,
+                supports daily decisions, and helps teams act faster without
+                switching tools.
               </p>
             </div>
           </EmptyCard>
@@ -138,7 +181,8 @@ export function AIFeaturesOverviewSection() {
             <div className="ai-card-text">
               <h4 className="ai-card-title">Up to 98% Faster Automation</h4>
               <p className="text-subdescription">
-               Automate approvals, validations, and routine operational tasks to reduce manual effort and accelerate execution across teams.
+                Automate approvals, validations, and routine operational tasks
+                to reduce manual effort and accelerate execution across teams.
               </p>
             </div>
           </EmptyCard>
