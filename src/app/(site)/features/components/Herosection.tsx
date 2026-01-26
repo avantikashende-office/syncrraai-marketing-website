@@ -5,7 +5,7 @@ import { fadeInMain } from "@/utils/animations";
 import Badge from "@/components/ui/Badge";
 import Counter from "@/components/ui/Counter";
 import Image from "next/image";
-import { Sparkle, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -38,17 +38,15 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <div className="ai-hero-image-container">
-        <div className="w-fill">
+        <div className="w-fill my-110">
           <Image
-            src="/img/AI-hero.png"
+            src="/img/features.svg"
             alt="AI Intelligence Dashboard"
             fill
             className="object-contain "
             priority
           />
         </div>
-      </div>
 
       {/* STATS (CONSTRAINED AGAIN) */}
       <div className="ai-hero-stats-wrapper">

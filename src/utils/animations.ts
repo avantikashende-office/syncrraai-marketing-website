@@ -1,5 +1,41 @@
 import { Variants, Easing } from "framer-motion";
 
+
+
+/* LEFT IMAGE */
+export const fadeInLeft: Variants = {
+  initial: {
+    opacity: 0,
+    x: -40,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 0.84, 0.44, 1] as Easing,
+    },
+  },
+};
+
+/* RIGHT IMAGE */
+export const fadeInRight: Variants = {
+  initial: {
+    opacity: 0,
+    x: 40,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 0.84, 0.44, 1] as Easing,
+    },
+  },
+};
+
+
+
 /* MAIN FADE */
 export const fadeInMain: Variants = {
   initial: {

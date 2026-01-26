@@ -2,7 +2,7 @@
 
 import Badge from "@/components/ui/Badge";
 import EmptyCard from "@/components/ui/EmptyCard";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInLeft, fadeInMain, fadeInRight } from "@/utils/animations";
 import { GearFine, TrendUp, Wallet, Warning } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -41,7 +41,7 @@ export function AIFeaturesOverviewSection() {
           <div className="md:w-1/2">
             <motion.p
               className="subtitle-side"
-              variants={fadeInMain}
+              variants={fadeInRight}
               initial="initial"
               whileInView="animate"
             >
@@ -87,11 +87,17 @@ export function AIFeaturesOverviewSection() {
               >
                 {/* LEFT IMAGE */}
                 <motion.div
+                  variants={fadeInLeft}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: false }}
                   animate={{ rotateZ: [-6, 6, -6] }}
                   transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
+                    rotateZ: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
                   }}
                   className="relative w-[60%] h-full mt-20 -mr-20 z-10"
                 >
@@ -105,11 +111,17 @@ export function AIFeaturesOverviewSection() {
 
                 {/* RIGHT IMAGE */}
                 <motion.div
+                  variants={fadeInRight}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: false }}
                   animate={{ rotateZ: [6, -6, 6] }}
                   transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
+                    rotateZ: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
                   }}
                   className="relative w-[60%] h-full mt-10 -ml-20 z-0"
                 >
@@ -171,8 +183,9 @@ export function AIFeaturesOverviewSection() {
                 <motion.div
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
-                  className="absolute w-4 h-4 rounded-full bg-green-500 
-             shadow-[0_0_15px_#22c55e] flex items-center justify-center"
+                  className="absolute left-[45%] top-[65%] w-4 h-4 rounded-full 
+bg-green-500 shadow-[0_0_15px_#22c55e] 
+flex items-center justify-center"
                 >
                   <div className="w-2 h-2 rounded-full bg-white" />
                 </motion.div>

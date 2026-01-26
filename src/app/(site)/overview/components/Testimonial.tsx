@@ -7,7 +7,7 @@ export default function Testimonial() {
     <section className="section-container">
       <div className="border-t border-b border-[#404040] py-10">
         {/* Quote */}
-        <p className="text-4xl leading-tight max-w-[80%] text-[#404040]">
+        <p className="text-4xl leading-tight  text-[#404040]">
           <span className="text-white">“Syncrra completely </span>
           changed how our factory operates. Our teams no longer chase
           spreadsheets or approvals. Production delays dropped by more than half
@@ -15,8 +15,7 @@ export default function Testimonial() {
         </p>
 
         {/* Bottom row */}
-        <div className="mt-8 flex items-center justify-between">
-          {/* User info */}
+        {/* <div className="mt-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Image
               src="/img/testimonial.png"
@@ -33,12 +32,11 @@ export default function Testimonial() {
             </div>
           </div>
 
-          {/* CTA */}
           <Button variant="outline" className="flex items-center gap-2">
             Read story
             <ArrowUpRight className="h-4 w-4" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

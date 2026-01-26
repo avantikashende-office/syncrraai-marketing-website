@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInMain, fadeInRight } from "@/utils/animations";
 import Button from "@/components/ui/Button";
 
 export default function HeroSection() {
@@ -46,7 +46,7 @@ export default function HeroSection() {
 
           <motion.div
             className="relative flex justify-center lg:justify-end"
-            variants={fadeInMain}
+            variants={fadeInRight}
             initial="initial"
             whileInView="animate"
           >

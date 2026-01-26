@@ -1644,10 +1644,6 @@
     padding-top: clamp(120px, 20vh, 200px);
   }
 
-  .ai-hero-image-container {
-    @apply w-full translate-y-0 pointer-events-none flex justify-center;
-    height: clamp(300px, 50vh, 420px);
-  }
 
   .ai-hero-stats-wrapper {
     @apply flex justify-center;
