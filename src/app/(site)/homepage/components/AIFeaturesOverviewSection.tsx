@@ -3,12 +3,20 @@
 import Badge from "@/components/ui/Badge";
 import EmptyCard from "@/components/ui/EmptyCard";
 import { fadeInMain } from "@/utils/animations";
+import { GearFine, TrendUp, Wallet, Warning } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
 export function AIFeaturesOverviewSection() {
   const tiltRef = useRef<HTMLDivElement>(null);
+
+  const chips = [
+    { label: "Anomaly Forecasting", icon: Warning },
+    { label: "Demand Forecasting", icon: TrendUp },
+    { label: "Performance Forecasting", icon: GearFine },
+    { label: "Revenue Forecasting", icon: Wallet },
+  ];
 
   return (
     <section className="section-container space-y-16">
@@ -126,12 +134,48 @@ export function AIFeaturesOverviewSection() {
 
             <EmptyCard className="ai-card">
               <div className="ai-card-image-stack">
+                {/* Graph Image */}
                 <Image
-                  src="/homepage/aiF.svg"
-                  alt="AI Forecasting"
+                  src="/homepage/forecast-graph.svg"
                   fill
                   className="object-cover"
+                  alt="Forecast Graph"
                 />
+
+                <motion.div
+                  className="flex gap-4 w-max mt-8"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  {[...chips, ...chips].map((chip, i) => {
+                    const Icon = chip.icon;
+
+                    return (
+                      <div
+                        key={i}
+                        className="flex items-center gap-2 px-4 py-2 rounded-md 
+                   bg-[#2a2a2a] text-sm text-white  whitespace-nowrap"
+                      >
+                        <Icon size={20} />
+                        {chip.label}
+                      </div>
+                    );
+                  })}
+                </motion.div>
+
+                {/* Moving Dot */}
+                <motion.div
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute w-4 h-4 rounded-full bg-green-500 
+             shadow-[0_0_15px_#22c55e] flex items-center justify-center"
+                >
+                  <div className="w-2 h-2 rounded-full bg-white" />
+                </motion.div>
               </div>
 
               <div className="ai-card-text">
