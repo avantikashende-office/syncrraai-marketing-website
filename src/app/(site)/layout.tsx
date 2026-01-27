@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ClientProviders from "@/ClientProviders";
 import { Footer } from "@/components/layout/Footer";
+import { Chatbot } from "@/components/shared/Chatbot/Chatbot";
 
 export default function SiteLayout({
   children,
@@ -14,6 +15,7 @@ export default function SiteLayout({
         <Navbar />
         {children}
         <Footer />
+        <Chatbot />
       </ClientProviders>
     </ThemeProvider>
   );

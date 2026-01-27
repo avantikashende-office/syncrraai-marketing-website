@@ -1,5 +1,17 @@
 import { FeatureList } from "@/components/ui/FeatureList";
 
+const aiDashboardfeatures = [
+  {
+    text: "Create fully customized dashboards by simply telling Syncrra Agent what you want to see — no manual configuration required.",
+  },
+  {
+    text: "Add, remove, or modify KPIs, charts, and views using natural language commands in real time.",
+  },
+  {
+    text: "Dashboards automatically adapt to roles, plants, and priorities, keeping every team focused on what matters most.",
+  },
+];
+
 const askFeatures = [
   {
     text: "Ask production questions in natural language and get instant, AI-verified answers.",
@@ -38,10 +50,20 @@ const smartFeatures = [
 export default function FeaturesSection() {
   return (
     <section className="content-section">
+
+       <FeatureList
+        title="AI Built Dashboard "
+        features={aiDashboardfeatures}
+        imageSrc="/img/1.svg"
+        imageAlt="Monitor dashboard"
+        reverse
+        listClassName="max-w-xl"
+      />
+
       <FeatureList
         title="Ask, Explore, and Visualize Your Factory Data"
         features={askFeatures}
-        imageSrc="/img/1.png"
+        imageSrc="/img/2.svg"
         imageAlt="User"
         imageClassName="ai-image-right-rounded"
       />
@@ -49,7 +71,7 @@ x
       <FeatureList
         title="Monitor and Act in Real Time"
         features={monitorFeatures}
-        imageSrc="/img/2.png"
+        imageSrc="/img/2.svg"
         imageAlt="Monitor dashboard"
         reverse
         listClassName="max-w-xl"
@@ -58,7 +80,7 @@ x
       <FeatureList
         title="Smart Forms Built for Manufacturing Workflows"
         features={smartFeatures}
-        imageSrc="/img/3.png"
+        imageSrc="/img/4.svg"
         imageAlt="User"
         listClassName="max-w-xl"
       />

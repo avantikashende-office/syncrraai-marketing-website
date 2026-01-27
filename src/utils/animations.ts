@@ -36,6 +36,45 @@ export const fadeInRight: Variants = {
 
 
 
+export const fadeInDown: Variants = {
+  initial: {
+    opacity: 0,
+    y: -28,
+    scale: 0.97,
+    filter: "blur(4px)",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.1,
+      ease: [0.16, 0.84, 0.44, 1] as Easing,
+    },
+  },
+};
+
+export const fadeInUp: Variants = {
+  initial: {
+    opacity: 0,
+    y: 28,
+    scale: 0.97,
+    filter: "blur(4px)",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.1,
+      ease: [0.16, 0.84, 0.44, 1] as Easing,
+    },
+  },
+};
+
+
 /* MAIN FADE */
 export const fadeInMain: Variants = {
   initial: {

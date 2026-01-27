@@ -9,7 +9,7 @@ const capabilityData = [
     title: "Procurement & Suppliers",
     description:
       "Plan schedule & track every job in real time, no bottlenecks, no guesswork",
-    image: "/product-overview/m1.svg",
+    image: "/product-overview/m1d.svg",
   },
   {
     key: "inventory",

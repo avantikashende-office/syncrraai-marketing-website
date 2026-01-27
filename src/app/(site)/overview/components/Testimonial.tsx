@@ -1,21 +1,17 @@
-import Button from "@/components/ui/Button";
-import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+"use client";
+import AnimatedRevealText from "@/components/ui/TestimonialText";
 
 export default function Testimonial() {
   return (
     <section className="section-container">
-      <div className="border-t border-b border-[#404040] py-10">
-        {/* Quote */}
-        <p className="text-4xl leading-tight  text-[#404040]">
-          <span className="text-white">“Syncrra completely </span>
-          changed how our factory operates. Our teams no longer chase
-          spreadsheets or approvals. Production delays dropped by more than half
-          in the first 60 days. It feels like the plant finally runs itself.”
-        </p>
+      {/* Quote */}
+      <AnimatedRevealText
+        className="text-4xl leading-tight text-[#404040]"
+        text=" '' Syncrra completely changed how our factory operates. Our teams no longer chase spreadsheets or approvals. Production delays dropped by more than half in the first 60 days. It feels like the plant finally runs itself '' "
+      />
 
-        {/* Bottom row */}
-        {/* <div className="mt-8 flex items-center justify-between">
+      {/* Bottom row */}
+      {/* <div className="mt-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Image
               src="/img/testimonial.png"
@@ -37,7 +33,6 @@ export default function Testimonial() {
             <ArrowUpRight className="h-4 w-4" />
           </Button>
         </div> */}
-      </div>
     </section>
   );
 }

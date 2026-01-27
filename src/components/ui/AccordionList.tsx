@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeInRight, fadeInUp } from "@/utils/animations";
 
 type Item = {
   key: string;
@@ -96,7 +97,10 @@ export default function AccordionList({
                 const isActive = active === item.key;
 
                 return (
-                  <div
+                  <motion.div
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     key={item.key}
                     onClick={() => handleClick(item.key)}
                     className={`accordion-item relative ${itemPaddingY}`}
@@ -197,7 +201,7 @@ export default function AccordionList({
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

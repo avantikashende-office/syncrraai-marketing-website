@@ -1,5 +1,8 @@
 "use client";
 
+import { fadeInDown} from "@/utils/animations";
+import { motion } from "framer-motion";
+
 type BadgeProps = {
   label: string;
   variant?: "default" | "plain" | "outline" | "transparent";
@@ -17,18 +20,21 @@ export default function Badge({
 
   return (
     <div className="badge-container w-fit">
-      <div
+      <motion.div
+        variants={fadeInDown}
+        initial="initial"
+        whileInView="animate"
         className={`
           ${isPlain ? "badge-plain" : ""}
           ${isOutline ? "badge-outline" : ""}
           ${isTransparent ? "badge-transparent" : ""}
-          ${!isPlain && !isOutline  && !isTransparent ? "badge-content" : ""}
+          ${!isPlain && !isOutline && !isTransparent ? "badge-content" : ""}
           flex items-center gap-2
         `}
       >
         {icon && <div className="flex items-center">{icon}</div>}
         <div>{label}</div>
-      </div>
+      </motion.div>
     </div>
   );
 }

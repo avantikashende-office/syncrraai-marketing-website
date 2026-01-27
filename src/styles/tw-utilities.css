@@ -4,7 +4,7 @@
     max-width: min(1200px, 90vw);
     margin-inline: auto;
     padding-inline: clamp(1rem, 5vw, 3rem);
-    padding-block: clamp(6rem, 10vh, 7rem);
+    padding-block: clamp(4rem, 6vh, 5rem);
   }
   .section-bg-gray {
     @apply w-full;
@@ -1536,7 +1536,7 @@
   }
 
   .split-media-img {
-    @apply object-cover;
+    @apply object-contain; 
   }
 
   /* Manufacturing As One - Overview */
@@ -1549,7 +1549,7 @@
   }
 
   .media-img {
-    @apply object-cover overflow-visible;
+    @apply object-cover ;
   }
 
   /* Data Control Section */

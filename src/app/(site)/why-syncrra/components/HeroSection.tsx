@@ -1,7 +1,8 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import { fadeInMain } from "@/utils/animations";
+import AnimatedRevealText from "@/components/ui/TestimonialText";
+import { fadeInMain, fadeInRight } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="section-container">
-      <div className="  hero-top-space  ">
+      <div className="  hero-top-space space-y-8 ">
         <div className="space-y-8">
           <div className="space-y-2">
             <motion.h1
@@ -25,7 +26,7 @@ export default function HeroSection() {
 
           <motion.p
             className="subtitle-center"
-            variants={fadeInMain}
+            variants={fadeInRight}
             initial="initial"
             whileInView="animate"
           >
@@ -65,13 +66,11 @@ export default function HeroSection() {
         </div>
 
         {/* Quote */}
-        <div className="border-t border-b border-[#404040] mt-20 py-10">
-          <p className="testimonial-quote-large">
-            <span className="text-white">“Syncrra transformed </span>
-            how we manage daily operations. What used to take hours across
-            multiple tools now happens automatically in one place.”
-          </p>
-        </div>
+        <AnimatedRevealText
+          className="text-4xl leading-tight text-[#404040]"
+          text=" '' Syncrra transformed how we manage daily operations. What used to take hours across multiple tools now happens automatically in one place. '' "
+        />
+       
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
+import { fadeInLeft, fadeInRight } from "@/utils/animations";
 
 export default function Herosection() {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ export default function Herosection() {
         style={{
           rotateX,
           transformPerspective: "clamp(800px, 100vw, 1200px)",
-          transformOrigin: "50% 100%",
+          transformOrigin: "50% 130%",
         }}
       >
         <img
@@ -48,16 +49,26 @@ export default function Herosection() {
           icon={<Sparkles fill="white" size={18} />}
         />
 
-        <h1 className="title-center">
+        <motion.h1
+          className="gradient-gray-text title-center"
+          variants={fadeInLeft}
+          initial="initial"
+          whileInView="animate"
+        >
           {t("hero.title")} <br />
           <span className="gradient-text">Connected Intelligence</span>
-        </h1>
+        </motion.h1>
 
-        <p className="subtitle-center">
+        <motion.p
+          className="subtitle-center"
+          variants={fadeInRight}
+          initial="initial"
+          whileInView="animate"
+        >
           Syncrra brings your operations into one intelligent system. From gate
           entry to billing, every action is connected, traceable, and driven by
           real-time intelligence.
-        </p>
+        </motion.p>
 
         <div className="hero-button-group pointer-events-auto">
           <Link

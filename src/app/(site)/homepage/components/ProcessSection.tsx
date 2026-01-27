@@ -1,14 +1,16 @@
 "use client";
 import Badge from "@/components/ui/Badge";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInMain, fadeInRight } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function ProcessSection() {
   return (
-    <section className="section-container">
+    <section className="
+    px-[clamp(1rem,5vw,3rem)]
+    pt-[clamp(2rem,2vh,3rem)]">
       <div className="space-y-6">
-        <div className="flex justify-center">
+        <div className="flex justify-center z-20">
           <Badge label="PROCESS" />
         </div>
         <motion.h2
@@ -21,12 +23,15 @@ export default function ProcessSection() {
           <br />
           Unified in One Flow
         </motion.h2>
-        <div className="flex justify-between">
-          <p className="subtitle-center">
-            From planning and inventory to production, quality, dispatch, and
-            billing, every step runs as one connected, approval-driven workflow.
-          </p>
-        </div>
+        <motion.p
+          className="subtitle-center"
+          variants={fadeInRight}
+          initial="initial"
+          whileInView="animate"
+        >
+          From planning and inventory to production, quality, dispatch, and
+          billing, every step runs as one connected, approval-driven workflow.
+        </motion.p>
 
         <Image
           src={"/homepage/process.gif"}

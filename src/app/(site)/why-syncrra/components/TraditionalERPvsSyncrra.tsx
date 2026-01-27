@@ -1,4 +1,7 @@
-import { fadeInMain } from "@/utils/animations";
+"use client";
+
+
+import { fadeInMain, fadeInRight } from "@/utils/animations";
 import { motion } from "framer-motion";
 
 export default function TradiionalERPvsSyncrra() {
@@ -18,7 +21,7 @@ export default function TradiionalERPvsSyncrra() {
 
         <motion.p
           className="subtitle-center"
-          variants={fadeInMain}
+          variants={fadeInRight}
           initial="initial"
           whileInView="animate"
         >

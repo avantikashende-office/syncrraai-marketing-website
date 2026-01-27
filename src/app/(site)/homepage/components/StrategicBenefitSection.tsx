@@ -17,6 +17,8 @@ import {
   Lock,
   RocketLaunch,
 } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight } from "@/utils/animations";
 
 export function StrategicBenefitsSection() {
   const iconMap: Record<string, LucideIcon> = {
@@ -78,17 +80,27 @@ export function StrategicBenefitsSection() {
         </div>
 
         {/* Heading */}
-        <h1 className=" gradient-gray-text title-center">
+        <motion.h1
+          variants={fadeInLeft}
+          initial="initial"
+          whileInView="animate"
+          className=" gradient-gray-text title-center"
+        >
           Empower Your Business with <br /> Intelligent ERP Automation
-        </h1>
+        </motion.h1>
 
         {/* Subtitle */}
-        <p className="subtitle-center">
+        <motion.p
+          variants={fadeInRight}
+          initial="initial"
+          whileInView="animate"
+          className="subtitle-center"
+        >
           Syncrra helps manufacturing and operations teams eliminate manual
           coordination, enforce process discipline, and gain real-time
           visibility across every function - all through one connected ERP
           platform.
-        </p>
+        </motion.p>
 
         {/* GRID */}
         <div className="benefits-grid">

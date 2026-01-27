@@ -4,7 +4,7 @@ import Badge from "@/components/ui/Badge";
 import { useState } from "react";
 import AccordionList from "@/components/ui/AccordionList";
 import { motion } from "framer-motion";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInMain, fadeInRight } from "@/utils/animations";
 
 const capabilityData = [
   {
@@ -55,13 +55,16 @@ export default function CoreCapabilitiesSection() {
           Effortless & Fully Connected
         </motion.h2>
 
-        <div className="flex justify-between">
-          <p className="subtitle-side">
-            Syncrra brings every operational function into one intelligent
-            system, removing manual coordination and ensuring every team works
-            from the same real-time data.
-          </p>
-        </div>
+        <motion.p
+          className="subtitle-side"
+          variants={fadeInRight}
+          initial="initial"
+          whileInView="animate"
+        >
+          Syncrra brings every operational function into one intelligent system,
+          removing manual coordination and ensuring every team works from the
+          same real-time data.
+        </motion.p>
       </div>
 
       <AccordionList
