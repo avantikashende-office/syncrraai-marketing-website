@@ -71,7 +71,7 @@ x
       <FeatureList
         title="Monitor and Act in Real Time"
         features={monitorFeatures}
-        imageSrc="/img/2.svg"
+        imageSrc="/img/3.svg"
         imageAlt="Monitor dashboard"
         reverse
         listClassName="max-w-xl"

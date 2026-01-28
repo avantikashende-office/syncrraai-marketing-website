@@ -52,7 +52,7 @@ export default function HeroSection() {
           >
             {/* IMAGE */}
             <Image
-              src="/product-overview/po-hero.svg"
+              src="/product-overview/po .svg"
               alt="Dashboard preview"
               width={1220}
               height={820}
