@@ -1,8 +1,12 @@
+"use client";
+
 import Badge from "@/components/ui/Badge";
 import { Check, Layers, X } from "lucide-react";
 import ComparisonCard from "@/components/ui/ComparisonCard";
 import HorizontalScroll from "@/components/ui/HorizontalScroll";
 import SyncrraLogoIcon from "../../../../../public/Logos/SyncrraLogoIcon";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight } from "@/utils/animations";
 
 const ComparizonSection = () => {
   const data1 = [
@@ -83,15 +87,25 @@ const ComparizonSection = () => {
           <Badge label="COMPARISON" />
         </div>
 
-        <h2 className="title-center gradient-gray-text">
+        <motion.h2
+          variants={fadeInLeft}
+          initial="initial"
+          whileInView="animate"
+          className="title-center gradient-gray-text"
+        >
           Why Syncrra Stands Out?
-        </h2>
+        </motion.h2>
 
-        <p className="subtitle-center">
+        <motion.p
+          variants={fadeInRight}
+          initial="initial"
+          whileInView="animate"
+          className="subtitle-center"
+        >
           See how Syncrra compares to traditional ERPs and fragmented AI tools
           when it comes to operational intelligence, scalability, and real-world
           execution.
-        </p>
+        </motion.p>
       </section>
       {/*  Horizontal on mobile, grid on desktop */}
 

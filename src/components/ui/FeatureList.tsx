@@ -1,3 +1,7 @@
+"use client";
+
+import { fadeInLeft, fadeInUp } from "@/utils/animations";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Image from "next/image";
 type Feature = { text: string };
@@ -23,16 +27,29 @@ export function FeatureList({
 }: FeatureListProps) {
   const Content = (
     <div className="split-pane">
-      <h3 className="split-title title-side gradient-gray-text">{title}</h3>
+      <motion.h3
+        variants={fadeInLeft}
+        initial="initial"
+        whileInView="animate"
+        className="split-title title-side gradient-gray-text"
+      >
+        {title}
+      </motion.h3>
 
       <ul className={`ai-feature-list ${listClassName}`}>
         {features.map((feature, index) => (
-          <li key={index} className="ai-feature-item">
+          <motion.li
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            key={index}
+            className="ai-feature-item"
+          >
             <div className="ai-feature-check-icon">
               <Check className="text-white text-sm" />
             </div>
             <p className="text-description">{feature.text}</p>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
@@ -40,7 +57,12 @@ export function FeatureList({
 
   const Media = (
     <div className="split-media">
-      <div className="split-media-frame">
+      <motion.div
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="animate"
+        className="split-media-frame"
+      >
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -48,7 +70,7 @@ export function FeatureList({
           className={`split-media-img ${imageClassName}`}
           priority
         />
-      </div>
+      </motion.div>
     </div>
   );
 

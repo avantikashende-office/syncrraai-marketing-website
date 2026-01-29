@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInLeft, fadeInMain, fadeInRight, fadeInUp } from "@/utils/animations";
 
 const CustomersSection = () => {
   const testimonials = [
@@ -59,7 +59,7 @@ const CustomersSection = () => {
           {/* Left: Title */}
           <motion.h1
             className="title-side gradient-gray-text"
-            variants={fadeInMain}
+            variants={fadeInLeft}
             initial="initial"
             whileInView="animate"
           >
@@ -70,7 +70,7 @@ const CustomersSection = () => {
           <div className="">
             <motion.p
               className="subtitle-side "
-              variants={fadeInMain}
+              variants={fadeInRight}
               initial="initial"
               whileInView="animate"
             >
@@ -89,7 +89,7 @@ const CustomersSection = () => {
 
                   <motion.h2
                     className="customer-case-title"
-                    variants={fadeInMain}
+                    variants={fadeInUp}
                     initial="initial"
                     whileInView="animate"
                   >
@@ -98,7 +98,7 @@ const CustomersSection = () => {
 
                   <motion.p
                     className="text-subdescription"
-                    variants={fadeInMain}
+                    variants={fadeInUp}
                     initial="initial"
                     whileInView="animate"
                   >
@@ -136,7 +136,7 @@ const CustomersSection = () => {
                     />
                     <motion.h2
                       className="customer-case-title"
-                      variants={fadeInMain}
+                      variants={fadeInUp}
                       initial="initial"
                       whileInView="animate"
                     >
@@ -166,10 +166,9 @@ const CustomersSection = () => {
             </div>
           </EmptyCard>
 
-          <div className="mt-30">
+          {/* <div className="mt-30">
             <EmptyCard className="empty-card-black relative overflow-hidden md:overflow-visible">
               <div className="grid grid-cols-1 md:grid-cols-2  md:gap-10">
-                {/* LEFT */}
                 <div className="testimonial-card order-1">
                   <div className="customer-testimonial-header">
                     <Settings />
@@ -197,7 +196,6 @@ const CustomersSection = () => {
                   </div>
                 </div>
 
-                {/* RIGHT IMAGE */}
                 <div className="relative order-2 flex justify-center md:justify-end">
                   <Image
                     src="/img/UserImage.png"
@@ -214,7 +212,7 @@ const CustomersSection = () => {
                 </div>
               </div>
             </EmptyCard>
-          </div>
+          </div> */}
 
           {/* <div className="testimonial-cards-grid">
           {testimonials.map((item, index) => (

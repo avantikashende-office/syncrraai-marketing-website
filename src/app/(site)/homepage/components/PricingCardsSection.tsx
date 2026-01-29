@@ -5,7 +5,11 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { fadeInMain } from "@/utils/animations";
+import {
+  fadeInLeft,
+  fadeInRight,
+  fadeInUp,
+} from "@/utils/animations";
 
 const PricingCardSection = () => {
   return (
@@ -15,7 +19,7 @@ const PricingCardSection = () => {
       </div>
       <motion.h1
         className="title-center gradient-gray-text"
-        variants={fadeInMain}
+        variants={fadeInLeft}
         initial="initial"
         whileInView="animate"
       >
@@ -24,7 +28,7 @@ const PricingCardSection = () => {
       </motion.h1>
       <motion.p
         className="subtitle-center"
-        variants={fadeInMain}
+        variants={fadeInRight}
         initial="initial"
         whileInView="animate"
       >
@@ -36,7 +40,7 @@ const PricingCardSection = () => {
         <div className="flex flex-col text-left">
           <motion.p
             className="text-lg text-white font-medium"
-            variants={fadeInMain}
+            variants={fadeInUp}
             initial="initial"
             whileInView="animate"
           >

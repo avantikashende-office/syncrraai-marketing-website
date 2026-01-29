@@ -1,7 +1,7 @@
 "use client";
 
 import EmptyCard from "@/components/ui/EmptyCard";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInLeft, fadeInMain, fadeInRight } from "@/utils/animations";
 import { motion } from "framer-motion";
 import { CircleOff, Users, X } from "lucide-react";
 import Image from "next/image";
@@ -31,7 +31,7 @@ export default function PromiseToManufacturer() {
     <div className="section-container space-y-10">
       <motion.h2
         className="title-center"
-        variants={fadeInMain}
+        variants={fadeInLeft}
         initial="initial"
         whileInView="animate"
       >
@@ -39,7 +39,7 @@ export default function PromiseToManufacturer() {
       </motion.h2>
       <motion.p
         className="subtitle-center"
-        variants={fadeInMain}
+        variants={fadeInRight}
         initial="initial"
         whileInView="animate"
       >

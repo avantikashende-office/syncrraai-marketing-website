@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/components/ui/Button";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInMain, fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -40,7 +40,7 @@ const JoinOurTeam = () => {
 
           <motion.div
             className="flex items-center gap-4"
-            variants={fadeInMain}
+            variants={fadeInUp}
             initial="initial"
             whileInView="animate"
           >

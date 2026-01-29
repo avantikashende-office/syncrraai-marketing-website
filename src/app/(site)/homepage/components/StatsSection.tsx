@@ -30,10 +30,9 @@ export default function StatsSection() {
             <div className="ai-hero-stat-number">
               <Counter to={65} />%
             </div>
-            <p className="text-xl">Lower Operational Overheads</p>
+            <p className="text-xl">Reduction in Manual Effort</p>
             <p className="ai-hero-stat-description">
-              Through controlled inventory, fewer errors, and automated
-              workflows
+              Across approvals, reporting, and inter-team follow-ups
             </p>
           </div>
 
@@ -51,11 +50,11 @@ export default function StatsSection() {
           {/* STAT 3 */}
           <div className="ai-hero-stat-item">
             <div className="ai-hero-stat-number">
-              <Counter to={99} />%
+              <Counter to={35} />%
             </div>
-            <p className="text-xl">Data Accuracy</p>
+            <p className="text-xl">Lower Operational Overheads</p>
             <p className="ai-hero-stat-description">
-              Enabled by scan-based tracking and approval-driven validation
+             Through controlled inventory, fewer errors, and automated workflows
             </p>
           </div>
 

@@ -127,16 +127,25 @@ export default function BusinessSize() {
         </motion.p>
 
         <BusinessLevels columns={data} />
-        <div
-          className="inline-flex  items-center gap-2 px-5 py-2 rounded-full 
-  bg-green-500/10 border border-green-500/30 text-sm"
-        >
-          <span className="text-green-400"> <Waypoints /> </span>
+        <div className="flex justify-center">
+          <div
+            className="inline-flex items-start gap-2 px-5 py-3 rounded-full 
+               bg-green-500/10 border border-green-500/30 text-sm"
+          >
+            <span className="text-green-400">
+              <Waypoints />
+            </span>
 
-          <p>
-            All features available at every tier—just unlock what you need when
-            you need it
-          </p>
+            <motion.p
+              variants={fadeInRight}
+              initial="initial"
+              whileInView="animate"
+              className="leading-snug"
+            >
+              All features available at every tier—just unlock what you need
+              when you need it
+            </motion.p>
+          </div>
         </div>
       </div>
     </section>

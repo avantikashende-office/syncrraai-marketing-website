@@ -2,6 +2,8 @@
 
 import Button from "@/components/ui/Button";
 import HowItWorksStep from "@/components/ui/HowItWorksSteps";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/utils/animations";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -13,15 +15,13 @@ const steps = [
     image: "/product-overview/step-1.svg",
   },
   {
-    title: "Configure Processes",
-    description:
-      "Define workflows, approvals, and production stages effortlessly.",
+    title: "Customise Workflows with AI",
+    description: "Personalise automation flow for your team’s exact needs",
     image: "/product-overview/step-2.svg",
   },
   {
-    title: "Track & Optimize",
-    description:
-      "Monitor live data, reduce errors, and improve efficiency in real time.",
+    title: "Grow Smarter, Faster",
+    description: "Use Insights and  reports to guide better business decisions",
     image: "/product-overview/step-3.svg",
   },
 ];
@@ -45,17 +45,35 @@ export default function HowItWorks() {
     <section className="section-container relative">
       {/* HEADER */}
       <div className="space-y-8 mb-24">
-        <h1 className="title-side gradient-gray-text">How It Works</h1>
+        <motion.h1
+          variants={fadeInLeft}
+          initial="initial"
+          whileInView="animate"
+          className="title-side gradient-gray-text"
+        >
+          How It Works
+        </motion.h1>
 
         <div className="flex items-start justify-between gap-7">
-          <p className="subtitle-side">
+          <motion.p
+            variants={fadeInRight}
+            initial="initial"
+            whileInView="animate"
+            className="subtitle-side"
+          >
             A simple, fast and secure platform to manage your factory <br />
             in just a few steps.
-          </p>
+          </motion.p>
 
-          <Button variant="outline">
-            Create Account <ArrowUpRight size={20} />
-          </Button>
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+          >
+            <Button variant="outline">
+              Create Account <ArrowUpRight size={20} />
+            </Button>
+          </motion.div>
         </div>
       </div>
 

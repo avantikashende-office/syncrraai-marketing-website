@@ -1,7 +1,12 @@
 "use client";
 
 import Badge from "@/components/ui/Badge";
-import { fadeInMain } from "@/utils/animations";
+import {
+  fadeInLeft,
+  fadeInMain,
+  fadeInRight,
+  fadeInUp,
+} from "@/utils/animations";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
@@ -16,7 +21,7 @@ const HeroSection = () => {
 
         <motion.h2
           className="title-center"
-          variants={fadeInMain}
+          variants={fadeInLeft}
           initial="initial"
           whileInView="animate"
         >
@@ -26,7 +31,7 @@ const HeroSection = () => {
 
         <motion.p
           className="subtitle-center"
-          variants={fadeInMain}
+          variants={fadeInRight}
           initial="initial"
           whileInView="animate"
         >
@@ -43,7 +48,12 @@ const HeroSection = () => {
         <div className="solutions-hero-glow-right" />
         <div className="solutions-hero-glow-bottom" />
 
-        <div className="relative rounded-xl overflow-hidden">
+        <motion.div
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          className="relative rounded-xl overflow-hidden"
+        >
           <Image
             src="/about/about-hero.png"
             alt="Dashboard preview"
@@ -52,7 +62,7 @@ const HeroSection = () => {
             priority
             className="object-contain relative z-10 image-reveal-color"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

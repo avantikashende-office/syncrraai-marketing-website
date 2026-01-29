@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInMain } from "@/utils/animations";
+import { fadeInLeft, fadeInMain, fadeInRight } from "@/utils/animations";
 import Badge from "@/components/ui/Badge";
 import Counter from "@/components/ui/Counter";
 import Image from "next/image";
@@ -19,7 +19,7 @@ const HeroSection = () => {
 
           <motion.h2
             className="title-center"
-            variants={fadeInMain}
+            variants={fadeInLeft}
             initial="initial"
             whileInView="animate"
           >
@@ -28,7 +28,7 @@ const HeroSection = () => {
 
           <motion.p
             className="subtitle-center"
-            variants={fadeInMain}
+            variants={fadeInRight}
             initial="initial"
             whileInView="animate"
           >

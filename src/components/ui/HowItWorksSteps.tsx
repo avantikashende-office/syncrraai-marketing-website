@@ -28,7 +28,7 @@ export default function HowItWorksStep({
     once: false,
   });
 
-  const isImageLeft = index % 2 === 0;
+  const isImageLeft = index % 1 === 0;
 
   // 👇 DIRECTION-BASED SHINE
   const shineMotion =

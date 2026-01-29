@@ -14,7 +14,7 @@ export default function AIFeatures() {
   return (
     <>
       <HeroSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <FeaturesSection />
       <PromiseToManufacturer />
       <FAQSection />

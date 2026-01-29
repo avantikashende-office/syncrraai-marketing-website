@@ -1,5 +1,6 @@
 "use client";
 
+import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -105,7 +106,12 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({
       {/* ---- CONTENT ---- */}
       <ul className="comparison-list">
         {features.map((item, idx) => (
-          <li key={idx}>
+          <motion.li
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            key={idx}
+          >
             <div className="comparison-item">
               <p className="comparison-icon">{item.icon}</p>
 
@@ -116,7 +122,7 @@ const ComparisonCard: React.FC<ComparisonCardProps> = ({
             </div>
 
             {item.showDivider && <div className="comparison-divider" />}
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>

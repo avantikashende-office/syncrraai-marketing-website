@@ -1536,7 +1536,7 @@
   }
 
   .split-media-img {
-    @apply object-contain; 
+    @apply object-contain;
   }
 
   /* Manufacturing As One - Overview */
@@ -1549,7 +1549,7 @@
   }
 
   .media-img {
-    @apply object-cover ;
+    @apply object-cover;
   }
 
   /* Data Control Section */
@@ -1644,7 +1644,6 @@
     padding-top: clamp(120px, 20vh, 200px);
   }
 
-
   .ai-hero-stats-wrapper {
     @apply flex justify-center;
     padding-bottom: clamp(3rem, 8vh, 5rem);
@@ -1661,7 +1660,7 @@
   }
 
   .ai-hero-stat-item {
-    @apply flex-1 space-y-2 text-center ;
+    @apply flex-1 space-y-2 text-center;
     min-width: clamp(150px, 30vw, 200px);
   }
 
@@ -1947,7 +1946,8 @@
 .inline-nav-feature-icon {
   @apply flex-shrink-0 min-w-[1.5rem] min-h-[1.5rem]
          rounded-md bg-[#404040]
-         flex items-center justify-center;
+         flex items-center justify-center
+         self-start mt-1;
 }
 
 /* Image */

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeInMain, fadeInRight } from "@/utils/animations";
+import { fadeInLeft, fadeInMain, fadeInRight, fadeInUp } from "@/utils/animations";
 import Button from "@/components/ui/Button";
 
 export default function HeroSection() {
@@ -13,7 +13,7 @@ export default function HeroSection() {
           <div className="space-y-8">
             <motion.h1
               className="gradient-gray-text title-side"
-              variants={fadeInMain}
+              variants={fadeInLeft}
               initial="initial"
               whileInView="animate"
             >
@@ -25,7 +25,7 @@ export default function HeroSection() {
 
             <motion.p
               className="subtitle-side"
-              variants={fadeInMain}
+              variants={fadeInLeft}
               initial="initial"
               whileInView="animate"
             >
@@ -35,7 +35,7 @@ export default function HeroSection() {
 
             <motion.div
               className="flex items-center gap-4"
-              variants={fadeInMain}
+              variants={fadeInUp}
               initial="initial"
               whileInView="animate"
             >
@@ -52,7 +52,7 @@ export default function HeroSection() {
           >
             {/* IMAGE */}
             <Image
-              src="/product-overview/po .svg"
+              src="/product-overview/po.svg"
               alt="Dashboard preview"
               width={1220}
               height={820}

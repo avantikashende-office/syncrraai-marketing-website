@@ -1,6 +1,8 @@
 "use client";
 
 import AccordionList from "@/components/ui/AccordionList";
+import { fadeInLeft, fadeInRight } from "@/utils/animations";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const capabilityData = [
@@ -25,7 +27,7 @@ const capabilityData = [
       "Manage suppliers, track purchase RM, & streamline the procurement lifecycle",
     image: "/product-overview/m3.svg",
   },
-   {
+  {
     key: "production",
     title: "Production Management",
     description:
@@ -50,15 +52,25 @@ export default function ManufacturingAsOne() {
         {/* LEFT */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <h1 className="title-side gradient-gray-text max-w-[70%]">
+            <motion.h1
+              variants={fadeInLeft}
+              initial="initial"
+              whileInView="animate"
+              className="title-side gradient-gray-text max-w-[70%]"
+            >
               All Your Manufacturing Processes Working as One
-            </h1>
+            </motion.h1>
 
-            <p className="subtitle-side">
+            <motion.p
+              variants={fadeInRight}
+              initial="initial"
+              whileInView="animate"
+              className="subtitle-side"
+            >
               Eliminate silos with a single ERP that coordinates <br />
               production, inventory, machines, suppliers, and quality on
               autopilot
-            </p>
+            </motion.p>
           </div>
 
           <AccordionList
@@ -68,9 +80,9 @@ export default function ManufacturingAsOne() {
             itemPaddingY="py-6"
             autoNext={true}
             showRunnerLine={true}
-            autoNextDuration = {4200}
+            autoNextDuration={4200}
             showImage
-            imageClassName =""
+            imageClassName=""
           />
         </div>
       </div>
