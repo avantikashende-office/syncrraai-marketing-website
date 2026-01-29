@@ -44,50 +44,76 @@ const glow: Record<BusinessLevel, string> = {
 
 export default function BusinessLevels({ columns }: Props) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-      {columns.map((col, cIndex) => (
-        <div key={cIndex} className="space-y-5">
-          {col.items.map((item, i) => {
-            const isHeader = item.isHeader;
+    <div className="space-y-8">
+      {/* ---------- HEADERS ---------- */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {columns.map((col, cIndex) => {
+          const header = col.items.find((i) => i.isHeader);
 
-            return (
-              <div
-                key={i}
-                className={`
-                  rounded-xl border border-white/10
-                  bg-[#0B0B0B]
-                  p-5
-                  transition
-                  ${glow[col.level]}
-                  ${isHeader ? headerBg[col.level] : ""}
-                `}
-              >
-                {/* Icon + Title */}
-                <div className="flex items-center gap-3 mb-2">
-                  {item.icon && (
-                    <span className={textColor[col.level]}>{item.icon}</span>
-                  )}
+          if (!header) return null;
 
-                  <p
-                    className={`font-semibold ${
-                      isHeader ? "text-white" : "text-white"
-                    }`}
-                  >
-                    {item.title}
-                  </p>
+          return (
+            <div
+              key={cIndex}
+              className={`
+                h-full
+                rounded-xl
+                border border-white/10
+                px-6 py-6
+                flex items-start gap-3
+                ${headerBg[col.level]}
+              `}
+            >
+              {header.icon && (
+                <span className={textColor[col.level]}>{header.icon}</span>
+              )}
+              <p className="font-semibold text-md">{header.title}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ---------- CONTENT ---------- */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {columns.map((col, cIndex) => (
+          <div key={cIndex} className="flex flex-col gap-6">
+            {col.items
+              .filter((i) => !i.isHeader)
+              .map((item, i) => (
+                <div
+                  key={i}
+                  className={`
+                    h-full
+                    rounded-xl
+                    border border-white/10
+                    bg-[#0B0B0B]
+                    px-6 py-6
+                    transition
+                    ${glow[col.level]}
+                  `}
+                >
+                  <div className="flex gap-3">
+                    {item.icon && (
+                      <span className={textColor[col.level]}>{item.icon}</span>
+                    )}
+
+                    <div>
+                      <p className="font-semibold text-white text-md mb-1">
+                        {item.title}
+                      </p>
+
+                      {item.description && (
+                        <p className="text-sm text-[#99A1AF] leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Description */}
-                {!isHeader && item.description && (
-                  <p className="ml-7 text-xs text-gray-400 leading-relaxed">
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      ))}
+              ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

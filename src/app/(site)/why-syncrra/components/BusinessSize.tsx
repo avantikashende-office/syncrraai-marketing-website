@@ -3,6 +3,7 @@
 import { Column } from "@/components/ui/BusinessLevels";
 import BusinessLevels from "@/components/ui/BusinessLevels";
 import { fadeInMain, fadeInRight } from "@/utils/animations";
+import { BuildingOffice, CurrencyDollar, FlowArrow, Shield, Storefront, Users } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import {
   DollarSign,
@@ -23,25 +24,28 @@ export default function BusinessSize() {
     {
       level: "small",
       items: [
-        { title: "Small Business", icon: <Store size={20} />, isHeader: true },
-
         {
-          title: "Limited Budget, Big Dreams",
-          description:
-            "Enterprise features without enterprise costs. Start lean, scale smart.",
-          icon: <DollarSign size={20} />,
+          title: "Early-Stage & Growing Teams",
+          icon: <Storefront size={25} />,
+          isHeader: true,
         },
         {
-          title: "Wearing Too Many Hats",
+          title: "Start Smart, Scale Confidently",
           description:
-            "Automate routine tasks so you can focus on growth, not data entry.",
-          icon: <Briefcase size={20} />,
+            "Syncrra delivers an AI-first manufacturing ERP without heavy upfront investment. Activate only what you need today, with confidence the platform will scale as your business grows.",
+          icon: <CurrencyDollar size={25} />,
         },
         {
-          title: "Outgrowing Spreadsheets",
+          title: "Automation That Reduces Manual Effort",
           description:
-            "Real-time visibility without the complexity of traditional ERPs.",
-          icon: <TrendingUp size={20} />,
+            "When teams are small, time matters. Syncrra automates job tracking, approvals, inventory updates, and reporting to reduce manual work and keep operations organised.",
+          icon: <Briefcase size={25} />,
+        },
+        {
+          title: "Move Beyond Manual Tracking",
+          description:
+            "Spreadsheets stop working as complexity increases. Syncrra replaces fragmented tracking with real-time visibility, structured workflows, and intelligent dashboards.",
+          icon: <TrendingUp size={25} />,
         },
       ],
     },
@@ -50,28 +54,27 @@ export default function BusinessSize() {
       level: "mid",
       items: [
         {
-          title: "Mid-Size Business",
-          icon: <Layers size={20} />,
+          title: "Scaling & Mid-Growth Businesses",
+          icon: <FlowArrow size={25} />,
           isHeader: true,
         },
-
         {
-          title: "Scaling Pains",
+          title: "Scale Without System Disruptions",
           description:
-            "Handle increased volume without system slowdowns or migrations.",
-          icon: <Layers size={20} />,
+            "Growth should not force a system change. Syncrra scales across users, volumes, and processes without migrations or downtime.",
+          icon: <Zap size={25} />,
         },
         {
-          title: "Process Automation Gaps",
+          title: "Close Operational Gaps",
           description:
-            "Streamline workflows across teams with intelligent automation.",
-          icon: <Zap size={20} />,
+            "Disconnected tools slow execution. Syncrra unifies production planning, procurement, quality, and approvals into a single workflow-driven system.",
+          icon: <Users size={25} />,
         },
         {
-          title: "Data Silos",
+          title: "One Source of Truth Across Teams",
           description:
-            "Unified platform that connects all departments in real-time.",
-          icon: <Database size={20} />,
+            "Data silos create confusion. Syncrra connects teams on one platform with consistent, real-time data across departments.",
+          icon: <Shield size={25} />,
         },
       ],
     },
@@ -79,29 +82,33 @@ export default function BusinessSize() {
     {
       level: "enterprise",
       items: [
-        { title: "Enterprise", icon: <Factory size={20} />, isHeader: true },
-
         {
-          title: "Complex Operations",
-          description:
-            "Manage multi-location, multi-currency operations from one platform.",
-          icon: <Building2 size={20} />,
+          title: "Large & Enterprise Operations",
+          icon: <BuildingOffice size={25} />,
+          isHeader: true,
         },
         {
-          title: "Advanced Analytics",
+          title: "Centralised Control Across Locations",
           description:
-            "AI-powered insights for strategic decision-making at scale.",
-          icon: <BarChart3 size={20} />,
+            "Manage multi-plant, multi-location, and multi-currency operations with central visibility and local execution control.",
+          icon: <Building2 size={25} />,
         },
         {
-          title: "Compliance & Security",
+          title: "Intelligence That Supports Decisions",
           description:
-            "Enterprise-grade security with industry-specific compliance built-in.",
-          icon: <ShieldCheck size={20} />,
+            "Syncrra combines real-time data with Agentic AI to generate insights, forecasts, and dynamically created dashboards for faster, informed decisions.",
+          icon: <BarChart3 size={25} />,
+        },
+        {
+          title: "Enterprise-Ready by Design",
+          description:
+            "Built for complex environments with role-based access, audit trails, approval hierarchies, and compliance-ready architecture—without sacrificing usability.",
+          icon: <ShieldCheck size={25} />,
         },
       ],
     },
   ];
+
   return (
     <section className="section-container">
       <div className="space-y-8">
@@ -112,18 +119,20 @@ export default function BusinessSize() {
             initial="initial"
             whileInView="animate"
           >
-            Every Business Size. Every Challenge. <br /> One Solution.
+            Built to Grow With You. Not Replace You.
           </motion.h1>
         </div>
 
         <motion.p
-          className="subtitle-center"
+          className="subtitle-center !max-w-[clamp(280px,90vw,800px)]"
           variants={fadeInRight}
           initial="initial"
           whileInView="animate"
         >
-          From day one to day 10,000—Syncrra solves the pain points unique to
-          your stage while preparing you for what's next.
+          Most ERP systems force businesses to fit into predefined stages.
+          Syncrra does the opposite. It adapts to where you are today and
+          evolves with you as complexity increases, without migrations, rework,
+          or disruption.
         </motion.p>
 
         <BusinessLevels columns={data} />
@@ -133,7 +142,7 @@ export default function BusinessSize() {
                bg-green-500/10 border border-green-500/30 text-sm"
           >
             <span className="text-green-400">
-              <Waypoints />
+              <Zap />
             </span>
 
             <motion.p
@@ -142,8 +151,7 @@ export default function BusinessSize() {
               whileInView="animate"
               className="leading-snug"
             >
-              All features available at every tier—just unlock what you need
-              when you need it
+              Same platform. Same intelligence. Activated at your pace.
             </motion.p>
           </div>
         </div>

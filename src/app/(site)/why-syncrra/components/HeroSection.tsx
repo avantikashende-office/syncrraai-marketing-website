@@ -10,8 +10,8 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="section-container">
-      <div className="  hero-top-space space-y-8 ">
-        <div className="space-y-8">
+      <div className="  hero-top-space space-y-12 ">
+        <div className="space-y-8 hero-top-space ">
           <div className="space-y-2">
             <motion.h1
               className="gradient-gray-text title-center"
@@ -20,18 +20,18 @@ export default function HeroSection() {
               whileInView="animate"
             >
               One ERP Platform.
-              <br /> All Business Sizes.
+              <br /> Built for Every Stage of Manufacturing
             </motion.h1>
           </div>
 
           <motion.p
-            className="subtitle-center"
-            variants={fadeInRight}
+ className="subtitle-center !max-w-[clamp(280px,90vw,800px)]"            variants={fadeInRight}
             initial="initial"
             whileInView="animate"
           >
-            The first ERP designed to scale with you—from startup to enterprise.
-            No migration headaches. No system changes. Just seamless growth.
+            Syncrra is an AI-first manufacturing ERP designed to grow with your
+            business. From early-stage factories to large-scale enterprises,
+            Syncrra adapts without reimplementation, rework, or disruption.
           </motion.p>
 
           <motion.div
@@ -51,10 +51,16 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="relative mx-auto mt-20 w-fit">
+        <div className="relative mx-auto w-fit">
+          <div className="solutions-hero-glow-top" />
+
+          <div className="solutions-hero-glow-left" />
+
+          <div className="solutions-hero-glow-right" />
+          <div className="solutions-hero-glow-bottom" />
           <div className="relative rounded-xl overflow-hidden">
             <Image
-              src="/WhySyncrra/why-syncrra.svg"
+              src="/WhySyncrra/ws.svg"
               alt="Dashboard preview"
               width={1100}
               height={700}
@@ -66,11 +72,12 @@ export default function HeroSection() {
         </div>
 
         {/* Quote */}
-        <AnimatedRevealText
-          className="text-4xl leading-tight text-[#404040]"
-          text=" '' Syncrra transformed how we manage daily operations. What used to take hours across multiple tools now happens automatically in one place. '' "
-        />
-       
+        <div className="mt-[clamp(3rem,8vw,7.5rem)]">
+          <AnimatedRevealText
+            className="text-4xl leading-tight text-[#404040]"
+            text=" '' Syncrra changed the way we run our factory. What once required multiple tools, follow-ups, and manual checks now happens automatically in one connected system. '' "
+          />
+        </div>
       </div>
     </section>
   );
